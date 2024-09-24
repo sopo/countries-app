@@ -1,0 +1,4 @@
+.card-footer{
+    border-top: 1px solid var(--stroke-softer);
+    padding: 1rem;
+}
