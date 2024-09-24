@@ -4,7 +4,7 @@ const country = {
   population: 10590927,
   capital: "Dushanbe",
 };
-export default function CardContent() {
+const CardContent: React.FC = () => {
   return (
     <div className='card-content'>
       <h2 className="primary-text title-s">{country.name}</h2>
@@ -15,3 +15,4 @@ export default function CardContent() {
     </div>
   );
 }
+export default CardContent;

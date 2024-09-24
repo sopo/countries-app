@@ -1,6 +1,6 @@
 import "./Header.css";
 import BurgerMenu from '../../assets/list.bullet.svg?react'
-export default function Header() {
+const Header: React.FC = () => {
   return (
     <div>
     <div className="nav-web header-frame border-bottom ">
@@ -26,3 +26,4 @@ export default function Header() {
     </div>
   );
 }
+export default Header;

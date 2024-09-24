@@ -1,7 +1,8 @@
+import { PropsWithChildren } from "react";
 import "./Card.css";
 
 
-export default function Card({children}) { 
+const Card: React.FC<PropsWithChildren>= ({children}) => { 
   return (
     <div className='card'>
       {children}
@@ -9,3 +10,4 @@ export default function Card({children}) {
   );
 }
 
+export default Card;
