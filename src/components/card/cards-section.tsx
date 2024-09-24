@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./card/Card";
 import CardHeader from "./card-header/CardHeader";
 import CardContent from "./card-content/card-content";
 import CardFooter from "./card-footer/card-footer";

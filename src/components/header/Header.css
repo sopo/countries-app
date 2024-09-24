@@ -1,9 +1,35 @@
-.header-frame{
-    background-color: rgb(255, 255, 255);
-    height: 80px;
+.header-frame {
+  height: 80px;
+  display: flex;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1200px;
+  margin: auto;
+}
+.nav-end {
+  display: flex;
+  column-gap: 24px;
+}
+.nav-mobile {
+  display: none;
 }
 
-.header-nav{
+/* Breakpoints */
+@media (max-width: 1366px) {
+  .header-content {
+    width: 100%;
+    margin: auto 64px;
+  }
+}
+
+@media (max-width: 960px) {
+  .nav-web {
+    display: none;
+  }
+  .nav-mobile {
     display: flex;
-    column-gap: 1.8rem;
+  }
 }

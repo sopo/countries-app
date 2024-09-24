@@ -23,7 +23,7 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul,li {
   list-style-type: none; 
 }
 /* Color */
@@ -86,9 +86,13 @@ h1, h2, h3, p {
 .naked-button-m{
   font-size: 1rem;
 }
+.icon-l{
+  width: 1.6rem;
+}
 .icon-m{
   width: 1rem;
 }
+
 .icon-primary{
   color: var(--color-primary-text);
 }

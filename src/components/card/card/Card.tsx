@@ -9,6 +9,3 @@ export default function Card({children}) {
   );
 }
 
-{/* <div className="card border-radius-xl padding-xl">
-
-</div> */}

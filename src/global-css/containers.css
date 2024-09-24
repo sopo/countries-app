@@ -1,6 +1,6 @@
 /* Containers */
 .frame-full {
-  width: 100%;
+  width: auto;
 }
 .container-xl {
   width: 1200px;
