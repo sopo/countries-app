@@ -7,7 +7,6 @@ import CardHeader from "./components/cards/card-header/card-header";
 import CardContent from "./components/cards/card-content/card-content";
 import CardFooter from "./components/cards/card-footer/card-footer";
 
-
 const App: React.FC = () => {
   return (
     <>
