@@ -1,11 +1,12 @@
 import "./global-css/containers.css";
-import Header from "./components/header/Header";
+import Header from "./components/header/header";
+import Banner from "./components/banner/banner";
 import CardsSection from "./components/cards/cards-section/cards-section";
 import Card from "./components/cards/card-container/card";
 import CardHeader from "./components/cards/card-header/card-header";
 import CardContent from "./components/cards/card-content/card-content";
 import CardFooter from "./components/cards/card-footer/card-footer";
-import Banner from "./components/banner/banner";
+
 
 const App: React.FC = () => {
   return (
