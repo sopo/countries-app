@@ -1,6 +1,6 @@
 import "./global-css/containers.css";
-import Header from "./components/header/header";
-import Banner from "./components/banner/banner";
+import Header from "./components/header/header.tsx";
+import Banner from "./components/banner/banner.tsx";
 import CardsSection from "./components/cards/cards-section/cards-section";
 import Card from "./components/cards/card-container/card";
 import CardHeader from "./components/cards/card-header/card-header";
