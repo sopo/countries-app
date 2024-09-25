@@ -5,9 +5,9 @@ import Card from "./components/cards/card-container/card";
 import CardHeader from "./components/cards/card-header/CardHeader";
 import CardContent from "./components/cards/card-content/card-content";
 import CardFooter from "./components/cards/card-footer/card-footer";
-import Banner from "./components/banner/Banner";
+import Banner from "./components/banner/banner";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <div>

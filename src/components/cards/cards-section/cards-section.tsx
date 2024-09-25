@@ -9,8 +9,3 @@ const CardsSection: React.FC<PropsWithChildren> = ({ children }) => {
   );
 }
 export default CardsSection;
-{/* <Card>
-<CardHeader />
-<CardContent />
-<CardFooter />
-</Card> */}
