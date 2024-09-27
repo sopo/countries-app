@@ -1,4 +1,4 @@
-import styles from './banner.module.css'
+import styles from '#/banner/banner.module.css'
 const Banner: React.FC = () => {
     return(
         <div className={styles.heroBanner}>

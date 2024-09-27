@@ -1,1 +1,1 @@
-export { default } from './section';
+export { default } from "#/cards/section/section"

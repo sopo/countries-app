@@ -1,4 +1,4 @@
-import styles from "./content.module.css"
+import styles from "#/cards/content/content.module.css"
 const country = {
   name: "Tajikistan",
   population: 10590927,

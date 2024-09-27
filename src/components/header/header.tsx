@@ -1,5 +1,5 @@
-import styles from './header.module.css'
-import BurgerMenu from '../../assets/list.bullet.svg?react'
+import styles from '#/header/header.module.css'
+import BurgerMenu from '@/assets/list.bullet.svg?react'
 const Header: React.FC = () => {
   return (
     <div>
