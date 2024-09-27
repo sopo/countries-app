@@ -1,10 +1,10 @@
 import styles from "#/cards/content/content.module.css"
-const country = {
-  name: "Tajikistan",
-  population: 10590927,
-  capital: "Dushanbe",
-};
-const CardContent: React.FC = () => {
+interface Country{
+  name: string; 
+  population: number; 
+  capital: string;
+}
+const CardContent: React.FC<{ country: Country }> = ({country}) => {
   return (
     <div className={styles.cardContent}>
       <h2 className="primary-text title-s">{country.name}</h2>
