@@ -1,11 +1,11 @@
 import "./global-css/containers.css";
-import Header from "./components/header/header";
-import Banner from "./components/banner/banner";
-import CardsSection from "./components/cards/cards-section/cards-section";
-import Card from "./components/cards/card-container/card";
-import CardHeader from "./components/cards/card-header/card-header";
-import CardContent from "./components/cards/card-content/card-content";
-import CardFooter from "./components/cards/card-footer/card-footer";
+import Header from "./components/header";
+import Banner from "./components/banner";
+import CardsSection from "./components/cards/section";
+import CardContainer from "./components/cards/container";
+import CardHeader from "./components/cards/header";
+import CardContent from "./components/cards/content";
+import CardFooter from "./components/cards/footer";
 
 const App: React.FC = () => {
   return (
@@ -14,11 +14,11 @@ const App: React.FC = () => {
         <Header />
         <Banner />
         <CardsSection>
-          <Card>
+          <CardContainer>
             <CardHeader />
             <CardContent />
             <CardFooter />
-          </Card>
+          </CardContainer>
         </CardsSection>
       </div>
     </>

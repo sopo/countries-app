@@ -1,12 +1,10 @@
-// import './card-content.css'
-import styles from "./card-content.module.css"
+import styles from "./content.module.css"
 const country = {
   name: "Tajikistan",
   population: 10590927,
   capital: "Dushanbe",
 };
 const CardContent: React.FC = () => {
-  console.log(styles)
   return (
     <div className={styles.cardContent}>
       <h2 className="primary-text title-s">{country.name}</h2>
