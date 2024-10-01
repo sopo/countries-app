@@ -1,4 +1,4 @@
-import styles from "#/cards/content/content.module.css"
+import styles from "./content.module.css"
 interface Country{
   name: string; 
   population: number; 

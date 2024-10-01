@@ -1,4 +1,4 @@
-import styles from '#/cards/footer/footer.module.css';
+import styles from './footer.module.css';
 import ArrowIcon from '@/assets/arrow.right.svg?react'
 const CardFooter: React.FC = () => {
     return(
