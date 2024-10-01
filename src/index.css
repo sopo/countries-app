@@ -74,9 +74,14 @@ p {
 }
 .paragraph-l {
   font-size: 1.6rem;
+  line-height: 2.72rem;
+  font-weight: 400;
+
 }
 .paragraph-m {
   font-size: 1rem;
+  line-height: 1.7rem;
+  font-weight: 400;
 }
 .paragraph-s {
   font-size: 0.8rem;
