@@ -1,9 +1,13 @@
-import Banner from "../../components/banner";
-import CardsSection from "../../components/cards/section";
-import CardContainer from "../../components/cards/container";
-import CardContent from "../../components/cards/content";
-import CardHeader from "../../components/cards/header";
-import CardFooter from "../../components/cards/footer";
+import { lazy, Suspense } from "react";
+import Loading from "@/components/loading/loading";
+
+const Banner = lazy(() => import('../../components/banner'));
+const CardsSection = lazy(() => import('../../components/cards/section'));
+const CardContainer = lazy(() => import('../../components/cards/container'));
+const CardContent = lazy(() => import('../../components/cards/content'));
+const CardHeader = lazy(() => import('../../components/cards/header'));
+const CardFooter = lazy(() => import('../../components/cards/footer'))
+
 const country = {
     name: "Tajikistan",
     population: 10590927,
@@ -12,7 +16,10 @@ const country = {
 const DefaultHome: React.FC = () => {
       return(
         <div>
+          <Suspense fallback={<Loading />}>
         <Banner />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
           <CardsSection>
             <CardContainer>
               <CardHeader />
@@ -20,6 +27,7 @@ const DefaultHome: React.FC = () => {
               <CardFooter />
             </CardContainer>
           </CardsSection>
+          </Suspense>
           </div>
       )
 }

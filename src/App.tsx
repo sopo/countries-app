@@ -22,9 +22,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-{
-  /* <DefaultLayout>
-<DefaultHome />
-
-</DefaultLayout> */
-}
