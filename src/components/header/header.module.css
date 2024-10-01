@@ -16,6 +16,13 @@
 .nav-mobile {
   display: none;
 }
+.active{
+  color: var(--color-accent);
+ 
+}
+.initial{
+  color: var(--text-primary);
+}
 
 /* Breakpoints */
 @media (max-width: 1366px) {

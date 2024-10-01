@@ -1,6 +1,8 @@
 .article-container{
-    width: 860px;
-}
-.article-title{
-    margin-top: 56px;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.6rem;
+    max-width: 960px;
+    justify-content: flex-start;
 }

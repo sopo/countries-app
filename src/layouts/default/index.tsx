@@ -1,10 +1,10 @@
-import { PropsWithChildren } from "react";
+import { Outlet } from "react-router-dom";
 import Header from "@/components/header";
-const DefaultLayout: React.FC <PropsWithChildren> = ({children}) => { 
+const DefaultLayout: React.FC = () => { 
   return (
-    <div >
+    <div>
      <Header />
-      {children}
+      <Outlet />
     </div>
   );
 }

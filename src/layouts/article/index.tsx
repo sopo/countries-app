@@ -5,9 +5,11 @@ interface Content{
 }
 const ArticleLayout: React.FC<{content: Content}> = ({ content }) => {
     return(
-        <div className={`container-xl ${styles.articleContainer}`}>    
+        <div className={`container-xl `}>
+            <div className={` ${styles.articleContainer}`}>  
             <h1 className={`primary-text title-l ${styles.articleTitle}`}>{content.title}</h1>
-            <p className='primary-text paragraph-m'>{content.text}</p>
+            <p className={ `primary-text paragraph-m`}>{content.text}</p>
+            </div>  
         </div>
     )
 }

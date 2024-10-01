@@ -2,6 +2,7 @@
   font-family: Poppins, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --color-accent: #09af00;
   --color-primary-text: #191c1f;
+  --color-primary-text-inverted: #fff;
   --color-secondary-text: #505a63;
   --stroke-softer: #e1e4e5;
   --surface-1: #f7f7f7;

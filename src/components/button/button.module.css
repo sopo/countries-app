@@ -1,0 +1,12 @@
+.button-primary-m{
+    background-color: var(--color-accent);
+    color: var(--color-primary-text-inverted);
+    height: 4rem;
+    padding: 0 3rem;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+   
+}
