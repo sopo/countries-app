@@ -3,7 +3,7 @@ import "@/global-css/containers.css";
 import DefaultLayout from "./layouts/default";
 
 import HomePage from "./pages/home/homepage/homepage";
-import About from "./pages/about/views";
+import About from "./pages/about/about";
 import PageNotFound from "./pages/page-not-found/views";
 import ExpandedCard from "./pages/home/components/cards/section/views/expanded";
 

@@ -34,6 +34,9 @@ li {
 .primary-text {
   color: var(--color-primary-text);
 }
+.secondary-text{
+  color: var(--color-secondary-text);
+}
 .primary-text-inverted {
   color: #fff;
 }
@@ -61,18 +64,7 @@ p {
 .medium {
   font-weight: 500;
 }
-.title-l {
-  font-size: 2.4rem;
-  font-weight: 500;
-}
-.title-m {
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-.title-s {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
+
 .paragraph-l {
   font-size: 1.6rem;
   line-height: 2.72rem;
