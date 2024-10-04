@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import Loading from "@/components/loading/loading";
-
+import countries from "../../components/cards/static-data/cards-data";
 const Banner = lazy(() => import("../../components/banner"));
 const CardsSection = lazy(() => import("../../components/cards/section"));
 const CardContainer = lazy(() => import("../../components/cards/container"));
@@ -8,11 +8,6 @@ const CardContent = lazy(() => import("../../components/cards/content"));
 const CardHeader = lazy(() => import("../../components/cards/header"));
 const CardFooter = lazy(() => import("../../components/cards/footer"));
 
-const country = {
-  name: "Tajikistan",
-  population: 10590927,
-  capital: "Dushanbe",
-};
 const DefaultHome: React.FC = () => {
   return (
     <div>
@@ -23,9 +18,23 @@ const DefaultHome: React.FC = () => {
         <CardsSection>
           <CardContainer>
             <CardHeader />
-            <CardContent country={country} />
+            <CardContent country={countries[0]} />
             <CardFooter />
           </CardContainer>
+
+          <CardContainer>
+            <CardHeader />
+            <CardContent country={countries[1]} />
+            <CardFooter />
+          </CardContainer>
+
+          <CardContainer>
+            <CardHeader />
+            <CardContent country={countries[2]} />
+            <CardFooter />
+          </CardContainer>
+
+
         </CardsSection>
       </Suspense>
     </div>

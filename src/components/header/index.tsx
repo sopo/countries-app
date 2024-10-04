@@ -3,26 +3,26 @@ import styles from "#/header/header.module.css";
 import BurgerMenu from "@/assets/list.bullet.svg?react";
 const Header: React.FC = () => {
   const handleActiveLink = ({ isActive }: NavLinkRenderProps) => {
-    return isActive ? styles.active : styles.initial 
-  }
+    return isActive ? styles.active : styles.initial;
+  };
   return (
     <div>
       <div className={`${styles.headerFrame} ${styles.navWeb} border-bottom`}>
         <div className={styles.headerContent}>
-          <Link to='/'>
-              <p className="title-s accent">Travel</p>
+          <Link to="/">
+            <p className="title-s accent">Travel</p>
           </Link>
 
           <nav>
             <ul className={styles.navEnd}>
-            <NavLink to="personal" className={handleActiveLink}>
-                  Personal
+              <NavLink to="personal" className={handleActiveLink}>
+                Personal
               </NavLink>
               <NavLink to="business" className={handleActiveLink}>
-                  Business
+                Business
               </NavLink>
               <NavLink to="about" className={handleActiveLink}>
-                  About
+                About
               </NavLink>
             </ul>
           </nav>
@@ -31,10 +31,9 @@ const Header: React.FC = () => {
       <div className={`${styles.navMobile} ${styles.headerFrame}`}>
         <div className={styles.headerContent}>
           <div>
-          <Link to='/'>
+            <Link to="/">
               <p className="title-s accent">Travel</p>
-          </Link>
-
+            </Link>
           </div>
           <div className="nav-mobile-end">
             <BurgerMenu className="icon-l icon-primary" />
