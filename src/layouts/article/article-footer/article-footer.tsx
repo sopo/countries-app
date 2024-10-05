@@ -1,4 +1,4 @@
-import styles from '../article-pattern.module.css';
+import styles from '../article.module.css'
 const ArticleFooter: React.FC = () => {
     return(
         <div className={`container-l ${styles.articleFooter}`}>

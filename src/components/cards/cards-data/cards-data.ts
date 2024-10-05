@@ -1,7 +1,7 @@
 
 const countries = [
   {
-    id: "1",
+    id: 1,
     name: "Tajikistan",
     population: 10590927,
     capital: "Dushanbe",
@@ -10,7 +10,7 @@ const countries = [
     imageUrl: "https://www.coxandkings.co.uk/-/media/cox-and-kings/images/page-header-images/destinations/south-america/bolivia/page-header--flamingos-eduardo-avaroa-andean-fauna-national-reserve-bolivia-shutterstock406037995.jpg?w=1920&h=940",
   },
   {
-    id: "2",
+    id: 2,
     name: "Bolivia",
     population: 10590927,
     capital: "Dushanbe",
@@ -19,7 +19,7 @@ const countries = [
     imageUrl: "https://www.coxandkings.co.uk/-/media/cox-and-kings/images/page-header-images/destinations/south-america/bolivia/page-header--flamingos-eduardo-avaroa-andean-fauna-national-reserve-bolivia-shutterstock406037995.jpg?w=1920&h=940",
   },
   {
-    id: "3",
+    id: 3,
     name: "Armenia",
     population: 10590927,
     capital: "Dushanbe",

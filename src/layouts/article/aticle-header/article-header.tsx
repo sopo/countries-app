@@ -1,4 +1,4 @@
-import styles from "../article-pattern.module.css";
+import styles from '../article.module.css'
 import '@/global-css/typography.css'
 interface ArticleHeaderProps {
   articleTitle: string;

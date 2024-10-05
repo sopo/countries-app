@@ -1,10 +1,10 @@
-import countries from "../components/cards/section/static-data/cards-data";
-import Banner from "../components/banner";
-import CardsSection from "../components/cards/section/views/default";
-import CardContainer from "../components/cards/section/container/view";
-import CardContent from "../components/cards/section/container/content";
-import CardHeader from "../components/cards/section/container/header";
-import CardFooter from "../components/cards/section/container/footer";
+import countries from "../../components/cards/cards-data/cards-data";
+import Banner from "../../components/banner/banner";
+import CardsSection from "../../components/cards/cards-section/cards-section";
+import CardContainer from "../../components/cards/card";
+import CardContent from "../../components/cards/card-content/card-content";
+import CardHeader from "../../components/cards/card-header/card-header";
+import CardFooter from "../../components/cards/card-footer/card-footer";
 import { Link } from "react-router-dom";
 
 const HomePage: React.FC = () => {

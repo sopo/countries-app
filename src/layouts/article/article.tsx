@@ -1,6 +1,4 @@
 import { PropsWithChildren } from "react";
-
-
 const ArticlePattern: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={`container-xl`}>
