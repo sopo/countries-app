@@ -6,7 +6,7 @@ import HomePage from "./pages/home/homepage/homepage";
 import About from "./pages/about/about";
 import PageNotFound from "./pages/page-not-found/views";
 import ExpandedCard from "./pages/home/components/cards/section/views/expanded";
-
+import Contact from "./pages/contact/contact";
 const App: React.FC = () => {
   return (
     <>
@@ -15,6 +15,7 @@ const App: React.FC = () => {
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="/countries/:id" element={<ExpandedCard />}/>
             <Route path="*" element={<PageNotFound />} />
           </Route>

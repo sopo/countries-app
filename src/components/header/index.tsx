@@ -18,11 +18,11 @@ const Header: React.FC = () => {
               <NavLink to="personal" className={handleActiveLink}>
                 Personal
               </NavLink>
-              <NavLink to="business" className={handleActiveLink}>
-                Business
-              </NavLink>
               <NavLink to="about" className={handleActiveLink}>
                 About
+              </NavLink>
+              <NavLink to="contact" className={handleActiveLink}>
+                Contact
               </NavLink>
             </ul>
           </nav>

@@ -1,0 +1,15 @@
+.text-area{
+    height: 8rem;
+    width: 400px;
+    border: 1px solid var(--stroke-softer);
+    border-radius: .25rem;
+    background-color: var(--surface-1);
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--color-primary-text);
+}
+
+.text-area::placeholder{
+    font-size: 1rem;
+    color: var(--color-secondary-text);
+}
