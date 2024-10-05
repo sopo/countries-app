@@ -8,7 +8,9 @@ const Form:React.FC<PropsWithChildren<FormProps>> = ({children, title}) => {
         <div>
             <h2>{title}</h2>
             <div className={styles.form}>
+                <form>
                 {children}
+                </form>
             </div>
         </div>
     )
