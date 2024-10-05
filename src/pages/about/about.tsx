@@ -1,4 +1,4 @@
-import ArticlePattern from "@/layouts/article/article-pattern";
+import Article from '@/layouts/article/article'
 import ArticleHeader from "@/layouts/article/aticle-header/article-header";
 import ArticleBody from "@/layouts/article/article-body/article-body";
 
@@ -8,10 +8,10 @@ const content = {
   }
 const About: React.FC = () =>{
     return(
-        <ArticlePattern>
+        <Article>
             <ArticleHeader articleTitle={content.title}/>
             <ArticleBody text={content.text}></ArticleBody>
-        </ArticlePattern>
+        </Article>
     )
 }
 export default About;
