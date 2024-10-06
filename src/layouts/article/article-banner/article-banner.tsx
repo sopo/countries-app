@@ -5,7 +5,7 @@ interface ArticleBannerProps{
 const ArticleBanner:React.FC<ArticleBannerProps> = ({bannerImageUrl}) => {
    
     return(
-        <div className={styles.banner}
+        <div className={`image-container-xl ${styles.banner}`}
         style={{ backgroundImage: `url(${bannerImageUrl})` }}
         >
 

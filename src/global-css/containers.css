@@ -7,6 +7,11 @@
   margin-left: auto;
   margin-right: auto;
 }
+.image-container-xl {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .container-l{
   width: 768px;
   margin-left: auto;
@@ -19,5 +24,24 @@
     max-width: 100%;
     width: auto;
     margin: 0 64px;
+  }
+  .image-container-xl {
+    max-width: 100%;
+    width: auto;
+    margin: 0 64px;
+  }
+}
+@media (max-width: 960px){
+  .container-xl{
+    margin: 0 32px;
+  }
+  .image-container-xl {
+    margin: 0;
+  }
+}
+@media(max-width: 800px){
+  .container-l{
+    width: auto;
+    margin: 0 16px;
   }
 }

@@ -6,3 +6,13 @@
     background-size: cover; 
     background-position: center; 
 }
+@media (max-width: 1366px){
+    .banner{
+        height: 400px;
+    }
+}
+@media(max-width: 960px){
+    .banner{
+        height: 316px;
+    }
+}
