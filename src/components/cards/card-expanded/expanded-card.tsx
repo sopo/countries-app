@@ -10,7 +10,7 @@ import ArticleFooter from "@/layouts/article/article-footer/article-footer";
 
 const ExpandedCard: React.FC = () => {
   const { id } = useParams();
-  const country = countries.find((country) => `${country.id}` === id);
+  const country = countries.find((country) => country.id.toString() === id);
   const countryNotFound = !country;
 
   if (countryNotFound) {
@@ -25,7 +25,6 @@ const ExpandedCard: React.FC = () => {
         <ArticleBody text={country.description} />
         <ArticleFooter />
       </Article>
-      {console.log(country.imageUrl)}
       </>
     );
   }

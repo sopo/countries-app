@@ -1,18 +1,38 @@
+@font-face {
+  font-family: 'AeonikProTRIAL-Bold';
+  src: url('../assets/font/AeonikProTRIAL-Bold.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'AeonikProTRIAL-Light';
+  src: url('../assets/font/AeonikProTRIAL-Light.otf');
+  font-weight: light;
+}
+@font-face {
+  font-family: 'AeonikProTRIAL-Regular';
+  src: url('../assets/font/AeonikProTRIAL-Regular.otf');
+  font-weight: regular;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/font/Inter-VariableFont_opsz,wght.ttf');
+  font-weight: 100 900;
+}
+
 h1{
+    font-family: 'AeonikProTRIAL-Bold';
     font-size: 2rem;
-    font-weight: 600;
     line-height: 3rem;
     color: var(--color-primary-text);   
 }
 h2{
+  font-family: 'AeonikProTRIAL-Bold';
   font-size: 1.6rem;
-  font-weight: 600;
   line-height: 2.56rem;
   color: var(--color-primary-text);   
 }
-p{
+p{  font-family: 'Inter';
     font-size: 1rem;
-    font-weight: 400;
     line-height: 1.6rem;
     color: var(--color-primary-text);
 }
