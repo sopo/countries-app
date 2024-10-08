@@ -105,6 +105,9 @@ input, textarea, button, select {
 .icon-primary {
   color: var(--color-primary-text);
 }
+.icon-action{
+  color: var(--color-accent);
+}
 
 /* Borders */
 .border-radius-xl {
