@@ -7,10 +7,10 @@ const Header: React.FC = () => {
   };
   return (
     <div>
-      <div className={`${styles.headerFrame} ${styles.navWeb} border-bottom`}>
+      <div className={`${styles.headerFrame} ${styles.navWeb}`}>
         <div className={styles.headerContent}>
           <Link to="/">
-            <p className="title-s accent">Travel</p>
+            <h2>Travel</h2>
           </Link>
 
           <nav>

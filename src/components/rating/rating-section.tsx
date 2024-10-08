@@ -8,18 +8,15 @@ const RatingSection: React.FC = () => {
   function handleLikeClick() {
     setLike(like + 1);
   }
-  return (
+  return ( 
     <div className={styles.rating}>
-      {like ? (
-        <ThumbsUpFill
-          className="icon-l icon-action"
-          onClick={handleLikeClick}
-        />
+      {
+      like ? ( <ThumbsUpFill className="icon-l icon-action" onClick={handleLikeClick} />
       ) : (
         <ThumbsUp className="icon-l icon-primary" onClick={handleLikeClick} />
-      )}
-
-      {like}
+      )
+    }
+     <p>{like}</p> 
     </div>
   );
 };

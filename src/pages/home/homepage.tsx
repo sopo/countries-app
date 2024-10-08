@@ -7,7 +7,7 @@ import CardContent from "../../components/cards/card-content/card-content";
 import CardHeader from "../../components/cards/card-header/card-header";
 import CardFooter from "../../components/cards/card-footer/card-footer";
 import { Link } from "react-router-dom";
-import RatingSection from "@/components/button/icon-button/rating-section";
+import RatingSection from "@/components/rating/rating-section";
 
 const HomePage: React.FC = () => {
   const [countries] = useState(countriesData);

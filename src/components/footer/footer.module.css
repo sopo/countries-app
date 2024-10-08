@@ -1,0 +1,13 @@
+.footer-container{
+    background-color: black;
+    color: white;
+    height: 300px;
+    margin-top: 5rem;
+}
+.footer-content-container{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.footer-title{
+    color: var(--color-primary-text-inverted)
+}

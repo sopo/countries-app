@@ -1,0 +1,15 @@
+.dropdown{
+    background-color: var(--surface-1);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    
+  }
+ 
+.dropdown-title{
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-secondary-text);
+}
