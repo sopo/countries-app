@@ -1,22 +1,20 @@
 import ThumbsUp from "~/src/assets/icons/hand.thumbsup.svg?react";
 import ThumbsUpFill from "~/src/assets/icons/hand.thumbsup.fill.svg?react";
-import { useState } from "react";
 import styles from "./rating-section.module.css";
+interface RatingSectionProps {
+  rating: number;
+  onClick: () => void;
+}
 
-const RatingSection: React.FC = () => {
-  const [like, setLike] = useState(0);
-  function handleLikeClick() {
-    setLike(like + 1);
-  }
-  return ( 
+const RatingSection: React.FC<RatingSectionProps> = ({ rating, onClick }) => {
+  return (
     <div className={styles.rating}>
-      {
-      like ? ( <ThumbsUpFill className="icon-l icon-action" onClick={handleLikeClick} />
+      {rating ? (
+        <ThumbsUpFill className="icon-l icon-action" onClick={onClick} />
       ) : (
-        <ThumbsUp className="icon-l icon-primary" onClick={handleLikeClick} />
-      )
-    }
-     <p>{like}</p> 
+        <ThumbsUp className="icon-l icon-primary" onClick={onClick} />
+      )}
+      <p>{rating}</p>
     </div>
   );
 };
