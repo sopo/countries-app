@@ -2,30 +2,33 @@
 const countries = [
   {
     id: 1,
-    name: "Tajikistan",
-    population: 10590927,
-    capital: "Dushanbe",
+    name: "Japan",
+    title: "Find Fun for the Whole Family at Japan’s Theme Parks",
+    population: 125000000,
+    capital: "Tokyo",
     description:
-      "Tajikistan is a country in Central Asia surrounded by Afghanistan, China, Kyrgyzstan and Uzbekistan. It’s known for rugged mountains, popular for hiking and climbing. The Fann Mountains, near the national capital Dushanbe, have snow-capped peaks that rise over 5,000 meters. The range encompasses the Iskanderkulsky Nature Refuge, a notable bird habitat named for Iskanderkul, a turquoise lake formed by glaciers.",
-    imageUrl: "https://eiti.org/sites/default/files/styles/full_height_hero_desktop/public/2022-03/Tajikistan_shutterstock_543676123.jpg?itok=W58FllNc",
+      "Japan is an island country in East Asia. It is located in the Pacific Ocean off the northeast coast of the Asian mainland, and is bordered on the west by the Sea of Japan and extends from the Sea of Okhotsk in the north to the East China Sea in the south.",
+    imageUrl: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 2,
-    name: "Bolivia",
+    name: "China",
+    title: "The Perfect Two Week Itinerary in China",
     population: 12220000,
-    capital: "Sucre",
+    capital: "Beijing",
     description:
-      "Bolivia is a country in central South America, with a varied terrain spanning Andes Mountains, the Atacama Desert and Amazon Basin rainforest. At more than 3,500m, its administrative capital, La Paz, sits on the Andes’ Altiplano plateau with snow-capped Mt. Illimani in the background. Nearby is glass-smooth Lake Titicaca, the continent’s largest lake, straddling the border with Peru",
-    imageUrl: "https://www.coxandkings.co.uk/-/media/cox-and-kings/images/page-header-images/destinations/south-america/bolivia/page-header--flamingos-eduardo-avaroa-andean-fauna-national-reserve-bolivia-shutterstock406037995.jpg?w=1920&h=940",
+      "China, officially the People's Republic of China, is a country in East Asia. It has a population of over 1.4 billion, making it is the world's second-most populous country after India, constituting 17.4% of the world population. China spans the equivalent of five time zones and borders fourteen countries by land",
+    imageUrl: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: 3,
-    name: "Armenia",
-    population: 2780000,
-    capital: "Yerevan",
+    name: "Korea",
+    title: "Cherry Blossom in Seoul",
+    population: 51000000,
+    capital: "Seoul",
     description:
-      "Armenia, officially the Republic of Armenia, is a landlocked country in the Armenian Highlands of West Asia. It is a part of the Caucasus region and is bordered by Turkey to the west, Georgia to the north and Azerbaijan to the east, and Iran and the Azerbaijani exclave of Nakhchivan to the south.",
-    imageUrl: "https://www.oneplanetnetwork.org/sites/default/files/2022-01/Armenia.jpg",
+      "South Korea, an East Asian nation on the southern half of the Korean Peninsula, shares one of the world’s most heavily militarized borders with North Korea. It’s equally known for its green, hilly countryside dotted with cherry trees and centuries-old Buddhist temples, plus its coastal fishing villages, sub-tropical islands and high-tech cities such as Seoul, the capital.",
+    imageUrl: "https://images.unsplash.com/photo-1542977466-bbacf83cb0b4?q=80&w=3276&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 export default countries;

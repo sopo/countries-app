@@ -1,8 +1,11 @@
-import styles from './card-header.module.css'
-const CardHeader: React.FC = () => {
+import styles from './card-header.module.css';
+interface cardHeaderProps{
+  cardImageUrl: string;
+}
+const CardHeader: React.FC<cardHeaderProps> = ({cardImageUrl}) => {
   return (
-    <div className={styles.cardHeader}>
-      <p className="caption-s secondary-text">new</p>
+    <div>
+      <div className={styles.img} style={{ backgroundImage: `url(${cardImageUrl})` }}> </div>
     </div>
   );
 }

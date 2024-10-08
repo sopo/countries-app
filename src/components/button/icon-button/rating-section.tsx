@@ -1,15 +1,15 @@
 import ThumbsUp from "~/src/assets/icons/hand.thumbsup.svg?react";
 import ThumbsUpFill from "~/src/assets/icons/hand.thumbsup.fill.svg?react";
 import { useState } from "react";
-import styles from "./icon-button.module.css";
+import styles from "./rating-section.module.css";
 
-const IconButton: React.FC = () => {
+const RatingSection: React.FC = () => {
   const [like, setLike] = useState(0);
   function handleLikeClick() {
     setLike(like + 1);
   }
   return (
-    <div className={styles.iconButton}>
+    <div className={styles.rating}>
       {like ? (
         <ThumbsUpFill
           className="icon-l icon-action"
@@ -23,4 +23,4 @@ const IconButton: React.FC = () => {
     </div>
   );
 };
-export default IconButton;
+export default RatingSection;

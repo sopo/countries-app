@@ -1,17 +1,16 @@
 import styles from "./card-content.module.css"
 interface Country{
   name: string; 
+  title: string;
   population: number; 
   capital: string;
 }
 const CardContent: React.FC<{ country: Country }> = ({country}) => {
   return (
     <div className={styles.cardContent}>
-      <h2 className="primary-text title-s">{country.name}</h2>
-      <p className="secondary-text paragraph-m">
-        Population: {country.population}
-      </p>
-      <p className="secondary-text paragraph-m">Capital: {country.capital}</p>
+      <p className="secondary-text tag">{country.name}</p>
+      <h3>{country.title}</h3>
+      <p className="secondary-text info">{`Capital: ${country.capital} • Population: ${country.population}`}</p>
     </div>
   );
 }

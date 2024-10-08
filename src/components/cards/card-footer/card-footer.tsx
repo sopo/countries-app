@@ -1,12 +1,10 @@
+import { PropsWithChildren } from 'react';
 import styles from './card-footer.module.css'
-import ArrowIcon from '@/assets/arrow.right.svg?react'
-const CardFooter: React.FC = () => {
+
+const CardFooter: React.FC<PropsWithChildren> = ({children}) => {
     return(
         <div className={styles.cardFooter}>
-            <div className='display-flex column-gap-xs'>
-                <p className='naked-button-m'>Read more</p>
-                <ArrowIcon className='icon-m icon-primary' />
-            </div>
+            {children}
         </div>
     )
 }

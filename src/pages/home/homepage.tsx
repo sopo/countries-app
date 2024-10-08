@@ -7,7 +7,7 @@ import CardContent from "../../components/cards/card-content/card-content";
 import CardHeader from "../../components/cards/card-header/card-header";
 import CardFooter from "../../components/cards/card-footer/card-footer";
 import { Link } from "react-router-dom";
-import IconButton from "@/components/button/icon-button/icon-button";
+import RatingSection from "@/components/button/icon-button/rating-section";
 
 const HomePage: React.FC = () => {
   const [countries] = useState(countriesData);
@@ -19,11 +19,12 @@ const HomePage: React.FC = () => {
         
             <CardContainer key={country.id}>
                 <Link  to={`countries/${country.id}`}>
-              <CardHeader />
+              <CardHeader cardImageUrl={country.imageUrl}/>
               <CardContent country={country} />
               </Link>
-              <CardFooter />
-              <IconButton />
+              <CardFooter>
+              <RatingSection />
+              </CardFooter>
             </CardContainer>
          
         ))}

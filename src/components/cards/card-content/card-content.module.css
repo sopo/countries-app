@@ -1,3 +1,6 @@
 .card-content{
-    padding: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
 }
