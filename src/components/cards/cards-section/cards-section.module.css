@@ -4,7 +4,9 @@
   column-gap: 2rem;
   row-gap: 2rem;
 }
-
+.containerSpacing{
+  margin-top: 5rem;
+}
 /* Breakpoints */
 @media (max-width: 1366px) {
   .section {
