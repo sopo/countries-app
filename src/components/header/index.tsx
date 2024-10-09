@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         <div className={styles.headerContent}>
           <div>
             <Link to="/">
-              <p className="title-s accent">Travel</p>
+              <h2>Travel</h2>
             </Link>
           </div>
           <div className="nav-mobile-end">
