@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
       )
     );
   };
-  const buttonTitle = sortByRating ? "Sort by least populat" : "Sort by most popular";
+  const buttonTitle = sortByRating ? "Sort by least popular" : "Sort by most popular";
   return (
     <div>
       <Banner />
