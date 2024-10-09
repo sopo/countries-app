@@ -33,11 +33,10 @@ const HomePage: React.FC = () => {
       )
     );
   };
-  const buttonTitle = sortByRating ? "Show popular last" : "Show popular first";
+  const buttonTitle = sortByRating ? "Sort by least populat" : "Sort by most popular";
   return (
     <div>
       <Banner />
-
       <CardsSection>
         <SectionHeader>
           <h1 className="text-primary">Latest articles</h1>

@@ -10,7 +10,7 @@ const RatingSection: React.FC<RatingSectionProps> = ({ rating, onClick }) => {
   return (
     <div className={styles.rating}>
       {rating ? (
-        <ThumbsUpFill className="icon-l icon-action" onClick={onClick} />
+        <ThumbsUpFill className="icon-l icon-primary" onClick={onClick} />
       ) : (
         <ThumbsUp className="icon-l icon-primary" onClick={onClick} />
       )}
