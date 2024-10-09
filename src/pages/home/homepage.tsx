@@ -35,8 +35,9 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <Banner />
+
       <CardsSection>
-        <Button title={buttonSortTitle} className="buttonPrimaryM" onClick={handleSortClick}/>
+        <Button title={buttonSortTitle} className="buttonSecondaryM" onClick={handleSortClick}/>
         {countries.map((country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
