@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import { Link } from "react-router-dom";
+import countriesReducer from "./countries-reducer";
 import countriesData from "../../components/cards/cards-data/cards-data";
 import Banner from "../../components/banner/banner";
 import CardsSection from "@/components/cards/cards-section/cards-section";
@@ -12,26 +13,24 @@ import Button from "@/components/button/button";
 import SectionHeader from "@/components/cards/cards-section/section-header/section-header";
 
 const HomePage: React.FC = () => {
-  const [countries, setCountries] = useState(countriesData);
+  const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
   const [sortByRating, setSortByRating] = useState(false);
 
   const handleLikeClick = (id: number) => {
-    setCountries((prevCountries) =>
-      prevCountries.map((country) =>
-        country.id === id ? { ...country, rating: country.rating + 1 } : country
-      )
-    );
+    dispatch({
+      type: 'like',
+      id: id,
+    })
   };
 
   const handleSortClick = () => {
     const newSort = !sortByRating;
     setSortByRating(newSort);
+    dispatch({
+      type: 'sort',
+      newSort: newSort,
 
-    setCountries((prevCountries) =>
-      [...prevCountries].sort((a, b) =>
-        newSort ? b.rating - a.rating : a.rating - b.rating
-      )
-    );
+    })
   };
   const buttonTitle = sortByRating ? "Sort by least popular" : "Sort by most popular";
   return (
@@ -42,7 +41,7 @@ const HomePage: React.FC = () => {
           <h1 className="text-primary">Latest articles</h1>
           <Button title={buttonTitle} className="buttonSecondaryM" onClick={handleSortClick} />
         </SectionHeader>
-        {countries.map((country) => (
+        {countriesNew.map((country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
               <CardHeader cardImageUrl={country.imageUrl} />

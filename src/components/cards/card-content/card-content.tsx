@@ -1,10 +1,6 @@
+import { Country } from "../cards-data/country";
 import styles from "./card-content.module.css"
-interface Country{
-  name: string; 
-  title: string;
-  population: number; 
-  capital: string;
-}
+
 const CardContent: React.FC<{ country: Country }> = ({country}) => {
   return (
     <div className={styles.cardContent}>
