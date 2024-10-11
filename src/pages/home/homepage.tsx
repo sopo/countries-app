@@ -53,8 +53,8 @@ const HomePage: React.FC = () => {
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
-              <CardHeader cardImageUrl={country.imageUrl} />
-              <CardContent country={country} />
+              <CardHeader className={country.isDeleted ? "inactive" : ""} cardImageUrl={country.imageUrl} />
+              <CardContent className={country.isDeleted ? "inactive" : ""}  country={country} />
             </Link>
             <CardFooter>
               <RatingSection
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
                 onClick={() => handleLikeClick(country.id)}
               />
               <IconButton >
-                  <DeleteIcon className="icon-l icon-secondary" onClick={() => handleDeleteClick(country.id)} />
+                {country.isDeleted ? <p>Restore</p> : <DeleteIcon className="icon-l icon-secondary" onClick={() => handleDeleteClick(country.id)}/>} 
               </IconButton>
             </CardFooter>
           </CardContainer>

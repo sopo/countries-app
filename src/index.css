@@ -146,3 +146,7 @@ input, textarea, button, select {
 .column-gap-xs {
   column-gap: 1rem;
 }
+
+.inactive{
+  opacity: 0.4;
+}

@@ -19,7 +19,21 @@ function countriesReducer(countries: Country[], action: Action): Country[] {
       );
     }
     case "delete": {
-      return countries.filter((country) => country.id !== action.id  )
+      const updatedCountries =  countries.map((country) => 
+        country.id === action.id 
+      ? {...country, isDeleted: true}
+      : country
+      );
+
+      const sortedCountries = updatedCountries.sort((a, b) => {
+        if(a.isDeleted === b.isDeleted){
+          return 0;
+        }return a.isDeleted ? 1:-1; 
+      })
+     
+      return sortedCountries;
+
+      //return countries.filter((country) => country.id !== action.id  )
     }
     default:
       return countries;
