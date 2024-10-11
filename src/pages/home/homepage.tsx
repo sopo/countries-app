@@ -11,6 +11,8 @@ import CardFooter from "../../components/cards/card-footer/card-footer";
 import RatingSection from "@/components/rating/rating-section";
 import Button from "@/components/button/button";
 import SectionHeader from "@/components/cards/cards-section/section-header/section-header";
+import IconButton from "@/components/button/icon-button/icon-button";
+import DeleteIcon from '@/assets/icons/trash.svg?react';
 
 const HomePage: React.FC = () => {
   const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
@@ -32,6 +34,12 @@ const HomePage: React.FC = () => {
 
     })
   };
+  const handleDeleteClick = (id: number) => {
+    dispatch({
+      type: 'delete',
+      id: id,
+  })
+}
   const buttonTitle = sortByRating ? "Sort by least popular" : "Sort by most popular";
   return (
     <div>
@@ -40,6 +48,7 @@ const HomePage: React.FC = () => {
         <SectionHeader>
           <h1 className="text-primary">Latest articles</h1>
           <Button title={buttonTitle} className="buttonSecondaryM" onClick={handleSortClick} />
+          <Button title="Add new article" className="buttonSecondaryM" />
         </SectionHeader>
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>
@@ -52,6 +61,9 @@ const HomePage: React.FC = () => {
                 rating={country.rating}
                 onClick={() => handleLikeClick(country.id)}
               />
+              <IconButton >
+                  <DeleteIcon className="icon-l icon-secondary" onClick={() => handleDeleteClick(country.id)} />
+              </IconButton>
             </CardFooter>
           </CardContainer>
         ))}

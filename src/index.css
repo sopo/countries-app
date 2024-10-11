@@ -106,6 +106,9 @@ input, textarea, button, select {
 .icon-primary {
   color: var(--color-primary-text);
 }
+.icon-secondary {
+  color: var(--color-secondary-text);
+}
 .icon-action{
   color: var(--color-accent);
 }

@@ -7,4 +7,5 @@ export interface Country{
     description: string;
     imageUrl: string;
     rating: number;
+    isDeleted: boolean;
   }
