@@ -16,24 +16,30 @@ interface CreateCountryPopupProps{
 
 }
 const CreateCountryPopup:React.FC<CreateCountryPopupProps> = ({isOpen, handlePopupCloseClick, handleCreateArticle,}) => {
- 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [country,setCountry] = useState<any>({});
-
-  function handleInputChange(key:string,value:string){
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    setCountry( (prev:any)=>({
+ const initialCountry = {
+    id: 0,
+    name: "",
+    title: "",
+    population: 0,
+    capital: "",
+    description: "",
+    imageUrl: "https://images.unsplash.com/photo-1673179559805-8dfbf64e10d4?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    isDeleted: false,
+    rating: 0,
+ }
+  const [newCountry,setNewCountry] = useState<Country>(initialCountry);
+  function handleInputChange(key:string, value:string){
+    setNewCountry( (prev)=>({
       ...prev,
       [key]:value
     }) )
   }
-
   return(
         <Popup isOpen={isOpen} > 
         <PopupHeader title="Add new article" onClick={handlePopupCloseClick} />
         <PopupBody>
-          <Form onSubmit={()=>handleCreateArticle(country)}>
-          <Input id="country" name="country" onChange={(e)=> handleInputChange('country',e.target.value) } placeholder="Country name"  />
+          <Form onSubmit={()=>handleCreateArticle(newCountry)}>
+          <Input id="name" name="country"  placeholder="Country name" onChange={(e)=> handleInputChange('name',e.target.value) }  />
           <Input id="capital" name="capital" placeholder="Capital" onChange={(e)=> handleInputChange('capital',e.target.value) } />
           <Input id="population" name="population" placeholder="Population" onChange={(e)=> handleInputChange('population',e.target.value) } />
           <Input id="title" name="title" placeholder="Article title" onChange={(e)=> handleInputChange('title',e.target.value) }/>

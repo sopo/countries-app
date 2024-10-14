@@ -14,6 +14,7 @@ import SectionHeader from "@/components/cards/cards-section/section-header/secti
 import IconButton from "@/components/button/icon-button/icon-button";
 import DeleteIcon from '@/assets/icons/trash.svg?react';
 import CreateCountryPopup from "./create-country-popup";
+import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
   const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
   const [sortByRating, setSortByRating] = useState(false);
@@ -46,31 +47,17 @@ const HomePage: React.FC = () => {
       id: id,
   })
 };
-const handleCreateArticle = (data:any) => {
+const handleCreateArticle = (data: Country) => {
   dispatch({
     type:'create',
     data:data
   })
   setIsOpen(false);
-  // e.preventDefault()
-  // const formData = new FormData(e.currentTarget);
-  // const countryObj = {}
-  // for(const [key, value] of formData){
-  //   countryObj[key] = value;
-   
-  // }
-  // console.log(formData)
-  // dispatch({
-  //   type: 'create',
-  
- 
-  // })
-  // setIsOpen(false)
 }
   const buttonTitle = sortByRating ? "Sort by least popular" : "Sort by most popular";
   return (
     <div>
-      <CreateCountryPopup  isOpen={isOpen} handlePopupCloseClick={handlePopupCloseClick} handleCreateArticle={handleCreateArticle} />
+      {isOpen && <CreateCountryPopup  isOpen={isOpen} handlePopupCloseClick={handlePopupCloseClick} handleCreateArticle={handleCreateArticle} /> }
       <Banner />
       <CardsSection>
         <SectionHeader>
