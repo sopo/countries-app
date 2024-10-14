@@ -1,4 +1,4 @@
-import { useState, useReducer } from "react";
+import { useState, useReducer, } from "react";
 import { Link } from "react-router-dom";
 import countriesReducer from "./countries-reducer";
 import countriesData from "../../components/cards/cards-data/cards-data";
@@ -13,11 +13,17 @@ import Button from "@/components/button/button";
 import SectionHeader from "@/components/cards/cards-section/section-header/section-header";
 import IconButton from "@/components/button/icon-button/icon-button";
 import DeleteIcon from '@/assets/icons/trash.svg?react';
-
+import CreateCountryPopup from "./create-country-popup";
 const HomePage: React.FC = () => {
   const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
   const [sortByRating, setSortByRating] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false)
+  const handleAddArticleClick = () => {
+    setIsOpen(true);
+  }
+  const handlePopupCloseClick =() => {
+    setIsOpen(false)
+  }
   const handleLikeClick = (id: number) => {
     dispatch({
       type: 'like',
@@ -39,16 +45,38 @@ const HomePage: React.FC = () => {
       type: 'delete',
       id: id,
   })
+};
+const handleCreateArticle = (data:any) => {
+  dispatch({
+    type:'create',
+    data:data
+  })
+  setIsOpen(false);
+  // e.preventDefault()
+  // const formData = new FormData(e.currentTarget);
+  // const countryObj = {}
+  // for(const [key, value] of formData){
+  //   countryObj[key] = value;
+   
+  // }
+  // console.log(formData)
+  // dispatch({
+  //   type: 'create',
+  
+ 
+  // })
+  // setIsOpen(false)
 }
   const buttonTitle = sortByRating ? "Sort by least popular" : "Sort by most popular";
   return (
     <div>
+      <CreateCountryPopup  isOpen={isOpen} handlePopupCloseClick={handlePopupCloseClick} handleCreateArticle={handleCreateArticle} />
       <Banner />
       <CardsSection>
         <SectionHeader>
           <h1 className="text-primary">Latest articles</h1>
           <Button title={buttonTitle} className="buttonSecondaryM" onClick={handleSortClick} />
-          <Button title="Add new article" className="buttonSecondaryM" />
+          <Button title="Add new article" className="buttonSecondaryM" onClick={handleAddArticleClick}/>
         </SectionHeader>
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>
