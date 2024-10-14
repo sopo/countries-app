@@ -13,6 +13,7 @@ import Button from "@/components/button/button";
 import SectionHeader from "@/components/cards/cards-section/section-header/section-header";
 import IconButton from "@/components/button/icon-button/icon-button";
 import DeleteIcon from '@/assets/icons/trash.svg?react';
+import Restore from '@/assets/icons/arrow.uturn.backward.svg?react'
 import CreateCountryPopup from "./create-country-popup";
 import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
@@ -46,7 +47,14 @@ const HomePage: React.FC = () => {
       type: 'delete',
       id: id,
   })
+  
 };
+const handleRestoreClick = (id: number) => {
+  dispatch({
+    type: 'restore',
+    id: id,
+})
+}
 const handleCreateArticle = (data: Country) => {
   dispatch({
     type:'create',
@@ -77,7 +85,7 @@ const handleCreateArticle = (data: Country) => {
                 onClick={() => handleLikeClick(country.id)}
               />
               <IconButton >
-                {country.isDeleted ? <p>Restore</p> : <DeleteIcon className="icon-l icon-secondary" onClick={() => handleDeleteClick(country.id)}/>} 
+                {country.isDeleted ? <Restore className="icon-l icon-secondary" onClick={() => {handleRestoreClick(country.id)}}/> : <DeleteIcon className="icon-l icon-secondary" onClick={() => handleDeleteClick(country.id)}/>} 
               </IconButton>
             </CardFooter>
           </CardContainer>
