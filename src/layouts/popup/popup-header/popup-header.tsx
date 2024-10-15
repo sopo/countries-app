@@ -9,8 +9,8 @@ const PopupHeader: React.FC<PopupHeaderProps> = ({title, onClick}) => {
     return(
         <div className={styles.header}>
         <h2>{title}</h2>
-        <IconButton>
-        <CloseIcon className={styles.icon} onClick={onClick}/>
+        <IconButton onClick={onClick}>
+        <CloseIcon className={styles.icon} />
         </IconButton>
       </div>
     )
