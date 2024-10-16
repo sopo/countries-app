@@ -19,7 +19,7 @@ import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
   const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
   const [sortByRating, setSortByRating] = useState(false);
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const handleAddArticleClick = () => {
     setIsOpen(true);
   }
