@@ -40,6 +40,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [capitalErrorMessage, setCapitalErrorMessage] = useState('');
   const [titleErrorMessage, setTitleErrorMessage] = useState('');
   const [populationErrorMessage, setPopulationErrorMessage] = useState('');
+  const [descriptionErrorMessage, setDescriptionErrorMessage] = useState('')
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = (e.target.value)
     setName(newName)
@@ -105,6 +106,11 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       ...newCountry,
       description: newDescription
     }
+    if(newDescription === ""){
+      setDescriptionErrorMessage("Description should not be empty")
+    }else{
+      setDescriptionErrorMessage("")
+    }
     setNewCountry(country)
   }
 
@@ -149,6 +155,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             id="description"
             name="description"
             placeholder="Article description"
+            errorMessage={descriptionErrorMessage}
             value={description}
             onChange={handleDescriptionChange}
           />
