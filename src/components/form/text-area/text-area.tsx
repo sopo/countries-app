@@ -6,8 +6,9 @@ interface TextAreaProps {
   placeholder: string;
   onChange?: (event:ChangeEvent<HTMLTextAreaElement>) => void;
   value: string | number;
+  errorMessage?: string;
 }
-const TextArea: React.FC<TextAreaProps> = ({ id, name, placeholder,onChange, value }) => {
+const TextArea: React.FC<TextAreaProps> = ({ id, name, placeholder,onChange, value, errorMessage }) => {
   return (
     <div>
       <textarea
@@ -18,6 +19,7 @@ const TextArea: React.FC<TextAreaProps> = ({ id, name, placeholder,onChange, val
         className={styles.textArea}
         value={value}
       />
+        {errorMessage && <p className={styles.error}>{errorMessage}</p>}
     </div>
   );
 };

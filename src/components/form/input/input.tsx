@@ -6,8 +6,9 @@ interface InputProps{
     placeholder: string;
     onChange?: (event:ChangeEvent<HTMLInputElement>) => void;
     value: string | number;
+    errorMessage?: string;
 }
-const Input: React.FC<InputProps> = ({id, name, placeholder, onChange, value}) => {
+const Input: React.FC<InputProps> = ({id, name, placeholder, onChange, value, errorMessage}) => {
     return(
         <div>
             <input
@@ -18,6 +19,7 @@ const Input: React.FC<InputProps> = ({id, name, placeholder, onChange, value}) =
                 onChange={onChange}
                 value ={value}
             />
+            {errorMessage && <p className={styles.error}>{errorMessage}</p>}
         </div>
     )
 }
