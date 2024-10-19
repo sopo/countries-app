@@ -12,6 +12,7 @@
 .nav-end {
   display: flex;
   column-gap: 24px;
+  align-items: center;
 }
 .nav-mobile {
   display: none;
