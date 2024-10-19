@@ -29,3 +29,19 @@
     cursor: pointer;
     background-color: var(--surface-2);
 }
+.button-secondary-s{
+    background-color: var(--surface-1);
+    color: var(--color-secondary-text);
+    height: 2rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.button-secondary-s:hover{
+    cursor: pointer;
+    background-color: var(--surface-2);
+}

@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { useState } from "react";
+import {useParams} from 'react-router-dom';
 import Form from "@/components/form/form";
 import Input from "@/components/form/input/input";
 import TextArea from "@/components/form/text-area/text-area";
@@ -13,7 +14,25 @@ const [nameErrorMessage, setNameErrorMessage] = useState('');
 const [lastnameErrorMessage, setLastnameErrorMessage] = useState('')
 const [emailErrorMessage, setEmailErrorMessage] = useState('')
 const [messageErrorMessage, setMessageErrorMessage] = useState('')
-
+const {lang} = useParams();
+const kaContent = {
+  firstName: "სახელი",
+  lastname: "გვარი",
+  email: "ელ. ფოსტა",
+  message: "შეტყობინება",
+  submit: "გაგზავნა",
+  formTitle: "მოგვწერე",
+}
+const enContent = {
+  firstName: "First name",
+  lastname: "Last name",
+  email: "email",
+  message: "message",
+  submit: "Submit",
+  formTitle: "Send message",
+  
+}
+const content = lang === "en" ? enContent : kaContent;
 const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
   setName(e.target.value);
   if(name.length > 8){
@@ -57,15 +76,15 @@ const handleSubmit = () => {
 }
   return (
     <div className="container-xl">
-      <Form title="Send message">
-        <Input id="name" name="name" placeholder="First name" value={name} onChange={handleChangeName} errorMessage={nameErrorMessage}/>
-        <Input id="lastname" name="lastname" placeholder="Last name" value={lastname} onChange={handleChangeLastname} errorMessage={lastnameErrorMessage}/>
-        <Input id="email" name="email" placeholder="E-mail" value={email} onChange={handleChangeEmail} errorMessage={emailErrorMessage}/>
-        <TextArea id="message" name="message" placeholder="Message" value={message} onChange={handleChangeMessage} errorMessage={messageErrorMessage}/>
+      <Form title={content.formTitle}>
+        <Input id="name" name="name" placeholder={content.firstName} value={name} onChange={handleChangeName} errorMessage={nameErrorMessage}/>
+        <Input id="lastname" name="lastname" placeholder={content.lastname} value={lastname} onChange={handleChangeLastname} errorMessage={lastnameErrorMessage}/>
+        <Input id="email" name="email" placeholder={content.email} value={email} onChange={handleChangeEmail} errorMessage={emailErrorMessage}/>
+        <TextArea id="message" name="message" placeholder={content.message} value={message} onChange={handleChangeMessage} errorMessage={messageErrorMessage}/>
         
         <Button
           type="submit"
-          title="Submit"
+          title={content.submit}
           className="buttonPrimaryM"
           onClick={handleSubmit}
         />

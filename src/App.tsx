@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "@/global-css/containers.css";
 import DefaultLayout from "./layouts/default";
 import HomePage from "./pages/home/homepage";
@@ -10,21 +10,16 @@ const App: React.FC = () => {
   
   return (
     <>
-
-        <Routes>
-         
+        <Routes>    
           <Route path="/:lang" element={<DefaultLayout />} >
             <Route path="home" element={<HomePage />} />
             <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            
-            <Route path="countries/:id" element={<ExpandedCard />}/>
+            <Route path="contact" element={<Contact />} />           
+            <Route path=":lang/countries/:id" element={<ExpandedCard />}/>
             </Route>
             <Route path="*" element={<PageNotFound />} />
-            <Route path="/" element={<Navigate to="/en/home"/>} />
-           
+            <Route path="/" element={<Navigate to="/en/home"/>} />          
         </Routes>
-
     </>
   );
 };

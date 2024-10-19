@@ -1,5 +1,5 @@
 import { useState, useReducer, } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import countriesReducer from "./countries-reducer";
 import countriesData from "../../components/cards/cards-data/cards-data";
 import Banner from "../../components/banner/banner";
@@ -17,9 +17,20 @@ import Restore from '@/assets/icons/arrow.uturn.backward.svg?react'
 import CreateCountryPopup from "./create-country-popup";
 import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
+  
   const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
   const [sortByRating, setSortByRating] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const {lang} = useParams();
+  const kaContent = {
+    articleTitle: "ახალი სტატიები",
+    addNewArticle: "დამატება"
+  }
+  const enContent = {
+    articleTitle: "Latest articles",
+    addNewArticle: "Add new article"
+  }
+  const content = lang === "en" ? enContent : kaContent
   const handleAddArticleClick = () => {
     setIsOpen(true);
   }
@@ -69,9 +80,9 @@ const handleCreateArticle = (data: Country) => {
       <Banner />
       <CardsSection>
         <SectionHeader>
-          <h1 className="text-primary">Latest articles</h1>
+          <h1 className="text-primary">{content.articleTitle}</h1>
           <Button title={buttonTitle} className="buttonSecondaryM" onClick={handleSortClick} />
-          <Button title="Add new article" className="buttonSecondaryM" onClick={handleAddArticleClick}/>
+          <Button title={content.addNewArticle} className="buttonSecondaryM" onClick={handleAddArticleClick}/>
         </SectionHeader>
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>
