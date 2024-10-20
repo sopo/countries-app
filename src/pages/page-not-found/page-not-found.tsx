@@ -16,7 +16,7 @@ const PageNotFound: React.FC = () => {
     <div className={styles.container}>
       <h1 className="primary-text">{content.pageTitle}</h1>
       <div>
-        <Link to="/">
+        <Link to={`/${lang}`}>
           <Button title={content.buttonTitle} className="buttonPrimaryM" />
         </Link>
       </div>
