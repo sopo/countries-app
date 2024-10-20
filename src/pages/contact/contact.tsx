@@ -30,8 +30,9 @@ const enContent = {
   message: "message",
   submit: "Submit",
   formTitle: "Send message",
-  
 }
+
+
 const content = lang === "en" ? enContent : kaContent;
 const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
   setName(e.target.value);

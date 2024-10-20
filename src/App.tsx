@@ -8,6 +8,7 @@ import ExpandedCard from "./components/cards/card-expanded/expanded-card";
 import Contact from "./pages/contact/contact";
 const App: React.FC = () => {
   const { lang } = useParams();
+  
   return (
     <>
       <Routes>
@@ -18,7 +19,7 @@ const App: React.FC = () => {
           <Route path="countries/:id" element={<ExpandedCard />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
-        <Route path="/" element={<Navigate to={`/${lang}`} />} />
+        <Route path="/" element={<Navigate to={`/${lang || 'en'}`} />} />
       </Routes>
     </>
   );
