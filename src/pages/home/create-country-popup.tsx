@@ -28,11 +28,27 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [titleErrorMessage, setTitleErrorMessage] = useState("");
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
   const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
+  const {lang} = useParams();
+  const kaErrorMessageContent = {
+    name: "დასახელების მითითება სავალდებულოა",
+    capital: "დედაქალაქის მითითება სავალდებულოა",
+    popuation: "მიუთითეთ რიცხვი",
+    title: "სათაურის მითითება სავალდებულოა",
+    description: "ტექსტის მითითება სავალდებულოა"
+  }
+  const enErrorMessageContent = {
+    name: "Country name should not be empty",
+    capital: "Capital should not be empty",
+    popuation: "Population must be a number",
+    title: "Title should not be empty",
+    description: "Description should not be empty"
+  }
+  const ErrorMessageContent = lang === "en" ? enErrorMessageContent : kaErrorMessageContent
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setName(newName);
     if (newName === "") {
-      setNameErrorMessage("Country name should not be empty");
+      setNameErrorMessage(`${ErrorMessageContent.name}`);
     } else {
       setNameErrorMessage("");
     }
@@ -41,7 +57,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const newCapital = e.target.value;
     setCapital(newCapital);
     if (newCapital === "") {
-      setCapitalErrorMessage("Capital should not be empty");
+      setCapitalErrorMessage(`${ErrorMessageContent.capital}`);
     } else {
       setCapitalErrorMessage("");
     }
@@ -51,7 +67,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const numericValue = Number(newPopulation);
 
     if (newPopulation !== "" && isNaN(numericValue)) {
-      setPopulationErrorMessage("Population must be number");
+      setPopulationErrorMessage(`${ErrorMessageContent.popuation}`);
     } else {
       setPopulationErrorMessage("");
     }
@@ -61,7 +77,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const newTitle = e.target.value;
     setTitle(newTitle);
     if (newTitle === "") {
-      setTitleErrorMessage("Title should not be empty");
+      setTitleErrorMessage(`${ErrorMessageContent.title}`);
     } else {
       setTitleErrorMessage("");
     }
@@ -71,7 +87,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     setDescription(newDescription);
 
     if (newDescription === "") {
-      setDescriptionErrorMessage("Description should not be empty");
+      setDescriptionErrorMessage(`${ErrorMessageContent.description}`);
     } else {
       setDescriptionErrorMessage("");
     }
@@ -90,7 +106,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       rating: 0,
     });
   }
-  const {lang} = useParams();
+ 
   const kaContent = {
     name: "ქვეყანა",
     capital: "დედაქალაქი",
