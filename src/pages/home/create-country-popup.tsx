@@ -7,6 +7,7 @@ import TextArea from "@/components/form/text-area/text-area";
 import Button from "@/components/button/button";
 import { ChangeEvent, useState } from "react";
 import { Country } from "@/components/cards/cards-data/country";
+import { useParams } from "react-router-dom";
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
@@ -89,23 +90,43 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       rating: 0,
     });
   }
+  const {lang} = useParams();
+  const kaContent = {
+    name: "ქვეყანა",
+    capital: "დედაქალაქი",
+    population: "მოსახლეობის რაოდენობა",
+    title: "სტატიის სათაური",
+    descrtiption: "სტატიის ტექსტი",
+    button: "დამატება",
+    formTitle: "სტატიის დამატება",
+  }
+  const enContent = {
+    name: "Country",
+    capital: "Capital",
+    population: "Population",
+    title: "Title",
+    descrtiption: "Description",
+    button: "Add",
+    formTitle: "Add new article",
+  }
+  const content = lang ==="en" ? enContent : kaContent 
   return (
     <Popup isOpen={isOpen}>
-      <PopupHeader title="Add new article" onClick={handlePopupCloseClick} />
+      <PopupHeader title={content.formTitle} onClick={handlePopupCloseClick} />
       <PopupBody>
         <Form onSubmit={createArticle}>
           <Input
             id="name"
             errorMessage={nameErrorMessage}
             name="country"
-            placeholder="Country name"
+            placeholder={content.name}
             value={name}
             onChange={handleNameChange}
           />
           <Input
             id="capital"
             name="capital"
-            placeholder="Capital"
+            placeholder={content.capital}
             value={capital}
             errorMessage={capitalErrorMessage}
             onChange={handleCapitalChange}
@@ -113,7 +134,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <Input
             id="population"
             name="population"
-            placeholder="Population"
+            placeholder={content.population}
             value={population}
             errorMessage={populationErrorMessage}
             onChange={handlePopulationChange}
@@ -121,7 +142,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <Input
             id="title"
             name="title"
-            placeholder="Article title"
+            placeholder={content.title}
             errorMessage={titleErrorMessage}
             value={title}
             onChange={handleTitleChange}
@@ -129,13 +150,13 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <TextArea
             id="description"
             name="description"
-            placeholder="Article description"
+            placeholder={content.descrtiption}
             errorMessage={descriptionErrorMessage}
             value={description}
             onChange={handleDescriptionChange}
           />
           <Button
-            title="Add article"
+            title={content.button}
             className="buttonPrimaryM"
             type="submit"
           />

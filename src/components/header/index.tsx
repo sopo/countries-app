@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   };
   const { lang } = useParams();
   const title = lang === "en" ? "ქარ" : "en";
-  const to = lang === "en" ? "/ka/home" : "/en/home";
+  const to = lang === "en" ? "/ka" : "/en";
   const kaContent = {
     personal: "პირადი სივრცე",
     about: "ჩვენს შესახებ",
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
               <NavLink to="contact" className={handleActiveLink}>
                 {content.contact}
               </NavLink>
-              <NavLink to={to}>
+              <NavLink reloadDocument={true} to={to}>
                 <Button className="buttonSecondaryS" title={title} />
               </NavLink>
             </ul>

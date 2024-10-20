@@ -1,4 +1,4 @@
-const countries = [
+const countriesEn = [
   {
     id: 1,
     name: "Japan",
@@ -36,4 +36,4 @@ const countries = [
     isDeleted: false,
   },
 ];
-export default countries;
+export default countriesEn;
