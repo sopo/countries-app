@@ -5,9 +5,10 @@ import Form from "@/components/form/form";
 import Input from "@/components/form/input/input";
 import TextArea from "@/components/form/text-area/text-area";
 import Button from "@/components/button/button";
+import content from "./create-country-popup-content";
 import { ChangeEvent, useState } from "react";
 import { Country } from "@/components/cards/cards-data/country";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
@@ -29,26 +30,13 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
   const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
   const {lang} = useParams();
-  const kaErrorMessageContent = {
-    name: "დასახელების მითითება სავალდებულოა",
-    capital: "დედაქალაქის მითითება სავალდებულოა",
-    popuation: "მიუთითეთ რიცხვი",
-    title: "სათაურის მითითება სავალდებულოა",
-    description: "ტექსტის მითითება სავალდებულოა"
-  }
-  const enErrorMessageContent = {
-    name: "Country name should not be empty",
-    capital: "Capital should not be empty",
-    popuation: "Population must be a number",
-    title: "Title should not be empty",
-    description: "Description should not be empty"
-  }
-  const ErrorMessageContent = lang === "en" ? enErrorMessageContent : kaErrorMessageContent
+  const filteredContent = lang ==="en" ? content.en : content.ka
+
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setName(newName);
     if (newName === "") {
-      setNameErrorMessage(`${ErrorMessageContent.name}`);
+      setNameErrorMessage(`${filteredContent.nameError}`);
     } else {
       setNameErrorMessage("");
     }
@@ -57,7 +45,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const newCapital = e.target.value;
     setCapital(newCapital);
     if (newCapital === "") {
-      setCapitalErrorMessage(`${ErrorMessageContent.capital}`);
+      setCapitalErrorMessage(`${filteredContent.capitalError}`);
     } else {
       setCapitalErrorMessage("");
     }
@@ -67,7 +55,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const numericValue = Number(newPopulation);
 
     if (newPopulation !== "" && isNaN(numericValue)) {
-      setPopulationErrorMessage(`${ErrorMessageContent.popuation}`);
+      setPopulationErrorMessage(`${filteredContent.populationError}`);
     } else {
       setPopulationErrorMessage("");
     }
@@ -77,7 +65,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const newTitle = e.target.value;
     setTitle(newTitle);
     if (newTitle === "") {
-      setTitleErrorMessage(`${ErrorMessageContent.title}`);
+      setTitleErrorMessage(`${filteredContent.titleError}`);
     } else {
       setTitleErrorMessage("");
     }
@@ -87,7 +75,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     setDescription(newDescription);
 
     if (newDescription === "") {
-      setDescriptionErrorMessage(`${ErrorMessageContent.description}`);
+      setDescriptionErrorMessage(`${filteredContent.descriptionError}`);
     } else {
       setDescriptionErrorMessage("");
     }
@@ -106,43 +94,31 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       rating: 0,
     });
   }
- 
-  const kaContent = {
-    name: "ქვეყანა",
-    capital: "დედაქალაქი",
-    population: "მოსახლეობის რაოდენობა",
-    title: "სტატიის სათაური",
-    descrtiption: "სტატიის ტექსტი",
-    button: "დამატება",
-    formTitle: "სტატიის დამატება",
+  function handleUploadChange(e){
+    console.log("etarget",e.target.value)
+    
   }
-  const enContent = {
-    name: "Country",
-    capital: "Capital",
-    population: "Population",
-    title: "Title",
-    descrtiption: "Description",
-    button: "Add",
-    formTitle: "Add new article",
-  }
-  const content = lang ==="en" ? enContent : kaContent 
+  
+
+  
   return (
     <Popup isOpen={isOpen}>
-      <PopupHeader title={content.formTitle} onClick={handlePopupCloseClick} />
+      <PopupHeader title={filteredContent.formTitle} onClick={handlePopupCloseClick} />
       <PopupBody>
         <Form onSubmit={createArticle}>
+       
           <Input
             id="name"
             errorMessage={nameErrorMessage}
             name="country"
-            placeholder={content.name}
+            placeholder={filteredContent.name}
             value={name}
             onChange={handleNameChange}
           />
           <Input
             id="capital"
             name="capital"
-            placeholder={content.capital}
+            placeholder={filteredContent.capital}
             value={capital}
             errorMessage={capitalErrorMessage}
             onChange={handleCapitalChange}
@@ -150,7 +126,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <Input
             id="population"
             name="population"
-            placeholder={content.population}
+            placeholder={filteredContent.population}
             value={population}
             errorMessage={populationErrorMessage}
             onChange={handlePopulationChange}
@@ -158,7 +134,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <Input
             id="title"
             name="title"
-            placeholder={content.title}
+            placeholder={filteredContent.title}
             errorMessage={titleErrorMessage}
             value={title}
             onChange={handleTitleChange}
@@ -166,13 +142,17 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <TextArea
             id="description"
             name="description"
-            placeholder={content.descrtiption}
+            placeholder={filteredContent.description}
             errorMessage={descriptionErrorMessage}
             value={description}
             onChange={handleDescriptionChange}
           />
+          <Input
+            type="file"
+            onChange={handleUploadChange}
+           />
           <Button
-            title={content.button}
+            title={filteredContent.button}
             className="buttonPrimaryM"
             type="submit"
           />
