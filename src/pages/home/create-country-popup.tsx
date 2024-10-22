@@ -8,7 +8,7 @@ import Button from "@/components/button/button";
 import content from "./create-country-popup-content";
 import { ChangeEvent, useState } from "react";
 import { Country } from "@/components/cards/cards-data/country";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams,} from "react-router-dom";
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;

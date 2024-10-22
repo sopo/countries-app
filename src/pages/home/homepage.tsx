@@ -1,5 +1,5 @@
 import { useState, useReducer } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, } from "react-router-dom";
 import countriesReducer from "./countries-reducer";
 import countriesDataEn from "../../components/cards/cards-data/cards-data";
 import countriesDataGeo from "../../components/cards/cards-data/cards-data-geo";
@@ -144,6 +144,7 @@ const HomePage: React.FC = () => {
           </CardContainer>
         ))}
       </CardsSection>
+    
     </div>
   );
 };

@@ -1,16 +1,16 @@
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "@/components/header";
 import Footer from "@/components/footer/footer";
-const DefaultLayout: React.FC = () => { 
-  const {lang} = useParams()
-  console.log(lang)
+const DefaultLayout: React.FC = () => {
+
+ 
   return (
     <div>
-     <Header />
+      <Header />
       <Outlet />
-    <Footer />
+      <Footer />
     </div>
   );
-}
+};
 
 export default DefaultLayout;

@@ -1,4 +1,4 @@
-import { Link, NavLink, NavLinkRenderProps, useParams } from "react-router-dom";
+import { Link, NavLink, NavLinkRenderProps, useParams, } from "react-router-dom";
 import styles from "#/header/header.module.css";
 import BurgerMenu from "@/assets/list.bullet.svg?react";
 import Button from "../button/button";
@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     <div>
       <div className={`${styles.headerFrame} ${styles.navWeb}`}>
         <div className={styles.headerContent}>
-          <Link to="/">
+          <Link to={`/${lang}`}>
             <h2>Travel</h2>
           </Link>
 
@@ -59,6 +59,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };
