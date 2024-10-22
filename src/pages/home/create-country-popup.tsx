@@ -29,6 +29,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [titleErrorMessage, setTitleErrorMessage] = useState("");
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
   const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
+  const [img, setImg] = useState("");
   const {lang} = useParams();
   const filteredContent = lang ==="en" ? content.en : content.ka
 
@@ -80,6 +81,12 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       setDescriptionErrorMessage("");
     }
   };
+  function handleUploadChange(e: ChangeEvent<HTMLInputElement>){
+    const file = e.target.files[0];
+    if (file) {
+      setImg(URL.createObjectURL(file)) 
+    }
+  }
   function createArticle() {
     handleCreateArticle({
       id: 0,
@@ -88,16 +95,12 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       population: +population,
       description: description,
       title: title,
-      imageUrl:
-        "https://images.unsplash.com/photo-1673179559805-8dfbf64e10d4?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: img,
       isDeleted: false,
       rating: 0,
     });
   }
-  function handleUploadChange(e){
-    console.log("etarget",e.target.value)
-    
-  }
+
   
 
   
@@ -106,7 +109,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       <PopupHeader title={filteredContent.formTitle} onClick={handlePopupCloseClick} />
       <PopupBody>
         <Form onSubmit={createArticle}>
-       
+
           <Input
             id="name"
             errorMessage={nameErrorMessage}
@@ -150,6 +153,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           <Input
             type="file"
             onChange={handleUploadChange}
+            accept=".png, .jpg, .jpeg"
            />
           <Button
             title={filteredContent.button}

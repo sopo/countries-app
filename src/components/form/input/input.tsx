@@ -8,8 +8,9 @@ interface InputProps{
     value: string | number;
     errorMessage?: string;
     type?: string
+    accept?: string
 }
-const Input: React.FC<InputProps> = ({id, name, placeholder, onChange, value, errorMessage, type}) => {
+const Input: React.FC<InputProps> = ({id, name, placeholder, onChange, value, errorMessage, type, accept}) => {
     return(
         <div>
             <input
@@ -20,6 +21,7 @@ const Input: React.FC<InputProps> = ({id, name, placeholder, onChange, value, er
                 onChange={onChange}
                 value ={value}
                 type={type}
+                accept={accept}
 
             />
             {errorMessage && <p className={styles.error}>{errorMessage}</p>}
