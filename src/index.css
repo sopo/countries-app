@@ -126,6 +126,9 @@ input, textarea, button, select {
 .display-flex {
   display: flex;
 }
+.column {
+  flex-direction: column;
+}
 .space-between {
   justify-content: space-between;
 }

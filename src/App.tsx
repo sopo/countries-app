@@ -7,6 +7,7 @@ import PageNotFound from "./pages/page-not-found/page-not-found";
 import ExpandedCard from "./components/cards/card-expanded/expanded-card";
 import Contact from "./pages/contact/contact";
 
+
 const router = createBrowserRouter(
   createRoutesFromElements( 
     <Route>

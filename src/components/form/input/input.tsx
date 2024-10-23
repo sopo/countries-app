@@ -1,11 +1,11 @@
 import { ChangeEvent } from 'react';
 import styles from './input.module.css';
 interface InputProps{
-    id: string,
-    name: string;
-    placeholder: string;
+    id?: string,
+    name?: string;
+    placeholder?: string;
     onChange?: (event:ChangeEvent<HTMLInputElement>) => void;
-    value: string | number;
+    value?: string | number;
     errorMessage?: string;
     type?: string
     accept?: string

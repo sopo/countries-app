@@ -1,4 +1,5 @@
 import Popup from "@/layouts/popup/popup";
+import tabStyles from '@/components/tab/tab-bar.module.css'
 import PopupHeader from "@/layouts/popup/popup-header/popup-header";
 import PopupBody from "@/layouts/popup/popup-body/popup-body";
 import Form from "@/components/form/form";
@@ -9,10 +10,22 @@ import content from "./create-country-popup-content";
 import { ChangeEvent, useState } from "react";
 import { Country } from "@/components/cards/cards-data/country";
 import { useParams,} from "react-router-dom";
+import TabBar from "@/components/tab/tab-bar";
+import Tab from "@/components/tab/tab";
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
   handleCreateArticle: (data: Country) => void;
+}
+function imageToBase64(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      resolve(reader.result as string);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
 
 const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
@@ -29,7 +42,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [georgianDescription, setGeorgianDescription] = useState("");
   const [englishDescription, setEnglishDescription] = useState("");
 
-
   const [population, setPopulation] = useState("");
 
   const [nameErrorMessage, setNameErrorMessage] = useState("");
@@ -38,6 +50,8 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
   const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
   const [img, setImg] = useState("");
+  const [firstTabActive, setFirstTabActive] = useState(true)
+  const [secondTabActive, setSecondTabActive] = useState(false)
  
   const {lang} = useParams();
   const filteredContent = lang === "en" ? content.en : content.ka
@@ -130,10 +144,18 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
 
 
   function handleUploadChange(e: ChangeEvent<HTMLInputElement>){
-    const file = e.target.files[0];
-    if (file) {
-      setImg(URL.createObjectURL(file)) 
+    if(e.target.files){
+      const file = e.target.files[0];
+      if (file) {
+        imageToBase64(file).then(base64String => {
+          setImg(base64String);
+        }).catch(error => {
+          console.error('Error:', error);
+        });
+       
+      }
     }
+   
   }
   function createArticle() {
     handleCreateArticle({
@@ -160,14 +182,30 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       rating: 0,
     });
   }
-
+ const handleFirstTabChange = () => {
+    setFirstTabActive(true);
+    setSecondTabActive(false);
+  }
+  const handleSecondTabChange = () => {
+    setFirstTabActive(false);
+    setSecondTabActive(true);
+  }
+  const firstTabStyle = firstTabActive ? tabStyles.activeTab : tabStyles.initialTab
+  const secondTabStyle = secondTabActive ? tabStyles.activeTab : tabStyles.initialTab
+  const showFirstTabInputs = firstTabActive ? tabStyles.activeTabContent : tabStyles.inactiveTabContent
+  const showSecondTabInputs = secondTabActive ? tabStyles.activeTabContent : tabStyles.inactiveTabContent
   return (
     <Popup isOpen={isOpen}>
       <PopupHeader title={filteredContent.formTitle} onClick={handlePopupCloseClick} />
       <PopupBody>
         <Form onSubmit={createArticle}>
-          <div className="display-flex">
-          <div>
+          <div className="display-flex column">
+            <TabBar>
+              <Tab className={firstTabStyle} tabTitle="Georgian text" onClick={handleFirstTabChange}/>
+              <Tab className={secondTabStyle} tabTitle="English text" onClick={handleSecondTabChange}/>
+            </TabBar>
+          
+          <div className={showFirstTabInputs}>
           <Input
             id="nameInGeorgian"
             errorMessage={nameErrorMessage}
@@ -201,7 +239,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             onChange={handleGeorgianDescriptionChange}
           />
           </div>
-          <div>
+          <div className={showSecondTabInputs}>
           <Input
             id="nameInEnglish"
             errorMessage={nameErrorMessage}

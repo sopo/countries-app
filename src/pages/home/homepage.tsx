@@ -21,16 +21,12 @@ import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
   // კონტენტის გაფილტვრა ენის მიხედვით
   const { lang } = useParams();
-  
   const content = lang === "en" ? cardsSectionSd.en : cardsSectionSd.ka
- 
 
- 
   // რეიტინგის მიხედვით დასორტვა
   const [sortByRating, setSortByRating] = useState(false);
   const buttonTitle = sortByRating ? `${content.sort.least}` : `${content.sort.most}`;
 
-  
   //პოპაპის გახსნა/დახურვა
   const [isOpen, setIsOpen] = useState(false);
   const handleAddArticleClick = () => {
@@ -43,7 +39,6 @@ const HomePage: React.FC = () => {
   //რედიუსერი
   const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
 
- 
   const handleLikeClick = (id: number) => {
     dispatch({
       type: "like",
@@ -103,6 +98,7 @@ const HomePage: React.FC = () => {
             className="buttonSecondaryM"
             onClick={handleAddArticleClick}
           />
+     
         </SectionHeader>
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>
