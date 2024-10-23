@@ -1,6 +1,6 @@
-import countries from "@/components/cards/cards-data/cards-data";
+import countriesData from '@/components/cards/cards-data/cards-data'
 import { Country } from "@/components/cards/cards-data/country";
-
+// რედუსერს უნდა ჩავაწოდო რო დეითა და დაბრუნებული კონტენტი გაიფილტროს ჰოუმზე
 type Action =
   | { type: "like"; id: number }
   | { type: "sort"; newSort: boolean }
@@ -8,20 +8,20 @@ type Action =
   | { type: "restore"; id: number }
   | { type: "create"; data: Country };
  
-let nextId = countries.ka.length + 1;
+let nextId = countriesData.length + 1;
 
-function countriesReducer(countries: Country[], action: Action): Country[] {
+function countriesReducer(countriesData: Country[], action: Action): Country[] {
  
   switch (action.type) {
     case "like": {
-      return countries.map((country) =>
+      return countriesData.map((country) =>
         country.id === action.id
           ? { ...country, rating: country.rating + 1 }
           : country
       );
     }
     case "sort": {
-      return [...countries].sort((a, b) => {
+      return [...countriesData].sort((a, b) => {
         if (a.isDeleted && b.isDeleted) {
           return 0;
         }
@@ -35,7 +35,7 @@ function countriesReducer(countries: Country[], action: Action): Country[] {
       });
     }
     case "delete": {
-      const updatedCountries = countries.map((country) =>
+      const updatedCountries = countriesData.map((country) =>
         country.id === action.id ? { ...country, isDeleted: true } : country
       );
 
@@ -49,7 +49,7 @@ function countriesReducer(countries: Country[], action: Action): Country[] {
       return sortedCountries;
     }
     case "restore": {
-      const updatedCountries = countries.map((country) =>
+      const updatedCountries = countriesData.map((country) =>
         country.id === action.id ? { ...country, isDeleted: false } : country
       );
 
@@ -57,7 +57,7 @@ function countriesReducer(countries: Country[], action: Action): Country[] {
     }
     case "create": {
       return [
-        ...countries,
+        ...countriesData,
         {
           ...action.data,
           id: nextId++,
@@ -68,7 +68,7 @@ function countriesReducer(countries: Country[], action: Action): Country[] {
     
     
     default:
-      return countries;
+      return countriesData;
   }
 }
 export default countriesReducer;

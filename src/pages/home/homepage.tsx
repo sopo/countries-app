@@ -1,7 +1,7 @@
 import { useState, useReducer } from "react";
 import { Link, useParams } from "react-router-dom";
 import countriesReducer from "./countries-reducer";
-import countriesData from "../../components/cards/cards-data/cards-data";
+import countriesData from '@/components/cards/cards-data/cards-data'
 import cardsSectionSd from "./static-data/cards-section-sd";
 import Banner from "../../components/banner/banner";
 import CardsSection from "@/components/cards/cards-section/cards-section";
@@ -21,7 +21,7 @@ import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
   // კონტენტის გაფილტვრა ენის მიხედვით
   const { lang } = useParams();
-  const filteredCountriesData = lang === "en" ? countriesData.en : countriesData.ka
+  
   const content = lang === "en" ? cardsSectionSd.en : cardsSectionSd.ka
  
 
@@ -30,6 +30,7 @@ const HomePage: React.FC = () => {
   const [sortByRating, setSortByRating] = useState(false);
   const buttonTitle = sortByRating ? `${content.sort.least}` : `${content.sort.most}`;
 
+  
   //პოპაპის გახსნა/დახურვა
   const [isOpen, setIsOpen] = useState(false);
   const handleAddArticleClick = () => {
@@ -40,8 +41,9 @@ const HomePage: React.FC = () => {
   };
 
   //რედიუსერი
-  const [countriesNew, dispatch] = useReducer(countriesReducer, filteredCountriesData);
+  const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
 
+ 
   const handleLikeClick = (id: number) => {
     dispatch({
       type: "like",

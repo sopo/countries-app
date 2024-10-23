@@ -17,9 +17,9 @@ const ExpandedCard: React.FC = () => {
     population: 'Population'
   }
   const { id, lang } = useParams();
-  const filteredCountriesData = lang === "en" ? countriesData.en : countriesData.ka
+  //const filteredCountriesData = lang === "en" ? countriesData.en : countriesData.ka
   const content = lang === 'en' ? enContent : kaContent
-  const country = filteredCountriesData.find((country) => country.id.toString() === id);
+  const country = countriesData.find((country) => country.id.toString() === id);
   const countryNotFound = !country;
   
 
@@ -31,9 +31,9 @@ const ExpandedCard: React.FC = () => {
       <>
       <Article>
         <ArticleBanner bannerImageUrl={country.imageUrl}/>
-        <ArticleHeader articleTitle={country.name} />
-        <ArticleDetails text={`${content.capital}: ${country.capital} • ${content.population}: ${country.population}`}/>
-        <ArticleBody text={country.description} />
+        <ArticleHeader articleTitle={lang === "en" ?  country.nameEn : country.nameKa} />
+        <ArticleDetails text={`${content.capital}: ${lang === "en" ? country.capitalEn : country.capitalKa}  • ${content.population}: ${country.population}`}/>
+        <ArticleBody text={`${lang === "en"  ? country.descriptionEn : country.descriptionKa}`} />
         <ArticleFooter />
       </Article>
       </>

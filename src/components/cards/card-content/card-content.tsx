@@ -12,12 +12,13 @@ const CardContent: React.FC<{ country: Country; className?: string}> = ({country
     capital: "Capital",
     population: "Population",
   }
-  const content = lang === "en" ? enContent : kaContent
+const content = lang === "en" ? enContent : kaContent
   return (
     <div className={`${className} ${styles.cardContent}`}>
-      <p className="secondary-text tag">{country.name}</p>
-      <h3>{country.title}</h3>
-      <p className="secondary-text info">{`${content.capital}: ${country.capital} • ${content.population}: ${country.population}`}</p>
+      <p className="secondary-text tag">{
+      lang === "en" ? country.nameEn : country.nameKa}</p>
+      <h3>{lang === "en" ? country.titleEn : country.titleKa}</h3>
+      <p className="secondary-text info">{`${content.capital}: ${lang === "en" ? country.capitalEn : country.capitalKa} • ${content.population}: ${country.population}`}</p>
     </div>
   );
 }
