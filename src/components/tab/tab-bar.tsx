@@ -1,5 +1,6 @@
+import { PropsWithChildren } from 'react';
 import styles from './tab-bar.module.css'
-function TabBar({children,}){
+const TabBar:React.FC<PropsWithChildren> = ({children,}) => {
 return(
     <div className={styles.tabContainer}>
         {children}
