@@ -1,14 +1,22 @@
-export interface Country{
+export interface Country {
   id: number;
-  nameKa: string; 
-  nameEn: string;
-  titleKa: string;
-  titleEn: string;
-  population: number; 
-  capitalEn: string;
-  capitalKa: string;
-  descriptionKa: string;
-  descriptionEn: string;
+  name: {
+      ka: string;
+      en: string;
+  };
+  title: {
+      ka: string;
+      en: string;
+  };
+  population: number;
+  capital: {
+      ka: string;
+      en: string;
+  };
+  description: {
+      ka: string;
+      en: string;
+  };
   imageUrl: string;
   rating: number;
   isDeleted: boolean;

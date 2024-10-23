@@ -1,6 +1,5 @@
 import countriesData from '@/components/cards/cards-data/cards-data'
 import { Country } from "@/components/cards/cards-data/country";
-// რედუსერს უნდა ჩავაწოდო რო დეითა და დაბრუნებული კონტენტი გაიფილტროს ჰოუმზე
 type Action =
   | { type: "like"; id: number }
   | { type: "sort"; newSort: boolean }

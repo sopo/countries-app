@@ -31,9 +31,9 @@ const ExpandedCard: React.FC = () => {
       <>
       <Article>
         <ArticleBanner bannerImageUrl={country.imageUrl}/>
-        <ArticleHeader articleTitle={lang === "en" ?  country.nameEn : country.nameKa} />
-        <ArticleDetails text={`${content.capital}: ${lang === "en" ? country.capitalEn : country.capitalKa}  • ${content.population}: ${country.population}`}/>
-        <ArticleBody text={`${lang === "en"  ? country.descriptionEn : country.descriptionKa}`} />
+        <ArticleHeader articleTitle={lang === "en" ?  country.name.en : country.name.ka} />
+        <ArticleDetails text={`${content.capital}: ${lang === "en" ? country.capital.en : country.capital.ka}  • ${content.population}: ${country.population}`}/>
+        <ArticleBody text={`${lang === "en"  ? country.description.en : country.description.ka}`} />
         <ArticleFooter />
       </Article>
       </>

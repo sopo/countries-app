@@ -16,9 +16,9 @@ const content = lang === "en" ? enContent : kaContent
   return (
     <div className={`${className} ${styles.cardContent}`}>
       <p className="secondary-text tag">{
-      lang === "en" ? country.nameEn : country.nameKa}</p>
-      <h3>{lang === "en" ? country.titleEn : country.titleKa}</h3>
-      <p className="secondary-text info">{`${content.capital}: ${lang === "en" ? country.capitalEn : country.capitalKa} • ${content.population}: ${country.population}`}</p>
+      lang === "en" ? country.name.en : country.name.ka}</p>
+      <h3>{lang === "en" ? country.title.en : country.title.ka}</h3>
+      <p className="secondary-text info">{`${content.capital}: ${lang === "en" ? country.capital.en : country.capital.ka} • ${content.population}: ${country.population}`}</p>
     </div>
   );
 }
