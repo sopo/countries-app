@@ -9,7 +9,9 @@ const Popup: React.FC<PopupProps> = ({ children, isOpen,}) => {
     return (
       <div className={styles.overlay}>
         <div className={styles.popup}>
+          <div className={styles.container}>
           {children}
+          </div>
         </div>
       </div>
     );

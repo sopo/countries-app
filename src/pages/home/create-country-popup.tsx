@@ -1,4 +1,5 @@
 import Popup from "@/layouts/popup/popup";
+import tabStyles from '@/components/tab/tab-bar.module.css'
 import PopupHeader from "@/layouts/popup/popup-header/popup-header";
 import PopupBody from "@/layouts/popup/popup-body/popup-body";
 import Form from "@/components/form/form";
@@ -8,46 +9,125 @@ import Button from "@/components/button/button";
 import content from "./create-country-popup-content";
 import { ChangeEvent, useState } from "react";
 import { Country } from "@/components/cards/cards-data/country";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams,} from "react-router-dom";
+import TabBar from "@/components/tab/tab-bar";
+import Tab from "@/components/tab/tab";
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
   handleCreateArticle: (data: Country) => void;
 }
+function imageToBase64(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      resolve(reader.result as string);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
 const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   isOpen,
   handlePopupCloseClick,
   handleCreateArticle,
 }) => {
-  const [name, setName] = useState("");
-  const [capital, setCapital] = useState("");
-  const [title, setTitle] = useState("");
+  const [georgianName, setGeorgianName] = useState("")
+  const [englishName, setEnglishName] = useState("");
+  const [georgianCapital, setGeorgianCapital] = useState("");
+  const [englishCapital, setEnglishCapital] = useState("");
+  const [georgianTitle, setGeorgianTitle] = useState("");
+  const [englishTitle, setEnglishTitle] = useState("");
+  const [georgianDescription, setGeorgianDescription] = useState("");
+  const [englishDescription, setEnglishDescription] = useState("");
+
   const [population, setPopulation] = useState("");
-  const [description, setDescription] = useState("");
+
   const [nameErrorMessage, setNameErrorMessage] = useState("");
   const [capitalErrorMessage, setCapitalErrorMessage] = useState("");
   const [titleErrorMessage, setTitleErrorMessage] = useState("");
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
   const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
+  const [img, setImg] = useState("");
+  const [firstTabActive, setFirstTabActive] = useState(true)
+  const [secondTabActive, setSecondTabActive] = useState(false)
+ 
   const {lang} = useParams();
-  const filteredContent = lang ==="en" ? content.en : content.ka
+  const filteredContent = lang === "en" ? content.en : content.ka
 
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleGeorgianNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
-    setName(newName);
+    setGeorgianName(newName);
     if (newName === "") {
-      setNameErrorMessage(`${filteredContent.nameError}`);
+      setNameErrorMessage(`${filteredContent.name.error}`);
     } else {
       setNameErrorMessage("");
     }
   };
-  const handleCapitalChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleEnglishNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newName = e.target.value;
+    setEnglishName(newName);
+    if (newName === "") {
+      setNameErrorMessage(`${filteredContent.name.error}`);
+    } else {
+      setNameErrorMessage("");
+    }
+  };
+  const handleEnglishCapitalChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newCapital = e.target.value;
-    setCapital(newCapital);
+    setEnglishCapital(newCapital);
     if (newCapital === "") {
-      setCapitalErrorMessage(`${filteredContent.capitalError}`);
+      setCapitalErrorMessage(`${filteredContent.capital.error}`);
     } else {
       setCapitalErrorMessage("");
+    }
+  };
+  const handleGeorgianCapitalChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newCapital = e.target.value;
+    setGeorgianCapital(newCapital);
+    if (newCapital === "") {
+      setCapitalErrorMessage(`${filteredContent.capital.error}`);
+    } else {
+      setCapitalErrorMessage("");
+    }
+  };
+  const handleGeorgianTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newTitle = e.target.value;
+    setGeorgianTitle(newTitle);
+    if (newTitle === "") {
+      setTitleErrorMessage(`${filteredContent.title.error}`);
+    } else {
+      setTitleErrorMessage("");
+    }
+  };
+  const handleEnglishTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newTitle = e.target.value;
+    setEnglishTitle(newTitle);
+    if (newTitle === "") {
+      setTitleErrorMessage(`${filteredContent.title.error}`);
+    } else {
+      setTitleErrorMessage("");
+    }
+  };
+  const handleGeorgianDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const newDescription = e.target.value;
+    setGeorgianDescription(newDescription);
+
+    if (newDescription === "") {
+      setDescriptionErrorMessage(`${filteredContent.description.error}`);
+    } else {
+      setDescriptionErrorMessage("");
+    }
+  };
+  const handleEnglishDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const newDescription = e.target.value;
+    setEnglishDescription(newDescription);
+
+    if (newDescription === "") {
+      setDescriptionErrorMessage(`${filteredContent.description.error}`);
+    } else {
+      setDescriptionErrorMessage("");
     }
   };
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -55,107 +135,166 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const numericValue = Number(newPopulation);
 
     if (newPopulation !== "" && isNaN(numericValue)) {
-      setPopulationErrorMessage(`${filteredContent.populationError}`);
+      setPopulationErrorMessage(`${filteredContent.population.error}`);
     } else {
       setPopulationErrorMessage("");
     }
     setPopulation(newPopulation);
   };
-  const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newTitle = e.target.value;
-    setTitle(newTitle);
-    if (newTitle === "") {
-      setTitleErrorMessage(`${filteredContent.titleError}`);
-    } else {
-      setTitleErrorMessage("");
-    }
-  };
-  const handleDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const newDescription = e.target.value;
-    setDescription(newDescription);
 
-    if (newDescription === "") {
-      setDescriptionErrorMessage(`${filteredContent.descriptionError}`);
-    } else {
-      setDescriptionErrorMessage("");
+
+  function handleUploadChange(e: ChangeEvent<HTMLInputElement>){
+    if(e.target.files){
+      const file = e.target.files[0];
+      if (file) {
+        imageToBase64(file).then(base64String => {
+          setImg(base64String);
+        }).catch(error => {
+          console.error('Error:', error);
+        });
+       
+      }
     }
-  };
+   
+  }
   function createArticle() {
     handleCreateArticle({
       id: 0,
-      name: name,
-      capital: capital,
+      name: {
+        ka: georgianName,
+        en: englishName
+      },
+    capital:{
+      ka: georgianCapital,
+      en: englishCapital,
+    },
+    title:{
+      ka: georgianTitle,
+      en: englishTitle,
+    },
+    description:{
+      ka: georgianDescription,
+      en: englishDescription,
+    },
       population: +population,
-      description: description,
-      title: title,
-      imageUrl:
-        "https://images.unsplash.com/photo-1673179559805-8dfbf64e10d4?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: img,
       isDeleted: false,
       rating: 0,
     });
   }
-  function handleUploadChange(e){
-    console.log("etarget",e.target.value)
-    
+ const handleFirstTabChange = () => {
+    setFirstTabActive(true);
+    setSecondTabActive(false);
   }
-  
-
-  
+  const handleSecondTabChange = () => {
+    setFirstTabActive(false);
+    setSecondTabActive(true);
+  }
+  const firstTabStyle = firstTabActive ? tabStyles.activeTab : tabStyles.initialTab
+  const secondTabStyle = secondTabActive ? tabStyles.activeTab : tabStyles.initialTab
+  const showFirstTabInputs = firstTabActive ? tabStyles.activeTabContent : tabStyles.inactiveTabContent
+  const showSecondTabInputs = secondTabActive ? tabStyles.activeTabContent : tabStyles.inactiveTabContent
   return (
     <Popup isOpen={isOpen}>
       <PopupHeader title={filteredContent.formTitle} onClick={handlePopupCloseClick} />
       <PopupBody>
         <Form onSubmit={createArticle}>
-       
+          <div className="display-flex column">
+            <TabBar>
+              <Tab className={firstTabStyle} tabTitle="Georgian text" onClick={handleFirstTabChange}/>
+              <Tab className={secondTabStyle} tabTitle="English text" onClick={handleSecondTabChange}/>
+            </TabBar>
+          
+          <div className={showFirstTabInputs}>
           <Input
-            id="name"
+            id="nameInGeorgian"
             errorMessage={nameErrorMessage}
-            name="country"
-            placeholder={filteredContent.name}
-            value={name}
-            onChange={handleNameChange}
+            name="nameInGeorgian"
+            placeholder={filteredContent.name.ka}
+            value={georgianName}
+            onChange={handleGeorgianNameChange}
           />
-          <Input
-            id="capital"
-            name="capital"
-            placeholder={filteredContent.capital}
-            value={capital}
+            <Input
+            id="capitalInGeorgian"
             errorMessage={capitalErrorMessage}
-            onChange={handleCapitalChange}
+            name="capitalInGeorgian"
+            placeholder={filteredContent.capital.ka}
+            value={georgianCapital}
+            onChange={handleGeorgianCapitalChange}
           />
+             <Input
+            id="titleInGeorgian"
+            name="titleInGeorgian"
+            placeholder={filteredContent.title.ka}
+            errorMessage={titleErrorMessage}
+            value={georgianTitle}
+            onChange={handleGeorgianTitleChange}
+          />
+           <TextArea
+            id="descriptionInGeorgian"
+            name="descriptionInGeorgian"
+            placeholder={filteredContent.description.ka}
+            errorMessage={descriptionErrorMessage}
+            value={georgianDescription}
+            onChange={handleGeorgianDescriptionChange}
+          />
+          </div>
+          <div className={showSecondTabInputs}>
+          <Input
+            id="nameInEnglish"
+            errorMessage={nameErrorMessage}
+            name="nameInEnglish"
+            placeholder={filteredContent.name.en}
+            value={englishName}
+            onChange={handleEnglishNameChange}
+          />
+          
+            <Input
+            id="capitalInEnglish"
+            errorMessage={capitalErrorMessage}
+            name="capitalInEnglish"
+            placeholder={filteredContent.capital.en}
+            value={englishCapital}
+            onChange={handleEnglishCapitalChange}
+          />
+      
+             <Input
+            id="titleInEnglish"
+            name="titleInEnglish"
+            placeholder={filteredContent.title.en}
+            errorMessage={titleErrorMessage}
+            value={englishTitle}
+            onChange={handleEnglishTitleChange}
+          />
+             <TextArea
+            id="descriptionInEnglish"
+            name="descriptionInEnglish"
+            placeholder={filteredContent.description.en}
+            errorMessage={descriptionErrorMessage}
+            value={englishDescription}
+            onChange={handleEnglishDescriptionChange}
+          />
+          </div>
+          </div>
           <Input
             id="population"
             name="population"
-            placeholder={filteredContent.population}
+            placeholder={filteredContent.population.population}
             value={population}
             errorMessage={populationErrorMessage}
             onChange={handlePopulationChange}
           />
           <Input
-            id="title"
-            name="title"
-            placeholder={filteredContent.title}
-            errorMessage={titleErrorMessage}
-            value={title}
-            onChange={handleTitleChange}
-          />
-          <TextArea
-            id="description"
-            name="description"
-            placeholder={filteredContent.description}
-            errorMessage={descriptionErrorMessage}
-            value={description}
-            onChange={handleDescriptionChange}
-          />
-          <Input
             type="file"
             onChange={handleUploadChange}
+            accept=".png, .jpg, .jpeg"
            />
           <Button
             title={filteredContent.button}
             className="buttonPrimaryM"
             type="submit"
           />
+         
         </Form>
       </PopupBody>
     </Popup>

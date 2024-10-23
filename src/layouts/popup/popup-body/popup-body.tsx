@@ -1,8 +1,8 @@
 import { PropsWithChildren } from "react"
-
+import styles from '../popup.module.css'
 const PopupBody:React.FC<PropsWithChildren> = ({children}) => {
     return (
-        <div>
+        <div className={styles.content}>
             {children}
         </div>
     )

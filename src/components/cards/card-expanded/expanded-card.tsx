@@ -1,5 +1,4 @@
-import countriesDataEn from "../cards-data/cards-data";
-import countriesDataGeo from '../cards-data/cards-data-geo'
+import countriesData from "../cards-data/cards-data";
 import { useParams } from "react-router-dom";
 import PageNotFound from "@/pages/page-not-found/page-not-found";
 import Article from '@/layouts/article/article'
@@ -9,9 +8,6 @@ import ArticleBanner from "@/layouts/article/article-banner/article-banner";
 import ArticleDetails from "@/layouts/article/article-details/article-details";
 import ArticleFooter from "@/layouts/article/article-footer/article-footer";
 const ExpandedCard: React.FC = () => {
-  const { id, lang } = useParams();
-  const countries = lang === "en" ? countriesDataEn : countriesDataGeo;
-  console.log("language: ",lang)
   const kaContent = {
     capital: 'დედაქალაქი',
     population: 'მოსახლეობა'
@@ -20,9 +16,13 @@ const ExpandedCard: React.FC = () => {
     capital: 'Capital',
     population: 'Population'
   }
+  const { id, lang } = useParams();
+  //const filteredCountriesData = lang === "en" ? countriesData.en : countriesData.ka
   const content = lang === 'en' ? enContent : kaContent
-  const country = countries.find((country) => country.id.toString() === id);
+  const country = countriesData.find((country) => country.id.toString() === id);
   const countryNotFound = !country;
+  
+
 
   if (countryNotFound) {
     return <PageNotFound />;
@@ -31,9 +31,9 @@ const ExpandedCard: React.FC = () => {
       <>
       <Article>
         <ArticleBanner bannerImageUrl={country.imageUrl}/>
-        <ArticleHeader articleTitle={country.name} />
-        <ArticleDetails text={`${content.capital}: ${country.capital} • ${content.population}: ${country.population}`}/>
-        <ArticleBody text={country.description} />
+        <ArticleHeader articleTitle={lang === "en" ?  country.name.en : country.name.ka} />
+        <ArticleDetails text={`${content.capital}: ${lang === "en" ? country.capital.en : country.capital.ka}  • ${content.population}: ${country.population}`}/>
+        <ArticleBody text={`${lang === "en"  ? country.description.en : country.description.ka}`} />
         <ArticleFooter />
       </Article>
       </>
