@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                 {content.contact}
               </NavLink>
               <NavLink reloadDocument={true} to={to}>
-                <Button className="buttonSecondaryS" title={title} />
+                <Button className="buttonSecondaryS" title={title}  />
               </NavLink>
             </ul>
           </nav>

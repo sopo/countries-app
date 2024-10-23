@@ -1,8 +1,8 @@
 import { useState, useReducer } from "react";
-import { Link, useParams, } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import countriesReducer from "./countries-reducer";
-import countriesDataEn from "../../components/cards/cards-data/cards-data";
-import countriesDataGeo from "../../components/cards/cards-data/cards-data-geo";
+import countriesData from "../../components/cards/cards-data/cards-data";
+import cardsSectionSd from "./static-data/cards-section-sd";
 import Banner from "../../components/banner/banner";
 import CardsSection from "@/components/cards/cards-section/cards-section";
 import CardContainer from "../../components/cards/card";
@@ -19,34 +19,35 @@ import CreateCountryPopup from "./create-country-popup";
 import { Country } from "@/components/cards/cards-data/country";
 
 const HomePage: React.FC = () => {
+  // კონტენტის გაფილტვრა ენის მიხედვით
   const { lang } = useParams();
-  const countriesData = lang === "en" ? countriesDataEn : countriesDataGeo;
-  const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
-  const [sortByRating, setSortByRating] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const filteredCountriesData = lang === "en" ? countriesData.en : countriesData.ka
+  const content = lang === "en" ? cardsSectionSd.en : cardsSectionSd.ka
+ 
 
-  const kaContent = {
-    articleTitle: "ახალი სტატიები",
-    addNewArticle: "დამატება",
-  };
-  const enContent = {
-    articleTitle: "Latest articles",
-    addNewArticle: "Add new article",
-  };
-  const content = lang === "en" ? enContent : kaContent;
+ 
+  // რეიტინგის მიხედვით დასორტვა
+  const [sortByRating, setSortByRating] = useState(false);
+  const buttonTitle = sortByRating ? `${content.sort.least}` : `${content.sort.most}`;
+
+  //პოპაპის გახსნა/დახურვა
+  const [isOpen, setIsOpen] = useState(false);
   const handleAddArticleClick = () => {
     setIsOpen(true);
   };
   const handlePopupCloseClick = () => {
     setIsOpen(false);
   };
+
+  //რედიუსერი
+  const [countriesNew, dispatch] = useReducer(countriesReducer, filteredCountriesData);
+
   const handleLikeClick = (id: number) => {
     dispatch({
       type: "like",
       id: id,
     });
   };
-
   const handleSortClick = () => {
     const newSort = !sortByRating;
     setSortByRating(newSort);
@@ -74,16 +75,8 @@ const HomePage: React.FC = () => {
     });
     setIsOpen(false);
   };
-  const kaSortContent = {
-    least: "ნაკლებად პოპულარული წინ",
-    most: "პოპულარული წინ"
-  }
-  const enSortContent = {
-    least: "Sort by least popular",
-    most: "Sort by most popular"
-  }
-  const sortContent = lang === "en" ?  enSortContent : kaSortContent 
-  const buttonTitle = sortByRating ? `${sortContent.least}` : `${sortContent.most}`;
+
+
   return (
     <div>
       {isOpen && (
@@ -94,6 +87,7 @@ const HomePage: React.FC = () => {
         />
       )}
       <Banner />
+     
       <CardsSection>
         <SectionHeader>
           <h1 className="text-primary">{content.articleTitle}</h1>
@@ -144,7 +138,6 @@ const HomePage: React.FC = () => {
           </CardContainer>
         ))}
       </CardsSection>
-    
     </div>
   );
 };

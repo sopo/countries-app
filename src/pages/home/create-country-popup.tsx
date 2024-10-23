@@ -14,6 +14,7 @@ interface CreateCountryPopupProps {
   handlePopupCloseClick: () => void;
   handleCreateArticle: (data: Country) => void;
 }
+
 const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   isOpen,
   handlePopupCloseClick,
@@ -30,8 +31,10 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
   const [descriptionErrorMessage, setDescriptionErrorMessage] = useState("");
   const [img, setImg] = useState("");
+  //კონტენტის გაფილტრვა ენის მიხედვით
   const {lang} = useParams();
-  const filteredContent = lang ==="en" ? content.en : content.ka
+  const filteredContent = lang === "en" ? content.en : content.ka
+
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
@@ -91,6 +94,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     handleCreateArticle({
       id: 0,
       name: name,
+
       capital: capital,
       population: +population,
       description: description,
@@ -101,15 +105,20 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     });
   }
 
-  
-
-  
   return (
     <Popup isOpen={isOpen}>
       <PopupHeader title={filteredContent.formTitle} onClick={handlePopupCloseClick} />
       <PopupBody>
         <Form onSubmit={createArticle}>
 
+          <Input
+            id="name"
+            errorMessage={nameErrorMessage}
+            name="country"
+            placeholder={filteredContent.name}
+            value={name}
+            onChange={handleNameChange}
+          />
           <Input
             id="name"
             errorMessage={nameErrorMessage}

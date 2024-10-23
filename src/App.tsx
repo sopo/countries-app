@@ -10,6 +10,7 @@ import Contact from "./pages/contact/contact";
 const router = createBrowserRouter(
   createRoutesFromElements( 
     <Route>
+    <Route path="/" element={<Navigate to="/en"/>} />
     <Route path =":lang" element={<DefaultLayout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<About />} />
@@ -17,7 +18,7 @@ const router = createBrowserRouter(
           <Route path="countries/:id" element={<ExpandedCard />} />
           <Route path="*" element={<PageNotFound />} />
     </Route> 
-    <Route path="/" element={<Navigate to="/en"/>} />
+    
     </Route>
   )
 )

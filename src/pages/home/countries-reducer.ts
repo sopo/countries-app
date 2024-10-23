@@ -1,13 +1,17 @@
 import countries from "@/components/cards/cards-data/cards-data";
 import { Country } from "@/components/cards/cards-data/country";
+
 type Action =
   | { type: "like"; id: number }
   | { type: "sort"; newSort: boolean }
   | { type: "delete"; id: number }
   | { type: "restore"; id: number }
   | { type: "create"; data: Country };
-let nextId = countries.length + 1;
+ 
+let nextId = countries.ka.length + 1;
+
 function countriesReducer(countries: Country[], action: Action): Country[] {
+ 
   switch (action.type) {
     case "like": {
       return countries.map((country) =>
@@ -59,7 +63,10 @@ function countriesReducer(countries: Country[], action: Action): Country[] {
           id: nextId++,
         },
       ];
+      
     }
+    
+    
     default:
       return countries;
   }
