@@ -26,6 +26,10 @@ const content = {
     },
     button: "დამატება",
     formTitle: "სტატიის დამატება",
+    tab: {
+      first: 'ველები ქართულად',
+      second: 'ველები ინგლისურად',
+    },
   },
   en: {
     name: {
@@ -54,6 +58,11 @@ const content = {
     },
     button: "Add",
     formTitle: "Add new article",
+    tab: {
+      first: 'Georgian fields',
+      second: 'English fields'
+    },
   },
+  
 };
 export default content;

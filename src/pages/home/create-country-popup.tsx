@@ -201,8 +201,8 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
         <Form onSubmit={createArticle}>
           <div className="display-flex column">
             <TabBar>
-              <Tab className={firstTabStyle} tabTitle="Georgian text" onClick={handleFirstTabChange}/>
-              <Tab className={secondTabStyle} tabTitle="English text" onClick={handleSecondTabChange}/>
+              <Tab className={firstTabStyle} tabTitle={filteredContent.tab.first} onClick={handleFirstTabChange}/>
+              <Tab className={secondTabStyle} tabTitle={filteredContent.tab.second} onClick={handleSecondTabChange}/>
             </TabBar>
           
           <div className={showFirstTabInputs}>
