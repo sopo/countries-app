@@ -15,7 +15,7 @@ import SectionHeader from "@/components/cards/cards-section/section-header/secti
 import IconButton from "@/components/button/icon-button/icon-button";
 import DeleteIcon from "@/assets/icons/trash.svg?react";
 import Restore from "@/assets/icons/arrow.uturn.backward.svg?react";
-import CreateCountryPopup from "./create-country-popup";
+import CreateCountryPopup from "./create article/create-country-popup";
 import { Country } from "@/components/cards/cards-data/country";
 
 const HomePage: React.FC = () => {
