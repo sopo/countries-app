@@ -1,18 +1,20 @@
 .popup{
     position: fixed;
     z-index: 1000;
-    left: 0; 
-    top: 0;
-    width: 100vw; 
+    left: 50%;
+    top: 50%; 
+    width: 464px; 
     height: 100vh; 
     border-radius: 0;
-    background-color:white;
+    background-color: white;
     overflow: auto;
-    
+    transform: translate(-50%, -50%);
     
 }
+
 .container{
     margin: 2rem;
+   
 }
 .content{
    background-color: white;
