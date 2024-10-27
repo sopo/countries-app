@@ -1,6 +1,6 @@
-import ThumbsUp from "~/src/assets/icons/hand.thumbsup.svg?react";
-import ThumbsUpFill from "~/src/assets/icons/hand.thumbsup.fill.svg?react";
-import styles from "./rating-section.module.css";
+import ThumbsUp from '~/src/assets/icons/hand.thumbsup.svg?react';
+import ThumbsUpFill from '~/src/assets/icons/hand.thumbsup.fill.svg?react';
+import styles from './rating-section.module.css';
 interface RatingSectionProps {
   rating: number;
   onClick: () => void;

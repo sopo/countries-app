@@ -1,5 +1,5 @@
-import { PropsWithChildren, MouseEvent } from "react";
-import styles from "./icon-button.module.css";
+import { PropsWithChildren, MouseEvent } from 'react';
+import styles from './icon-button.module.css';
 interface IconButtonProps extends PropsWithChildren {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }

@@ -1,15 +1,15 @@
-import styles from "./footer.module.css";
-import { useParams } from "react-router-dom";
+import styles from './footer.module.css';
+import { useParams } from 'react-router-dom';
 const Footer: React.FC = () => {
   const { lang } = useParams();
   const kaContent = {
-    title: "ბლოგი",
+    title: 'ბლოგი',
   };
   const enContent = {
-    title: "Blog",
+    title: 'Blog',
   };
 
-  const content = lang === "en" ? enContent : kaContent;
+  const content = lang === 'en' ? enContent : kaContent;
   return (
     <div>
       <div className={styles.footerContainer}>

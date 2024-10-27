@@ -1,5 +1,5 @@
-import styles from "../article.module.css";
-import "@/global-css/typography.css";
+import styles from '../article.module.css';
+import '@/global-css/typography.css';
 interface ArticleHeaderProps {
   articleTitle: string;
 }

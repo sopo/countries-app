@@ -1,24 +1,24 @@
-import countriesData from "@/components/cards/cards-data/cards-data";
-import { Country } from "@/components/cards/cards-data/country";
+import countriesData from '@/components/cards/cards-data/cards-data';
+import { Country } from '@/components/cards/cards-data/country';
 type Action =
-  | { type: "like"; id: number }
-  | { type: "sort"; newSort: boolean }
-  | { type: "delete"; id: number }
-  | { type: "restore"; id: number }
-  | { type: "create"; data: Country };
+  | { type: 'like'; id: number }
+  | { type: 'sort'; newSort: boolean }
+  | { type: 'delete'; id: number }
+  | { type: 'restore'; id: number }
+  | { type: 'create'; data: Country };
 
 let nextId = countriesData.length + 1;
 
 function countriesReducer(countriesData: Country[], action: Action): Country[] {
   switch (action.type) {
-    case "like": {
+    case 'like': {
       return countriesData.map((country) =>
         country.id === action.id
           ? { ...country, rating: country.rating + 1 }
           : country,
       );
     }
-    case "sort": {
+    case 'sort': {
       return [...countriesData].sort((a, b) => {
         if (a.isDeleted && b.isDeleted) {
           return 0;
@@ -32,7 +32,7 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
         return action.newSort ? b.rating - a.rating : a.rating - b.rating;
       });
     }
-    case "delete": {
+    case 'delete': {
       const updatedCountries = countriesData.map((country) =>
         country.id === action.id ? { ...country, isDeleted: true } : country,
       );
@@ -46,14 +46,14 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
 
       return sortedCountries;
     }
-    case "restore": {
+    case 'restore': {
       const updatedCountries = countriesData.map((country) =>
         country.id === action.id ? { ...country, isDeleted: false } : country,
       );
 
       return updatedCountries;
     }
-    case "create": {
+    case 'create': {
       return [
         ...countriesData,
         {

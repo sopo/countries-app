@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
-import styles from "./popup.module.css";
+import { PropsWithChildren } from 'react';
+import styles from './popup.module.css';
 interface PopupProps extends PropsWithChildren {
   isOpen: boolean;
 }

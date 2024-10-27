@@ -1,4 +1,4 @@
-import styles from "./article-banner.module.css";
+import styles from './article-banner.module.css';
 interface ArticleBannerProps {
   bannerImageUrl: string;
 }

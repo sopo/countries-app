@@ -1,4 +1,4 @@
-import styles from "./card-header.module.css";
+import styles from './card-header.module.css';
 interface cardHeaderProps {
   cardImageUrl: string;
   className?: string;
@@ -10,7 +10,7 @@ const CardHeader: React.FC<cardHeaderProps> = ({ cardImageUrl, className }) => {
         className={`${className} ${styles.img}`}
         style={{ backgroundImage: `url(${cardImageUrl})` }}
       >
-        {" "}
+        {' '}
       </div>
     </div>
   );

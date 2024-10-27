@@ -1,6 +1,6 @@
-import IconButton from "@/components/button/icon-button/icon-button";
-import CloseIcon from "@/assets/icons/xmark.svg?react";
-import styles from "../popup.module.css";
+import IconButton from '@/components/button/icon-button/icon-button';
+import CloseIcon from '@/assets/icons/xmark.svg?react';
+import styles from '../popup.module.css';
 interface PopupHeaderProps {
   title: string;
   onClick: () => void;

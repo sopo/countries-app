@@ -1,5 +1,5 @@
-import { ChangeEvent } from "react";
-import styles from "./text-area.module.css";
+import { ChangeEvent } from 'react';
+import styles from './text-area.module.css';
 interface TextAreaProps {
   id: string;
   name: string;

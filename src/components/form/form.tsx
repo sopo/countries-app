@@ -1,5 +1,5 @@
-import { FormEvent, PropsWithChildren } from "react";
-import styles from "./form.module.css";
+import { FormEvent, PropsWithChildren } from 'react';
+import styles from './form.module.css';
 interface FormProps {
   title?: string;
   onSubmit?: (event: FormEvent<HTMLFormElement>) => void;

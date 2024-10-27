@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react";
-import styles from "./cards-section.module.css";
+import { PropsWithChildren } from 'react';
+import styles from './cards-section.module.css';
 
 const CardsSection: React.FC<PropsWithChildren> = ({ children }) => {
   return (

@@ -1,27 +1,27 @@
-import { useState, useReducer } from "react";
-import { Link, useParams } from "react-router-dom";
-import countriesReducer from "./countries-reducer";
-import countriesData from "@/components/cards/cards-data/cards-data";
-import cardsSectionSd from "./static-data/cards-section-sd";
-import Banner from "../../components/banner/banner";
-import CardsSection from "@/components/cards/cards-section/cards-section";
-import CardContainer from "../../components/cards/card";
-import CardContent from "../../components/cards/card-content/card-content";
-import CardHeader from "../../components/cards/card-header/card-header";
-import CardFooter from "../../components/cards/card-footer/card-footer";
-import RatingSection from "@/components/rating/rating-section";
-import Button from "@/components/button/button";
-import SectionHeader from "@/components/cards/cards-section/section-header/section-header";
-import IconButton from "@/components/button/icon-button/icon-button";
-import DeleteIcon from "@/assets/icons/trash.svg?react";
-import Restore from "@/assets/icons/arrow.uturn.backward.svg?react";
-import CreateCountryPopup from "./create article/create-country-popup";
-import { Country } from "@/components/cards/cards-data/country";
+import { useState, useReducer } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import countriesReducer from './countries-reducer';
+import countriesData from '@/components/cards/cards-data/cards-data';
+import cardsSectionSd from './static-data/cards-section-sd';
+import Banner from '../../components/banner/banner';
+import CardsSection from '@/components/cards/cards-section/cards-section';
+import CardContainer from '../../components/cards/card';
+import CardContent from '../../components/cards/card-content/card-content';
+import CardHeader from '../../components/cards/card-header/card-header';
+import CardFooter from '../../components/cards/card-footer/card-footer';
+import RatingSection from '@/components/rating/rating-section';
+import Button from '@/components/button/button';
+import SectionHeader from '@/components/cards/cards-section/section-header/section-header';
+import IconButton from '@/components/button/icon-button/icon-button';
+import DeleteIcon from '@/assets/icons/trash.svg?react';
+import Restore from '@/assets/icons/arrow.uturn.backward.svg?react';
+import CreateCountryPopup from './create article/create-country-popup';
+import { Country } from '@/components/cards/cards-data/country';
 
 const HomePage: React.FC = () => {
   // კონტენტის გაფილტვრა ენის მიხედვით
   const { lang } = useParams();
-  const content = lang === "en" ? cardsSectionSd.en : cardsSectionSd.ka;
+  const content = lang === 'en' ? cardsSectionSd.en : cardsSectionSd.ka;
 
   // რეიტინგის მიხედვით დასორტვა
   const [sortByRating, setSortByRating] = useState(false);
@@ -43,7 +43,7 @@ const HomePage: React.FC = () => {
 
   const handleLikeClick = (id: number) => {
     dispatch({
-      type: "like",
+      type: 'like',
       id: id,
     });
   };
@@ -51,25 +51,25 @@ const HomePage: React.FC = () => {
     const newSort = !sortByRating;
     setSortByRating(newSort);
     dispatch({
-      type: "sort",
+      type: 'sort',
       newSort: newSort,
     });
   };
   const handleDeleteClick = (id: number) => {
     dispatch({
-      type: "delete",
+      type: 'delete',
       id: id,
     });
   };
   const handleRestoreClick = (id: number) => {
     dispatch({
-      type: "restore",
+      type: 'restore',
       id: id,
     });
   };
   const handleCreateArticle = (data: Country) => {
     dispatch({
-      type: "create",
+      type: 'create',
       data: data,
     });
     setIsOpen(false);
@@ -104,11 +104,11 @@ const HomePage: React.FC = () => {
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
               <CardHeader
-                className={country.isDeleted ? "inactive" : ""}
+                className={country.isDeleted ? 'inactive' : ''}
                 cardImageUrl={country.imageUrl}
               />
               <CardContent
-                className={country.isDeleted ? "inactive" : ""}
+                className={country.isDeleted ? 'inactive' : ''}
                 country={country}
               />
             </Link>

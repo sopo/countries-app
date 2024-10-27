@@ -4,14 +4,14 @@ import {
   createRoutesFromElements,
   Route,
   Navigate,
-} from "react-router-dom";
-import "@/global-css/containers.css";
-import DefaultLayout from "./layouts/default";
-import HomePage from "./pages/home/homepage";
-import About from "./pages/about/about";
-import PageNotFound from "./pages/page-not-found/page-not-found";
-import ExpandedCard from "./components/cards/card-expanded/expanded-card";
-import Contact from "./pages/contact/contact";
+} from 'react-router-dom';
+import '@/global-css/containers.css';
+import DefaultLayout from './layouts/default';
+import HomePage from './pages/home/homepage';
+import About from './pages/about/about';
+import PageNotFound from './pages/page-not-found/page-not-found';
+import ExpandedCard from './components/cards/card-expanded/expanded-card';
+import Contact from './pages/contact/contact';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

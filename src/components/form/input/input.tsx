@@ -1,5 +1,5 @@
-import { ChangeEvent } from "react";
-import styles from "./input.module.css";
+import { ChangeEvent } from 'react';
+import styles from './input.module.css';
 interface InputProps {
   id?: string;
   name?: string;

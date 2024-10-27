@@ -1,25 +1,25 @@
-import { Link, NavLink, NavLinkRenderProps, useParams } from "react-router-dom";
-import styles from "#/header/header.module.css";
-import BurgerMenu from "@/assets/list.bullet.svg?react";
-import Button from "../button/button";
+import { Link, NavLink, NavLinkRenderProps, useParams } from 'react-router-dom';
+import styles from '#/header/header.module.css';
+import BurgerMenu from '@/assets/list.bullet.svg?react';
+import Button from '../button/button';
 const Header: React.FC = () => {
   const handleActiveLink = ({ isActive }: NavLinkRenderProps) => {
     return isActive ? styles.active : styles.initial;
   };
   const { lang } = useParams();
-  const title = lang === "en" ? "ქარ" : "en";
-  const to = lang === "en" ? "/ka" : "/en";
+  const title = lang === 'en' ? 'ქარ' : 'en';
+  const to = lang === 'en' ? '/ka' : '/en';
   const kaContent = {
-    personal: "პირადი სივრცე",
-    about: "ჩვენს შესახებ",
-    contact: "კონტაქტი",
+    personal: 'პირადი სივრცე',
+    about: 'ჩვენს შესახებ',
+    contact: 'კონტაქტი',
   };
   const engContent = {
-    personal: "Personal",
-    about: "About us",
-    contact: "Contact",
+    personal: 'Personal',
+    about: 'About us',
+    contact: 'Contact',
   };
-  const content = lang === "en" ? engContent : kaContent;
+  const content = lang === 'en' ? engContent : kaContent;
 
   return (
     <div>
@@ -28,7 +28,6 @@ const Header: React.FC = () => {
           <Link to={`/${lang}`}>
             <h2>Travel</h2>
           </Link>
-
           <nav>
             <ul className={styles.navEnd}>
               <NavLink to="personal" className={handleActiveLink}>

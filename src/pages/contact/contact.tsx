@@ -1,68 +1,68 @@
-import React, { ChangeEvent } from "react";
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import Form from "@/components/form/form";
-import Input from "@/components/form/input/input";
-import TextArea from "@/components/form/text-area/text-area";
-import Button from "@/components/button/button";
+import React, { ChangeEvent } from 'react';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import Form from '@/components/form/form';
+import Input from '@/components/form/input/input';
+import TextArea from '@/components/form/text-area/text-area';
+import Button from '@/components/button/button';
 const Contact: React.FC = () => {
-  const [name, setName] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [nameErrorMessage, setNameErrorMessage] = useState("");
-  const [lastnameErrorMessage, setLastnameErrorMessage] = useState("");
-  const [emailErrorMessage, setEmailErrorMessage] = useState("");
-  const [messageErrorMessage, setMessageErrorMessage] = useState("");
+  const [name, setName] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [nameErrorMessage, setNameErrorMessage] = useState('');
+  const [lastnameErrorMessage, setLastnameErrorMessage] = useState('');
+  const [emailErrorMessage, setEmailErrorMessage] = useState('');
+  const [messageErrorMessage, setMessageErrorMessage] = useState('');
   const { lang } = useParams();
   const kaContent = {
-    firstName: "სახელი",
-    lastname: "გვარი",
-    email: "ელ. ფოსტა",
-    message: "შეტყობინება",
-    submit: "გაგზავნა",
-    formTitle: "მოგვწერე",
+    firstName: 'სახელი',
+    lastname: 'გვარი',
+    email: 'ელ. ფოსტა',
+    message: 'შეტყობინება',
+    submit: 'გაგზავნა',
+    formTitle: 'მოგვწერე',
   };
   const enContent = {
-    firstName: "First name",
-    lastname: "Last name",
-    email: "email",
-    message: "message",
-    submit: "Submit",
-    formTitle: "Send message",
+    firstName: 'First name',
+    lastname: 'Last name',
+    email: 'email',
+    message: 'message',
+    submit: 'Submit',
+    formTitle: 'Send message',
   };
 
-  const content = lang === "en" ? enContent : kaContent;
+  const content = lang === 'en' ? enContent : kaContent;
   const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
     if (name.length > 8) {
-      setNameErrorMessage("Name must be less than 8 characters");
+      setNameErrorMessage('Name must be less than 8 characters');
     } else {
-      setNameErrorMessage("");
+      setNameErrorMessage('');
     }
   };
   const handleChangeLastname = (e: ChangeEvent<HTMLInputElement>) => {
     setLastname(e.target.value);
     if (lastname.length > 8) {
-      setLastnameErrorMessage("Lastname must be less than 8 characters");
+      setLastnameErrorMessage('Lastname must be less than 8 characters');
     } else {
-      setLastnameErrorMessage("");
+      setLastnameErrorMessage('');
     }
   };
   const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
     if (email.length > 8) {
-      setEmailErrorMessage("email must be less than 8 characters");
+      setEmailErrorMessage('email must be less than 8 characters');
     } else {
-      setEmailErrorMessage("");
+      setEmailErrorMessage('');
     }
   };
   const handleChangeMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
     if (message.length > 8) {
-      setMessageErrorMessage("Message must be less than 8 characters");
+      setMessageErrorMessage('Message must be less than 8 characters');
     } else {
-      setMessageErrorMessage("");
+      setMessageErrorMessage('');
     }
   };
   const formData = {

@@ -1,17 +1,17 @@
-import Popup from "@/layouts/popup/popup";
-import tabStyles from "@/components/tab/tab-bar.module.css";
-import PopupHeader from "@/layouts/popup/popup-header/popup-header";
-import PopupBody from "@/layouts/popup/popup-body/popup-body";
-import Form from "@/components/form/form";
-import Input from "@/components/form/input/input";
-import TextArea from "@/components/form/text-area/text-area";
-import Button from "@/components/button/button";
-import content from "./create-country-popup-content";
-import { ChangeEvent, useState } from "react";
-import { Country } from "@/components/cards/cards-data/country";
-import { useParams } from "react-router-dom";
-import TabBar from "@/components/tab/tab-bar";
-import Tab from "@/components/tab/tab";
+import Popup from '@/layouts/popup/popup';
+import tabStyles from '@/components/tab/tab-bar.module.css';
+import PopupHeader from '@/layouts/popup/popup-header/popup-header';
+import PopupBody from '@/layouts/popup/popup-body/popup-body';
+import Form from '@/components/form/form';
+import Input from '@/components/form/input/input';
+import TextArea from '@/components/form/text-area/text-area';
+import Button from '@/components/button/button';
+import content from './create-country-popup-content';
+import { ChangeEvent, useState } from 'react';
+import { Country } from '@/components/cards/cards-data/country';
+import { useParams } from 'react-router-dom';
+import TabBar from '@/components/tab/tab-bar';
+import Tab from '@/components/tab/tab';
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
@@ -33,88 +33,88 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   handlePopupCloseClick,
   handleCreateArticle,
 }) => {
-  const [georgianName, setGeorgianName] = useState("");
-  const [englishName, setEnglishName] = useState("");
-  const [georgianCapital, setGeorgianCapital] = useState("");
-  const [englishCapital, setEnglishCapital] = useState("");
-  const [georgianTitle, setGeorgianTitle] = useState("");
-  const [englishTitle, setEnglishTitle] = useState("");
-  const [georgianDescription, setGeorgianDescription] = useState("");
-  const [englishDescription, setEnglishDescription] = useState("");
-  const [population, setPopulation] = useState("");
-  const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState("");
-  const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState("");
+  const [georgianName, setGeorgianName] = useState('');
+  const [englishName, setEnglishName] = useState('');
+  const [georgianCapital, setGeorgianCapital] = useState('');
+  const [englishCapital, setEnglishCapital] = useState('');
+  const [georgianTitle, setGeorgianTitle] = useState('');
+  const [englishTitle, setEnglishTitle] = useState('');
+  const [georgianDescription, setGeorgianDescription] = useState('');
+  const [englishDescription, setEnglishDescription] = useState('');
+  const [population, setPopulation] = useState('');
+  const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
+  const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
   const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
-    useState("");
+    useState('');
   const [englishCapitalErrorMessage, setEnglishCapitalErrorMessage] =
-    useState("");
+    useState('');
   const [georgianTitleErrorMessage, setGeorgianTitleErrorMessage] =
-    useState("");
-  const [englishTitleErrorMessage, setEnglishTitleErrorMessage] = useState("");
-  const [populationErrorMessage, setPopulationErrorMessage] = useState("");
+    useState('');
+  const [englishTitleErrorMessage, setEnglishTitleErrorMessage] = useState('');
+  const [populationErrorMessage, setPopulationErrorMessage] = useState('');
   const [georgianDescriptionErrorMessage, setGeorgianDescriptionErrorMessage] =
-    useState("");
+    useState('');
   const [englishDescriptionErrorMessage, setEnglishDescriptionErrorMessage] =
-    useState("");
-  const [img, setImg] = useState("");
+    useState('');
+  const [img, setImg] = useState('');
   const [firstTabActive, setFirstTabActive] = useState(true);
   const [secondTabActive, setSecondTabActive] = useState(false);
 
   const { lang } = useParams();
-  const filteredContent = lang === "en" ? content.en : content.ka;
+  const filteredContent = lang === 'en' ? content.en : content.ka;
 
   const handleGeorgianNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setGeorgianName(newName);
-    if (newName === "") {
+    if (newName === '') {
       setGeorgianNameErrorMessage(`${filteredContent.name.error}`);
     } else {
-      setGeorgianNameErrorMessage("");
+      setGeorgianNameErrorMessage('');
     }
   };
   const handleEnglishNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setEnglishName(newName);
-    if (newName === "") {
+    if (newName === '') {
       setEnglishNameErrorMessage(`${filteredContent.name.error}`);
     } else {
-      setEnglishNameErrorMessage("");
+      setEnglishNameErrorMessage('');
     }
   };
   const handleEnglishCapitalChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newCapital = e.target.value;
     setEnglishCapital(newCapital);
-    if (newCapital === "") {
+    if (newCapital === '') {
       setEnglishCapitalErrorMessage(`${filteredContent.capital.error}`);
     } else {
-      setEnglishCapitalErrorMessage("");
+      setEnglishCapitalErrorMessage('');
     }
   };
   const handleGeorgianCapitalChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newCapital = e.target.value;
     setGeorgianCapital(newCapital);
-    if (newCapital === "") {
+    if (newCapital === '') {
       setGeorgianCapitalErrorMessage(`${filteredContent.capital.error}`);
     } else {
-      setGeorgianCapitalErrorMessage("");
+      setGeorgianCapitalErrorMessage('');
     }
   };
   const handleGeorgianTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newTitle = e.target.value;
     setGeorgianTitle(newTitle);
-    if (newTitle === "") {
+    if (newTitle === '') {
       setGeorgianTitleErrorMessage(`${filteredContent.title.error}`);
     } else {
-      setGeorgianTitleErrorMessage("");
+      setGeorgianTitleErrorMessage('');
     }
   };
   const handleEnglishTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newTitle = e.target.value;
     setEnglishTitle(newTitle);
-    if (newTitle === "") {
+    if (newTitle === '') {
       setEnglishTitleErrorMessage(`${filteredContent.title.error}`);
     } else {
-      setEnglishTitleErrorMessage("");
+      setEnglishTitleErrorMessage('');
     }
   };
   const handleGeorgianDescriptionChange = (
@@ -122,12 +122,12 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   ) => {
     const newDescription = e.target.value;
     setGeorgianDescription(newDescription);
-    if (newDescription === "") {
+    if (newDescription === '') {
       setGeorgianDescriptionErrorMessage(
         `${filteredContent.description.error}`,
       );
     } else {
-      setGeorgianDescriptionErrorMessage("");
+      setGeorgianDescriptionErrorMessage('');
     }
   };
   const handleEnglishDescriptionChange = (
@@ -136,20 +136,20 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     const newDescription = e.target.value;
     setEnglishDescription(newDescription);
 
-    if (newDescription === "") {
+    if (newDescription === '') {
       setEnglishDescriptionErrorMessage(`${filteredContent.description.error}`);
     } else {
-      setEnglishDescriptionErrorMessage("");
+      setEnglishDescriptionErrorMessage('');
     }
   };
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newPopulation = e.target.value;
     const numericValue = Number(newPopulation);
 
-    if (newPopulation !== "" && isNaN(numericValue)) {
+    if (newPopulation !== '' && isNaN(numericValue)) {
       setPopulationErrorMessage(`${filteredContent.population.error}`);
     } else {
-      setPopulationErrorMessage("");
+      setPopulationErrorMessage('');
     }
     setPopulation(newPopulation);
   };
@@ -163,7 +163,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             setImg(base64String);
           })
           .catch((error) => {
-            console.error("Error:", error);
+            console.error('Error:', error);
           });
       }
     }
