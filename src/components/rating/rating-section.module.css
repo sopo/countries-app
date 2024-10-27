@@ -1,5 +1,5 @@
-.rating{
-    display: flex;
-    column-gap: 8px;
-    align-items: center;
+.rating {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
 }

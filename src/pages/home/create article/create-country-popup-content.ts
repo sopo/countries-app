@@ -27,8 +27,8 @@ const content = {
     button: "დამატება",
     formTitle: "სტატიის დამატება",
     tab: {
-      first: 'ველები ქართულად',
-      second: 'ველები ინგლისურად',
+      first: "ველები ქართულად",
+      second: "ველები ინგლისურად",
     },
   },
   en: {
@@ -59,10 +59,9 @@ const content = {
     button: "Add",
     formTitle: "Add new article",
     tab: {
-      first: 'Georgian fields',
-      second: 'English fields'
+      first: "Georgian fields",
+      second: "English fields",
     },
   },
-  
 };
 export default content;

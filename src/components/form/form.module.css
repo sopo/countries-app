@@ -1,13 +1,10 @@
-.form-container{
-    display: flex;
-    flex-direction: column;
-    
-    
- 
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
-.form{
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    width: 400px;
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 400px;
 }

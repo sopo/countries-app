@@ -1,18 +1,18 @@
-.banner{
-    position: relative;
-    height: 560px;
-    display: flex;
-    align-items: center; 
-    background-size: cover; 
-    background-position: center; 
+.banner {
+  position: relative;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
 }
-@media (max-width: 1366px){
-    .banner{
-        height: 400px;
-    }
+@media (max-width: 1366px) {
+  .banner {
+    height: 400px;
+  }
 }
-@media(max-width: 960px){
-    .banner{
-        height: 316px;
-    }
+@media (max-width: 960px) {
+  .banner {
+    height: 316px;
+  }
 }

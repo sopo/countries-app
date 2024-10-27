@@ -44,13 +44,18 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [population, setPopulation] = useState("");
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState("");
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState("");
-  const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] = useState("");
-  const [englishCapitalErrorMessage, setEnglishCapitalErrorMessage] = useState("");
-  const [georgianTitleErrorMessage, setGeorgianTitleErrorMessage] = useState("");
+  const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
+    useState("");
+  const [englishCapitalErrorMessage, setEnglishCapitalErrorMessage] =
+    useState("");
+  const [georgianTitleErrorMessage, setGeorgianTitleErrorMessage] =
+    useState("");
   const [englishTitleErrorMessage, setEnglishTitleErrorMessage] = useState("");
   const [populationErrorMessage, setPopulationErrorMessage] = useState("");
-  const [georgianDescriptionErrorMessage, setGeorgianDescriptionErrorMessage] = useState("");
-  const [englishDescriptionErrorMessage, setEnglishDescriptionErrorMessage] = useState("");
+  const [georgianDescriptionErrorMessage, setGeorgianDescriptionErrorMessage] =
+    useState("");
+  const [englishDescriptionErrorMessage, setEnglishDescriptionErrorMessage] =
+    useState("");
   const [img, setImg] = useState("");
   const [firstTabActive, setFirstTabActive] = useState(true);
   const [secondTabActive, setSecondTabActive] = useState(false);
@@ -113,18 +118,20 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     }
   };
   const handleGeorgianDescriptionChange = (
-    e: ChangeEvent<HTMLTextAreaElement>
+    e: ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const newDescription = e.target.value;
     setGeorgianDescription(newDescription);
     if (newDescription === "") {
-      setGeorgianDescriptionErrorMessage(`${filteredContent.description.error}`);
+      setGeorgianDescriptionErrorMessage(
+        `${filteredContent.description.error}`,
+      );
     } else {
       setGeorgianDescriptionErrorMessage("");
     }
   };
   const handleEnglishDescriptionChange = (
-    e: ChangeEvent<HTMLTextAreaElement>
+    e: ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const newDescription = e.target.value;
     setEnglishDescription(newDescription);

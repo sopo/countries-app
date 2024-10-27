@@ -17,11 +17,10 @@
 .nav-mobile {
   display: none;
 }
-.active{
+.active {
   color: var(--color-accent);
- 
 }
-.initial{
+.initial {
   color: var(--text-primary);
 }
 
@@ -40,12 +39,12 @@
   .nav-mobile {
     display: flex;
   }
- .header-content{
-  margin: auto 32px;
- }
+  .header-content {
+    margin: auto 32px;
+  }
 }
-@media (max-width: 800px){
-  .header-content{
+@media (max-width: 800px) {
+  .header-content {
     margin: auto 16px;
   }
 }

@@ -4,8 +4,7 @@
     "paths": {
       "@/*": ["src/*"],
       "~/*": ["./*"],
-      "#/*": ["src/components/*"],
-
+      "#/*": ["src/components/*"]
     }
   },
   "files": [],
@@ -13,5 +12,4 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
-  
 }

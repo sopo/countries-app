@@ -12,7 +12,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.container-l{
+.container-l {
   width: 768px;
   margin-left: auto;
   margin-right: auto;
@@ -31,16 +31,16 @@
     margin: 0 64px;
   }
 }
-@media (max-width: 960px){
-  .container-xl{
+@media (max-width: 960px) {
+  .container-xl {
     margin: 0 32px;
   }
   .image-container-xl {
     margin: 0;
   }
 }
-@media(max-width: 800px){
-  .container-l{
+@media (max-width: 800px) {
+  .container-l {
     width: auto;
     margin: 0 16px;
   }

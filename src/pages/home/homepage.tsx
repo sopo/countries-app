@@ -1,7 +1,7 @@
 import { useState, useReducer } from "react";
 import { Link, useParams } from "react-router-dom";
 import countriesReducer from "./countries-reducer";
-import countriesData from '@/components/cards/cards-data/cards-data'
+import countriesData from "@/components/cards/cards-data/cards-data";
 import cardsSectionSd from "./static-data/cards-section-sd";
 import Banner from "../../components/banner/banner";
 import CardsSection from "@/components/cards/cards-section/cards-section";
@@ -21,11 +21,13 @@ import { Country } from "@/components/cards/cards-data/country";
 const HomePage: React.FC = () => {
   // კონტენტის გაფილტვრა ენის მიხედვით
   const { lang } = useParams();
-  const content = lang === "en" ? cardsSectionSd.en : cardsSectionSd.ka
+  const content = lang === "en" ? cardsSectionSd.en : cardsSectionSd.ka;
 
   // რეიტინგის მიხედვით დასორტვა
   const [sortByRating, setSortByRating] = useState(false);
-  const buttonTitle = sortByRating ? `${content.sort.least}` : `${content.sort.most}`;
+  const buttonTitle = sortByRating
+    ? `${content.sort.least}`
+    : `${content.sort.most}`;
 
   //პოპაპის გახსნა/დახურვა
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +75,6 @@ const HomePage: React.FC = () => {
     setIsOpen(false);
   };
 
-
   return (
     <div>
       {isOpen && (
@@ -84,7 +85,7 @@ const HomePage: React.FC = () => {
         />
       )}
       <Banner />
-     
+
       <CardsSection>
         <SectionHeader>
           <h1 className="text-primary">{content.articleTitle}</h1>
@@ -98,7 +99,6 @@ const HomePage: React.FC = () => {
             className="buttonSecondaryM"
             onClick={handleAddArticleClick}
           />
-     
         </SectionHeader>
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>

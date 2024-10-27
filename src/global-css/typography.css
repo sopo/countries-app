@@ -1,71 +1,72 @@
 @font-face {
-  font-family: 'AeonikProTRIAL-Bold';
-  src: url('../assets/font/AeonikProTRIAL-Bold.otf');
+  font-family: "AeonikProTRIAL-Bold";
+  src: url("../assets/font/AeonikProTRIAL-Bold.otf");
   font-weight: bold;
 }
 @font-face {
-  font-family: 'AeonikProTRIAL-Light';
-  src: url('../assets/font/AeonikProTRIAL-Light.otf');
+  font-family: "AeonikProTRIAL-Light";
+  src: url("../assets/font/AeonikProTRIAL-Light.otf");
   font-weight: light;
 }
 @font-face {
-  font-family: 'AeonikProTRIAL-Regular';
-  src: url('../assets/font/AeonikProTRIAL-Regular.otf');
+  font-family: "AeonikProTRIAL-Regular";
+  src: url("../assets/font/AeonikProTRIAL-Regular.otf");
   font-weight: regular;
 }
 @font-face {
-  font-family: 'Inter';
-  src: url('../assets/font/Inter-VariableFont_opsz,wght.ttf');
+  font-family: "Inter";
+  src: url("../assets/font/Inter-VariableFont_opsz,wght.ttf");
   font-weight: 100 900;
 }
 
-h1{
-    font-family: 'AeonikProTRIAL-Bold';
-    line-height: 3rem;
-    color: var(--color-primary-text);   
+h1 {
+  font-family: "AeonikProTRIAL-Bold";
+  line-height: 3rem;
+  color: var(--color-primary-text);
 }
-h2{
-  font-family: 'AeonikProTRIAL-Bold';
+h2 {
+  font-family: "AeonikProTRIAL-Bold";
   font-size: 1.6rem;
   line-height: 2.56rem;
-  color: var(--color-primary-text);   
+  color: var(--color-primary-text);
 }
-h3{
-  font-family: 'AeonikProTRIAL-Regular';
+h3 {
+  font-family: "AeonikProTRIAL-Regular";
   font-size: 1.5rem;
   line-height: 1.75rem;
-  color: var(--color-primary-text); 
+  color: var(--color-primary-text);
 }
-p{  font-family: 'Inter';
-    font-size: 1rem;
-    line-height: 1.6rem;
-    color: var(--color-primary-text);
+p {
+  font-family: "Inter";
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: var(--color-primary-text);
 }
-.info{
+.info {
   font-family: "Inter";
   font-size: 0.75rem;
   font-weight: 400;
 }
-.tag{
+.tag {
   font-family: "Inter";
   font-size: 1rem;
   font-weight: 400;
 }
 .title-l {
-    font-size: 2.4rem;
-    font-weight: 500;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.title-m {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.title-s {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-primary-text);
+}
+@media (max-width: 960px) {
+  h1 {
+    font-size: 1.5rem;
   }
-  .title-m {
-    font-size: 1.6rem;
-    font-weight: 500;
-  }
-  .title-s {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--color-primary-text);
-  }
-  @media(max-width: 960px){
-    h1{
-      font-size: 1.5rem;
-    }
-  }
+}

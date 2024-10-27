@@ -1,4 +1,4 @@
-import countriesData from '@/components/cards/cards-data/cards-data'
+import countriesData from "@/components/cards/cards-data/cards-data";
 import { Country } from "@/components/cards/cards-data/country";
 type Action =
   | { type: "like"; id: number }
@@ -6,17 +6,16 @@ type Action =
   | { type: "delete"; id: number }
   | { type: "restore"; id: number }
   | { type: "create"; data: Country };
- 
+
 let nextId = countriesData.length + 1;
 
 function countriesReducer(countriesData: Country[], action: Action): Country[] {
- 
   switch (action.type) {
     case "like": {
       return countriesData.map((country) =>
         country.id === action.id
           ? { ...country, rating: country.rating + 1 }
-          : country
+          : country,
       );
     }
     case "sort": {
@@ -35,7 +34,7 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
     }
     case "delete": {
       const updatedCountries = countriesData.map((country) =>
-        country.id === action.id ? { ...country, isDeleted: true } : country
+        country.id === action.id ? { ...country, isDeleted: true } : country,
       );
 
       const sortedCountries = updatedCountries.sort((a, b) => {
@@ -49,7 +48,7 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
     }
     case "restore": {
       const updatedCountries = countriesData.map((country) =>
-        country.id === action.id ? { ...country, isDeleted: false } : country
+        country.id === action.id ? { ...country, isDeleted: false } : country,
       );
 
       return updatedCountries;
@@ -62,10 +61,8 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
           id: nextId++,
         },
       ];
-      
     }
-    
-    
+
     default:
       return countriesData;
   }

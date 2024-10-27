@@ -4,10 +4,10 @@
   column-gap: 2rem;
   row-gap: 2rem;
 }
-.container-spacing{
+.container-spacing {
   margin-top: 5rem;
 }
-.section-header{
+.section-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,9 +25,8 @@
   .section {
     grid-template-columns: 1fr;
   }
-  .section-header{
+  .section-header {
     flex-direction: column;
     row-gap: 1rem;
   }
-  
 }

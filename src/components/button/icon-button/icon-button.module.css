@@ -1,10 +1,9 @@
-.icon-button{
-    padding: 1rem;
-    border-radius: 1rem;
-    display: inline-flex;
+.icon-button {
+  padding: 1rem;
+  border-radius: 1rem;
+  display: inline-flex;
 }
-.icon-button:hover{
-    cursor: pointer;
-    background-color: var(--surface-2);
-
+.icon-button:hover {
+  cursor: pointer;
+  background-color: var(--surface-2);
 }
