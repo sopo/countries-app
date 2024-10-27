@@ -9,5 +9,5 @@ const Tab: React.FC<TabProps> = ({ tabTitle, className, onClick }) => {
       <p className={className}>{tabTitle}</p>
     </div>
   );
-};
-export default Tab;
+}
+export default Tab
