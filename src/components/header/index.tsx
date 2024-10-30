@@ -42,6 +42,9 @@ const Header: React.FC = () => {
               <NavLink to={to}>
                 <Button className="buttonSecondaryS" title={title} />
               </NavLink>
+              <NavLink to="sign-in">
+                <Button className="buttonSecondaryS" title="sign in" />
+              </NavLink>
             </ul>
           </nav>
         </div>
