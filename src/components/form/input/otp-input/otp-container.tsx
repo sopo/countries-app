@@ -1,7 +1,7 @@
 import styles from './otp-container.module.css';
 import otpInputSd from './otp-input-sd';
 import { useParams } from 'react-router-dom';
-import { useState, } from 'react';
+import { useState } from 'react';
 import OtpInput from './otp-input';
 interface NumberOfInputsProps {
   numberOfInputs: number;

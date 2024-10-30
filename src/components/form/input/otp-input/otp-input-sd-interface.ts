@@ -1,9 +1,9 @@
-interface OtpInputSdInterface{
-    ka: {
-       title: string;
-    },
-    en: {
-        title: string;
-     },
+interface OtpInputSdInterface {
+  ka: {
+    title: string;
+  };
+  en: {
+    title: string;
+  };
 }
 export default OtpInputSdInterface;
