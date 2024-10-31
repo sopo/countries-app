@@ -40,7 +40,7 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({
         return newValues;
       });
     }
-
+   
     if (newValue && /^[0-9]$/.test(newValue) && index < values.length - 1) {
       ref.current[index + 1]?.focus();
     } else if (index === values.length - 1 && newValue) {
