@@ -1,0 +1,19 @@
+.input {
+  height: 4rem;
+  width: 50px;
+  border: 1px solid var(--stroke-softer);
+  border-radius: 0.25rem;
+  background-color: var(--surface-1);
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-primary-text);
+}
+.input::placeholder {
+  font-size: 1rem;
+  color: var(--color-secondary-text);
+}
+.error {
+  color: var(--color-error-text);
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+}

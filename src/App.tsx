@@ -12,6 +12,7 @@ import About from './pages/about/about';
 import PageNotFound from './pages/page-not-found/page-not-found';
 import ExpandedCard from './components/cards/card-expanded/expanded-card';
 import Contact from './pages/contact/contact';
+import SignIn from './pages/sign-in/sign-in';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         <Route index element={<HomePage />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="sign-in" element={<SignIn />} />
         <Route path="countries/:id" element={<ExpandedCard />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
