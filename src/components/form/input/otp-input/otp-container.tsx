@@ -108,4 +108,3 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({
   );
 };
 export default OtpContainer;
-
