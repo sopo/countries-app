@@ -60,11 +60,9 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({
           ref.current[index - 1]?.focus();
           return newValues;
         });
-      }
-      else if(index > 0) {
+      } else if (index > 0) {
         ref.current[index - 1]?.focus();
-        
-      } 
+      }
     }
   };
   const handlePaste = (
