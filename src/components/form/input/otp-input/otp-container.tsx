@@ -57,11 +57,15 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({
         setValues((prevValues) => {
           const newValues = [...prevValues];
           newValues[index] = '';
-          ref.current[index - 1]?.focus();
           return newValues;
         });
-      } else if (index > 0) {
+      } else if (index > 0 && values[index] === '') {
         ref.current[index - 1]?.focus();
+        setValues((prevValues) => {
+          const newValues = [...prevValues];
+          newValues[index - 1] = '';
+          return newValues;
+        });
       }
     }
   };
@@ -104,3 +108,4 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({
   );
 };
 export default OtpContainer;
+
