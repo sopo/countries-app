@@ -53,17 +53,18 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({
   ) => {
     if (e.key === 'Backspace') {
       e.preventDefault();
-      if (values[index] === '') {
-        if (index > 0) {
-          ref.current[index - 1]?.focus();
-        }
-      } else {
+      if (values[index] !== '') {
         setValues((prevValues) => {
           const newValues = [...prevValues];
           newValues[index] = '';
+          ref.current[index - 1]?.focus();
           return newValues;
         });
       }
+      else if(index > 0) {
+        ref.current[index - 1]?.focus();
+        
+      } 
     }
   };
   const handlePaste = (
