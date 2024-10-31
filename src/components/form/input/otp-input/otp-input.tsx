@@ -1,21 +1,27 @@
 import styles from './otp-input.module.css';
+import { forwardRef } from 'react';
 interface OtpInputProps {
-  key: number;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onPaste: (e: React.ClipboardEvent<HTMLInputElement>) => void;
 }
-const OtpInput: React.FC<OtpInputProps> = ({ key, value, onChange }) => {
-  return (
-    <div>
-      <input
-        key={key}
-        value={value}
-        onChange={onChange}
-        className={styles.input}
-        placeholder="X"
-        maxLength={1}
-      />
-    </div>
-  );
-};
+const OtpInput = forwardRef<HTMLInputElement, OtpInputProps>(
+  ({ value, onChange, onKeyDown, onPaste }, ref) => {
+    return (
+      <div>
+        <input
+          value={value}
+          onChange={onChange}
+          className={styles.input}
+          placeholder="X"
+          maxLength={1}
+          ref={ref}
+          onKeyDown={onKeyDown}
+          onPaste={onPaste}
+        />
+      </div>
+    );
+  },
+);
 export default OtpInput;
