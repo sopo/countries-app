@@ -5,8 +5,12 @@ import { useState, useRef } from 'react';
 import OtpInput from './otp-input';
 interface NumberOfInputsProps {
   numberOfInputs: number;
+  codeFilled: (values: string[]) => void;
 }
-const OtpContainer: React.FC<NumberOfInputsProps> = ({ numberOfInputs, codeFilled }) => {
+const OtpContainer: React.FC<NumberOfInputsProps> = ({
+  numberOfInputs,
+  codeFilled,
+}) => {
   const { lang } = useParams();
   const content = lang === 'en' ? otpInputSd.en : otpInputSd.ka;
   const [values, setValues] = useState(Array(numberOfInputs).fill(''));
@@ -14,9 +18,13 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({ numberOfInputs, codeFille
   const ref = useRef<(HTMLInputElement | null)[]>(
     Array(numberOfInputs).fill(null),
   );
-  function checkCodeFill(values){
-    if(values.every(value => value !== undefined && value !== null && value !== "")){
-        codeFilled(values);
+  function checkCodeFill(values: string[]) {
+    if (
+      values.every(
+        (value) => value !== undefined && value !== null && value !== '',
+      )
+    ) {
+      codeFilled(values);
     }
   }
   const handleChange = (
@@ -28,7 +36,7 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({ numberOfInputs, codeFille
       setValues((prevValues) => {
         const newValues = [...prevValues];
         newValues[index] = newValue;
-        checkCodeFill(newValues)
+        checkCodeFill(newValues);
         return newValues;
       });
     }
@@ -49,12 +57,12 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({ numberOfInputs, codeFille
         if (index > 0) {
           ref.current[index - 1]?.focus();
         }
-        } else {
-          setValues((prevValues) => {
-            const newValues = [...prevValues];
-            newValues[index] = '';
-            return newValues;
-          });
+      } else {
+        setValues((prevValues) => {
+          const newValues = [...prevValues];
+          newValues[index] = '';
+          return newValues;
+        });
       }
     }
   };
@@ -64,21 +72,19 @@ const OtpContainer: React.FC<NumberOfInputsProps> = ({ numberOfInputs, codeFille
   ) => {
     e.preventDefault();
     const pastedData = e.clipboardData.getData('text');
-    if(/^\d+$/.test(pastedData)){
-        setValues((prevValues) => {
-            const newValues = [...prevValues];
-            const length = Math.min(pastedData.length, numberOfInputs - index);
-            for (let i = 0; i < length; i++) {
-              newValues[index + i] = pastedData[i];
-            }
-            checkCodeFill(newValues)
-            return newValues;
-          });
-          ref.current[index]?.blur();
-          
+    if (/^\d+$/.test(pastedData)) {
+      setValues((prevValues) => {
+        const newValues = [...prevValues];
+        const length = Math.min(pastedData.length, numberOfInputs - index);
+        for (let i = 0; i < length; i++) {
+          newValues[index + i] = pastedData[i];
+        }
+        checkCodeFill(newValues);
+        return newValues;
+      });
+      ref.current[index]?.blur();
     }
-  //1234
-
+    //1234
   };
   return (
     <div>
