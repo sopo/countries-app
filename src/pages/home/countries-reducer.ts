@@ -22,13 +22,12 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
     }
     case 'edit': {
       return countriesData.map((country) => {
-        if(country.id === action.data.id){
-          return action.data
-        }else{
-          return country
+        if (country.id === action.data.id) {
+          return action.data;
+        } else {
+          return country;
         }
-      })
-      
+      });
     }
     case 'sort': {
       return [...countriesData].sort((a, b) => {

@@ -42,7 +42,7 @@ const ExpandedCard: React.FC = () => {
           <ArticleDetails
             text={`${content.capital}: ${lang === 'en' ? country.capital.en : country.capital.ka}  • ${content.population}: ${country.population}`}
           />
-         
+
           <ArticleFooter />
         </Article>
       </>

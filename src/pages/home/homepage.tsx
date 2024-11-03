@@ -38,7 +38,9 @@ const HomePage: React.FC = () => {
     setIsOpen(false);
   };
   //useEffect
-  const[editCountryId, setEditCountryId] = useState<string | undefined>(undefined)
+  const [editCountryId, setEditCountryId] = useState<string | undefined>(
+    undefined,
+  );
   const refreshData = () => {
     return axios.get('http://localhost:3000/countries').then((response) => {
       dispatch({
@@ -51,29 +53,30 @@ const HomePage: React.FC = () => {
     refreshData();
   }, []);
   const handleCreateArticle = (data: Omit<Country, 'id'>) => {
-    if(editCountryId){
-      axios.patch(`http://localhost:3000/countries/${editCountryId}`, data).then(({data}) => {
-        dispatch({
-          type: 'edit',
-          data: data
-        })
-        setIsOpen(false)
-      })
-    }else{
+    if (editCountryId) {
       axios
-      .post('http://localhost:3000/countries', data)
-      .then((response) => {
-        dispatch({
-          type: 'create',
-          data: response.data,
+        .patch(`http://localhost:3000/countries/${editCountryId}`, data)
+        .then(({ data }) => {
+          dispatch({
+            type: 'edit',
+            data: data,
+          });
+          setIsOpen(false);
         });
-      })
+    } else {
+      axios
+        .post('http://localhost:3000/countries', data)
+        .then((response) => {
+          dispatch({
+            type: 'create',
+            data: response.data,
+          });
+        })
 
-      .finally(() => {
-        setIsOpen(false);
-      });
+        .finally(() => {
+          setIsOpen(false);
+        });
     }
- 
   };
 
   const handleDeleteClick = (id: string) => {
@@ -86,7 +89,7 @@ const HomePage: React.FC = () => {
   };
   const handleEditClick = (id: string) => {
     setIsOpen(true);
-    setEditCountryId(id)
+    setEditCountryId(id);
   };
   const handleLikeClick = (id: string, rating: number) => {
     axios

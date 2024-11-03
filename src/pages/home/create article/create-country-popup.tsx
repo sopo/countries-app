@@ -18,7 +18,6 @@ interface CreateCountryPopupProps {
   handlePopupCloseClick: () => void;
   handleCreateArticle: (data: Omit<Country, 'id'>) => void;
   id?: string;
-  
 }
 function imageToBase64(file: File) {
   return new Promise<string>((resolve, reject) => {
@@ -40,9 +39,11 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   // useEffect
   useEffect(() => {
     if (id) {
-      axios.get<Country>(`http://localhost:3000/countries/${id}`).then(({data}) => {
-        setGeorgianName(data.name.ka);
-      });
+      axios
+        .get<Country>(`http://localhost:3000/countries/${id}`)
+        .then(({ data }) => {
+          setGeorgianName(data.name.ka);
+        });
     }
   }, [id]);
 
@@ -106,9 +107,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       setGeorgianCapitalErrorMessage('');
     }
   };
-
-
-
 
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newPopulation = e.target.value;
@@ -210,7 +208,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
                 value={georgianCapital}
                 onChange={handleGeorgianCapitalChange}
               />
-          
             </div>
             <div className={showSecondTabInputs}>
               <Input
@@ -230,8 +227,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
                 value={englishCapital}
                 onChange={handleEnglishCapitalChange}
               />
-
-       
             </div>
           </div>
           <Input
