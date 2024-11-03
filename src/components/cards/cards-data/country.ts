@@ -1,5 +1,5 @@
 export interface Country {
-  id: number;
+  id: string;
   name: {
     ka: string;
     en: string;
@@ -19,5 +19,4 @@ export interface Country {
   };
   imageUrl: string;
   rating: number;
-  isDeleted: boolean;
 }

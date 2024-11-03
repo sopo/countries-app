@@ -7,15 +7,17 @@ import Input from '@/components/form/input/input';
 import TextArea from '@/components/form/text-area/text-area';
 import Button from '@/components/button/button';
 import content from './create-country-popup-content';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, useEffect } from 'react';
 import { Country } from '@/components/cards/cards-data/country';
 import { useParams } from 'react-router-dom';
 import TabBar from '@/components/tab/tab-bar';
 import Tab from '@/components/tab/tab';
+import axios from 'axios';
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
-  handleCreateArticle: (data: Country) => void;
+  handleCreateArticle: (data: Omit<Country, 'id'>) => void;
+  id?: string;
 }
 function imageToBase64(file: File) {
   return new Promise<string>((resolve, reject) => {
@@ -32,7 +34,16 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   isOpen,
   handlePopupCloseClick,
   handleCreateArticle,
+  id,
 }) => {
+  // useEffect
+  useEffect(() => {
+    if (id) {
+      axios.get(`http://localhost:3000/countries/${id}`).then(() => {});
+    }
+  }, [id]);
+
+  //useState fields
   const [georgianName, setGeorgianName] = useState('');
   const [englishName, setEnglishName] = useState('');
   const [georgianCapital, setGeorgianCapital] = useState('');
@@ -42,6 +53,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [georgianDescription, setGeorgianDescription] = useState('');
   const [englishDescription, setEnglishDescription] = useState('');
   const [population, setPopulation] = useState('');
+
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
   const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
@@ -60,9 +72,11 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [firstTabActive, setFirstTabActive] = useState(true);
   const [secondTabActive, setSecondTabActive] = useState(false);
 
+  // language
   const { lang } = useParams();
   const filteredContent = lang === 'en' ? content.en : content.ka;
 
+  //handlers
   const handleGeorgianNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setGeorgianName(newName);
@@ -170,7 +184,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   }
   function createArticle() {
     handleCreateArticle({
-      id: 0,
       name: {
         ka: georgianName,
         en: englishName,
@@ -189,7 +202,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       },
       population: +population,
       imageUrl: img,
-      isDeleted: false,
       rating: 0,
     });
   }

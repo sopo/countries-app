@@ -1,7 +1,7 @@
-import { useState, useReducer } from 'react';
+import { useState, useReducer, useEffect } from 'react';
+import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import countriesReducer from './countries-reducer';
-import countriesData from '@/components/cards/cards-data/cards-data';
 import cardsSectionSd from './static-data/cards-section-sd';
 import Banner from '../../components/banner/banner';
 import CardsSection from '@/components/cards/cards-section/cards-section';
@@ -14,7 +14,7 @@ import Button from '@/components/button/button';
 import SectionHeader from '@/components/cards/cards-section/section-header/section-header';
 import IconButton from '@/components/button/icon-button/icon-button';
 import DeleteIcon from '@/assets/icons/trash.svg?react';
-import Restore from '@/assets/icons/arrow.uturn.backward.svg?react';
+import EditIcon from '@/assets/icons/pencil.svg?react';
 import CreateCountryPopup from './create article/create-country-popup';
 import { Country } from '@/components/cards/cards-data/country';
 
@@ -37,16 +37,65 @@ const HomePage: React.FC = () => {
   const handlePopupCloseClick = () => {
     setIsOpen(false);
   };
-
-  //რედიუსერი
-  const [countriesNew, dispatch] = useReducer(countriesReducer, countriesData);
-
-  const handleLikeClick = (id: number) => {
-    dispatch({
-      type: 'like',
-      id: id,
+  //useEffect
+  const refreshData = () => {
+    return axios.get('http://localhost:3000/countries').then((response) => {
+      dispatch({
+        type: 'load',
+        data: response.data,
+      });
     });
   };
+  useEffect(() => {
+    refreshData();
+  }, []);
+  const handleCreateArticle = (data: Omit<Country, 'id'>) => {
+    axios
+      .post('http://localhost:3000/countries', data)
+      .then((response) => {
+        dispatch({
+          type: 'create',
+          data: response.data,
+        });
+      })
+
+      .finally(() => {
+        setIsOpen(false);
+      });
+  };
+
+  const handleDeleteClick = (id: string) => {
+    axios.delete(`http://localhost:3000/countries/${id}`).then(() => {
+      dispatch({
+        type: 'delete',
+        id: id,
+      });
+    });
+  };
+  const handleEditClick = (id: string) => {
+    setIsOpen(true);
+    console.log(id)
+  };
+  const handleLikeClick = (id: string, rating: number) => {
+    axios
+      .patch(`http://localhost:3000/countries/${id}`, {
+        rating: rating + 1,
+      })
+      .then(() => {
+        dispatch({
+          type: 'like',
+          id: id,
+        });
+      });
+  };
+  //რედიუსერი
+  const [countriesNew, dispatch] = useReducer(countriesReducer, []);
+  // const handleLikeClick = (id: number) => {
+  //   dispatch({
+  //     type: 'like',
+  //     id: id,
+  //   });
+  // };
   const handleSortClick = () => {
     const newSort = !sortByRating;
     setSortByRating(newSort);
@@ -55,25 +104,20 @@ const HomePage: React.FC = () => {
       newSort: newSort,
     });
   };
-  const handleDeleteClick = (id: number) => {
-    dispatch({
-      type: 'delete',
-      id: id,
-    });
-  };
-  const handleRestoreClick = (id: number) => {
-    dispatch({
-      type: 'restore',
-      id: id,
-    });
-  };
-  const handleCreateArticle = (data: Country) => {
-    dispatch({
-      type: 'create',
-      data: data,
-    });
-    setIsOpen(false);
-  };
+  // const handleDeleteClick = (id: number) => {
+  //   dispatch({
+  //     type: 'delete',
+  //     id: id,
+  //   });
+  // };
+
+  // const handleCreateArticle = (data: Country) => {
+  //   dispatch({
+  //     type: 'create',
+  //     data: data,
+  //   });
+  //   setIsOpen(false);
+  // };
 
   return (
     <div>
@@ -103,34 +147,25 @@ const HomePage: React.FC = () => {
         {countriesNew.map((country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
-              <CardHeader
-                className={country.isDeleted ? 'inactive' : ''}
-                cardImageUrl={country.imageUrl}
-              />
-              <CardContent
-                className={country.isDeleted ? 'inactive' : ''}
-                country={country}
-              />
+              <CardHeader cardImageUrl={country.imageUrl} />
+              <CardContent country={country} />
             </Link>
             <CardFooter>
               <RatingSection
                 rating={country.rating}
-                onClick={() => handleLikeClick(country.id)}
+                onClick={() => handleLikeClick(country.id, country.rating)}
               />
               <IconButton>
-                {country.isDeleted ? (
-                  <Restore
-                    className="icon-l icon-secondary"
-                    onClick={() => {
-                      handleRestoreClick(country.id);
-                    }}
-                  />
-                ) : (
-                  <DeleteIcon
-                    className="icon-l icon-secondary"
-                    onClick={() => handleDeleteClick(country.id)}
-                  />
-                )}
+                <EditIcon
+                  className="icon-l icon-secondary"
+                  onClick={() => handleEditClick(country.id)}
+                />
+              </IconButton>
+              <IconButton>
+                <DeleteIcon
+                  className="icon-l icon-secondary"
+                  onClick={() => handleDeleteClick(country.id)}
+                />
               </IconButton>
             </CardFooter>
           </CardContainer>

@@ -1,13 +1,11 @@
-import countriesData from '@/components/cards/cards-data/cards-data';
 import { Country } from '@/components/cards/cards-data/country';
 type Action =
-  | { type: 'like'; id: number }
+  | { type: 'load'; data: Country[] }
+  | { type: 'like'; id: string }
   | { type: 'sort'; newSort: boolean }
-  | { type: 'delete'; id: number }
-  | { type: 'restore'; id: number }
+  | { type: 'delete'; id: string }
+  | { type: 'restore'; id: string }
   | { type: 'create'; data: Country };
-
-let nextId = countriesData.length + 1;
 
 function countriesReducer(countriesData: Country[], action: Action): Country[] {
   switch (action.type) {
@@ -18,39 +16,18 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
           : country,
       );
     }
+    case 'load': {
+      return action.data;
+    }
     case 'sort': {
       return [...countriesData].sort((a, b) => {
-        if (a.isDeleted && b.isDeleted) {
-          return 0;
-        }
-        if (a.isDeleted) {
-          return 1;
-        }
-        if (b.isDeleted) {
-          return -1;
-        }
         return action.newSort ? b.rating - a.rating : a.rating - b.rating;
       });
     }
     case 'delete': {
-      const updatedCountries = countriesData.map((country) =>
-        country.id === action.id ? { ...country, isDeleted: true } : country,
+      const updatedCountries = countriesData.filter(
+        (country) => country.id !== action.id,
       );
-
-      const sortedCountries = updatedCountries.sort((a, b) => {
-        if (a.isDeleted === b.isDeleted) {
-          return 0;
-        }
-        return a.isDeleted ? 1 : -1;
-      });
-
-      return sortedCountries;
-    }
-    case 'restore': {
-      const updatedCountries = countriesData.map((country) =>
-        country.id === action.id ? { ...country, isDeleted: false } : country,
-      );
-
       return updatedCountries;
     }
     case 'create': {
@@ -58,7 +35,6 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
         ...countriesData,
         {
           ...action.data,
-          id: nextId++,
         },
       ];
     }
