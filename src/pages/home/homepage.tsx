@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
   };
   const handleEditClick = (id: string) => {
     setIsOpen(true);
-    console.log(id)
+    console.log(id);
   };
   const handleLikeClick = (id: string, rating: number) => {
     axios
