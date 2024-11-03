@@ -4,18 +4,19 @@ import PopupHeader from '@/layouts/popup/popup-header/popup-header';
 import PopupBody from '@/layouts/popup/popup-body/popup-body';
 import Form from '@/components/form/form';
 import Input from '@/components/form/input/input';
-import TextArea from '@/components/form/text-area/text-area';
 import Button from '@/components/button/button';
 import content from './create-country-popup-content';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, useEffect } from 'react';
 import { Country } from '@/components/cards/cards-data/country';
 import { useParams } from 'react-router-dom';
 import TabBar from '@/components/tab/tab-bar';
 import Tab from '@/components/tab/tab';
+import axios from 'axios';
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
-  handleCreateArticle: (data: Country) => void;
+  handleCreateArticle: (data: Omit<Country, 'id'>) => void;
+  id?: string;
 }
 function imageToBase64(file: File) {
   return new Promise<string>((resolve, reject) => {
@@ -28,19 +29,33 @@ function imageToBase64(file: File) {
   });
 }
 
+//კომპონენტი
 const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   isOpen,
   handlePopupCloseClick,
   handleCreateArticle,
+  id,
 }) => {
+  // useEffect
+  useEffect(() => {
+    if (id) {
+      axios
+        .get<Country>(`http://localhost:3000/countries/${id}`)
+        .then(({ data }) => {
+          setGeorgianName(data.name.ka);
+          setEnglishName(data.name.en);
+          setGeorgianCapital(data.capital.ka);
+          setEnglishCapital(data.capital.en);
+          setPopulation(data.population.toString());
+        });
+    }
+  }, [id]);
+
+  //useState ფილდებისთვის, ტაბებისთვის
   const [georgianName, setGeorgianName] = useState('');
   const [englishName, setEnglishName] = useState('');
   const [georgianCapital, setGeorgianCapital] = useState('');
   const [englishCapital, setEnglishCapital] = useState('');
-  const [georgianTitle, setGeorgianTitle] = useState('');
-  const [englishTitle, setEnglishTitle] = useState('');
-  const [georgianDescription, setGeorgianDescription] = useState('');
-  const [englishDescription, setEnglishDescription] = useState('');
   const [population, setPopulation] = useState('');
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
@@ -48,21 +63,16 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     useState('');
   const [englishCapitalErrorMessage, setEnglishCapitalErrorMessage] =
     useState('');
-  const [georgianTitleErrorMessage, setGeorgianTitleErrorMessage] =
-    useState('');
-  const [englishTitleErrorMessage, setEnglishTitleErrorMessage] = useState('');
   const [populationErrorMessage, setPopulationErrorMessage] = useState('');
-  const [georgianDescriptionErrorMessage, setGeorgianDescriptionErrorMessage] =
-    useState('');
-  const [englishDescriptionErrorMessage, setEnglishDescriptionErrorMessage] =
-    useState('');
   const [img, setImg] = useState('');
   const [firstTabActive, setFirstTabActive] = useState(true);
   const [secondTabActive, setSecondTabActive] = useState(false);
 
+  // ენის ფილტრი
   const { lang } = useParams();
   const filteredContent = lang === 'en' ? content.en : content.ka;
 
+  //handlers
   const handleGeorgianNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newName = e.target.value;
     setGeorgianName(newName);
@@ -99,53 +109,9 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       setGeorgianCapitalErrorMessage('');
     }
   };
-  const handleGeorgianTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newTitle = e.target.value;
-    setGeorgianTitle(newTitle);
-    if (newTitle === '') {
-      setGeorgianTitleErrorMessage(`${filteredContent.title.error}`);
-    } else {
-      setGeorgianTitleErrorMessage('');
-    }
-  };
-  const handleEnglishTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newTitle = e.target.value;
-    setEnglishTitle(newTitle);
-    if (newTitle === '') {
-      setEnglishTitleErrorMessage(`${filteredContent.title.error}`);
-    } else {
-      setEnglishTitleErrorMessage('');
-    }
-  };
-  const handleGeorgianDescriptionChange = (
-    e: ChangeEvent<HTMLTextAreaElement>,
-  ) => {
-    const newDescription = e.target.value;
-    setGeorgianDescription(newDescription);
-    if (newDescription === '') {
-      setGeorgianDescriptionErrorMessage(
-        `${filteredContent.description.error}`,
-      );
-    } else {
-      setGeorgianDescriptionErrorMessage('');
-    }
-  };
-  const handleEnglishDescriptionChange = (
-    e: ChangeEvent<HTMLTextAreaElement>,
-  ) => {
-    const newDescription = e.target.value;
-    setEnglishDescription(newDescription);
-
-    if (newDescription === '') {
-      setEnglishDescriptionErrorMessage(`${filteredContent.description.error}`);
-    } else {
-      setEnglishDescriptionErrorMessage('');
-    }
-  };
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newPopulation = e.target.value;
     const numericValue = Number(newPopulation);
-
     if (newPopulation !== '' && isNaN(numericValue)) {
       setPopulationErrorMessage(`${filteredContent.population.error}`);
     } else {
@@ -153,7 +119,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     }
     setPopulation(newPopulation);
   };
-
   function handleUploadChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
       const file = e.target.files[0];
@@ -168,9 +133,10 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       }
     }
   }
+
+  //createArticle
   function createArticle() {
     handleCreateArticle({
-      id: 0,
       name: {
         ka: georgianName,
         en: englishName,
@@ -179,20 +145,13 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
         ka: georgianCapital,
         en: englishCapital,
       },
-      title: {
-        ka: georgianTitle,
-        en: englishTitle,
-      },
-      description: {
-        ka: georgianDescription,
-        en: englishDescription,
-      },
       population: +population,
       imageUrl: img,
-      isDeleted: false,
       rating: 0,
     });
   }
+
+  // ტაბების ლოგიკა
   const handleFirstTabChange = () => {
     setFirstTabActive(true);
     setSecondTabActive(false);
@@ -213,6 +172,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const showSecondTabInputs = secondTabActive
     ? tabStyles.activeTabContent
     : tabStyles.inactiveTabContent;
+
   return (
     <Popup isOpen={isOpen}>
       <PopupHeader
@@ -252,22 +212,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
                 value={georgianCapital}
                 onChange={handleGeorgianCapitalChange}
               />
-              <Input
-                id="titleInGeorgian"
-                name="titleInGeorgian"
-                placeholder={filteredContent.title.ka}
-                errorMessage={georgianTitleErrorMessage}
-                value={georgianTitle}
-                onChange={handleGeorgianTitleChange}
-              />
-              <TextArea
-                id="descriptionInGeorgian"
-                name="descriptionInGeorgian"
-                placeholder={filteredContent.description.ka}
-                errorMessage={georgianDescriptionErrorMessage}
-                value={georgianDescription}
-                onChange={handleGeorgianDescriptionChange}
-              />
             </div>
             <div className={showSecondTabInputs}>
               <Input
@@ -286,23 +230,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
                 placeholder={filteredContent.capital.en}
                 value={englishCapital}
                 onChange={handleEnglishCapitalChange}
-              />
-
-              <Input
-                id="titleInEnglish"
-                name="titleInEnglish"
-                placeholder={filteredContent.title.en}
-                errorMessage={englishTitleErrorMessage}
-                value={englishTitle}
-                onChange={handleEnglishTitleChange}
-              />
-              <TextArea
-                id="descriptionInEnglish"
-                name="descriptionInEnglish"
-                placeholder={filteredContent.description.en}
-                errorMessage={englishDescriptionErrorMessage}
-                value={englishDescription}
-                onChange={handleEnglishDescriptionChange}
               />
             </div>
           </div>

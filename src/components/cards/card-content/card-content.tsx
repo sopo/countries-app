@@ -21,7 +21,6 @@ const CardContent: React.FC<{ country: Country; className?: string }> = ({
       <p className="secondary-text tag">
         {lang === 'en' ? country.name.en : country.name.ka}
       </p>
-      <h3>{lang === 'en' ? country.title.en : country.title.ka}</h3>
       <p className="secondary-text info">{`${content.capital}: ${lang === 'en' ? country.capital.en : country.capital.ka} • ${content.population}: ${country.population}`}</p>
     </div>
   );

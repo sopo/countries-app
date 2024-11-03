@@ -1,12 +1,14 @@
-import countriesData from '../cards-data/cards-data';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PageNotFound from '@/pages/page-not-found/page-not-found';
 import Article from '@/layouts/article/article';
 import ArticleHeader from '@/layouts/article/aticle-header/article-header';
-import ArticleBody from '@/layouts/article/article-body/article-body';
 import ArticleBanner from '@/layouts/article/article-banner/article-banner';
 import ArticleDetails from '@/layouts/article/article-details/article-details';
 import ArticleFooter from '@/layouts/article/article-footer/article-footer';
+import { Country } from '../cards-data/country';
+
 const ExpandedCard: React.FC = () => {
   const kaContent = {
     capital: 'დედაქალაქი',
@@ -17,9 +19,14 @@ const ExpandedCard: React.FC = () => {
     population: 'Population',
   };
   const { id, lang } = useParams();
-  //const filteredCountriesData = lang === "en" ? countriesData.en : countriesData.ka
+  const [country, setCountry] = useState<Country | undefined>(undefined);
+  useEffect(() => {
+    axios.get(`http://localhost:3000/countries/${id}`).then((response) => {
+      setCountry(response.data);
+    });
+  }, [id, lang]);
   const content = lang === 'en' ? enContent : kaContent;
-  const country = countriesData.find((country) => country.id.toString() === id);
+
   const countryNotFound = !country;
 
   if (countryNotFound) {
@@ -35,9 +42,7 @@ const ExpandedCard: React.FC = () => {
           <ArticleDetails
             text={`${content.capital}: ${lang === 'en' ? country.capital.en : country.capital.ka}  • ${content.population}: ${country.population}`}
           />
-          <ArticleBody
-            text={`${lang === 'en' ? country.description.en : country.description.ka}`}
-          />
+
           <ArticleFooter />
         </Article>
       </>
