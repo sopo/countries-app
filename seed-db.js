@@ -12,8 +12,8 @@ async function seed() {
         en: country.capital ? country.capital[0] : 'No Capital',
         ka: country.capital ? country.capital[0] : 'No Capital',
       },
-
       population: country.population || 0,
+      rating: 0
     });
   }
 }

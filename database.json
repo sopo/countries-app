@@ -1,21 +1,7 @@
 {
   "countries": [
     {
-      "id": "d808",
-      "name": {
-        "ka": "ჯორჯია",
-        "en": "South Georgia"
-      },
-      "capital": {
-        "ka": "King Edward Point",
-        "en": "King Edward Point"
-      },
-      "population": 9898,
-      "imageUrl": "",
-      "rating": 0
-    },
-    {
-      "id": "e30a",
+      "id": "2f29",
       "name": {
         "en": "Grenada",
         "ka": "Grenada"
@@ -25,10 +11,10 @@
         "ka": "St. George's"
       },
       "population": 112519,
-      "rating": null
+      "rating": 0
     },
     {
-      "id": "4b56",
+      "id": "9310",
       "name": {
         "en": "Switzerland",
         "ka": "Switzerland"
@@ -37,10 +23,11 @@
         "en": "Bern",
         "ka": "Bern"
       },
-      "population": 8654622
+      "population": 8654622,
+      "rating": 0
     },
     {
-      "id": "b982",
+      "id": "5b9a",
       "name": {
         "en": "Sierra Leone",
         "ka": "Sierra Leone"
@@ -49,10 +36,11 @@
         "en": "Freetown",
         "ka": "Freetown"
       },
-      "population": 7976985
+      "population": 7976985,
+      "rating": 0
     },
     {
-      "id": "73db",
+      "id": "b76e",
       "name": {
         "en": "Hungary",
         "ka": "Hungary"
@@ -61,10 +49,11 @@
         "en": "Budapest",
         "ka": "Budapest"
       },
-      "population": 9749763
+      "population": 9749763,
+      "rating": 0
     },
     {
-      "id": "9378",
+      "id": "56ac",
       "name": {
         "en": "Taiwan",
         "ka": "Taiwan"
@@ -73,10 +62,11 @@
         "en": "Taipei",
         "ka": "Taipei"
       },
-      "population": 23503349
+      "population": 23503349,
+      "rating": 0
     },
     {
-      "id": "746e",
+      "id": "fbfa",
       "name": {
         "en": "Wallis and Futuna",
         "ka": "Wallis and Futuna"
@@ -85,10 +75,11 @@
         "en": "Mata-Utu",
         "ka": "Mata-Utu"
       },
-      "population": 11750
+      "population": 11750,
+      "rating": 0
     },
     {
-      "id": "db85",
+      "id": "a211",
       "name": {
         "en": "Barbados",
         "ka": "Barbados"
@@ -97,10 +88,11 @@
         "en": "Bridgetown",
         "ka": "Bridgetown"
       },
-      "population": 287371
+      "population": 287371,
+      "rating": 0
     },
     {
-      "id": "5653",
+      "id": "af1e",
       "name": {
         "en": "Pitcairn Islands",
         "ka": "Pitcairn Islands"
@@ -109,10 +101,11 @@
         "en": "Adamstown",
         "ka": "Adamstown"
       },
-      "population": 56
+      "population": 56,
+      "rating": 0
     },
     {
-      "id": "3787",
+      "id": "be3e",
       "name": {
         "en": "Ivory Coast",
         "ka": "Ivory Coast"
@@ -121,10 +114,11 @@
         "en": "Yamoussoukro",
         "ka": "Yamoussoukro"
       },
-      "population": 26378275
+      "population": 26378275,
+      "rating": 0
     },
     {
-      "id": "dec3",
+      "id": "dd86",
       "name": {
         "en": "Tunisia",
         "ka": "Tunisia"
@@ -133,10 +127,11 @@
         "en": "Tunis",
         "ka": "Tunis"
       },
-      "population": 11818618
+      "population": 11818618,
+      "rating": 0
     },
     {
-      "id": "4cf6",
+      "id": "9263",
       "name": {
         "en": "Italy",
         "ka": "Italy"
@@ -145,10 +140,11 @@
         "en": "Rome",
         "ka": "Rome"
       },
-      "population": 59554023
+      "population": 59554023,
+      "rating": 0
     },
     {
-      "id": "d25c",
+      "id": "9072",
       "name": {
         "en": "Benin",
         "ka": "Benin"
@@ -157,10 +153,11 @@
         "en": "Porto-Novo",
         "ka": "Porto-Novo"
       },
-      "population": 12123198
+      "population": 12123198,
+      "rating": 0
     },
     {
-      "id": "3433",
+      "id": "92e8",
       "name": {
         "en": "Indonesia",
         "ka": "Indonesia"
@@ -169,10 +166,11 @@
         "en": "Jakarta",
         "ka": "Jakarta"
       },
-      "population": 273523621
+      "population": 273523621,
+      "rating": 0
     },
     {
-      "id": "9f17",
+      "id": "d29a",
       "name": {
         "en": "Cape Verde",
         "ka": "Cape Verde"
@@ -181,10 +179,11 @@
         "en": "Praia",
         "ka": "Praia"
       },
-      "population": 555988
+      "population": 555988,
+      "rating": 0
     },
     {
-      "id": "38d1",
+      "id": "d8a4",
       "name": {
         "en": "Saint Kitts and Nevis",
         "ka": "Saint Kitts and Nevis"
@@ -193,10 +192,11 @@
         "en": "Basseterre",
         "ka": "Basseterre"
       },
-      "population": 53192
+      "population": 53192,
+      "rating": 0
     },
     {
-      "id": "82b3",
+      "id": "07d0",
       "name": {
         "en": "Laos",
         "ka": "Laos"
@@ -205,10 +205,11 @@
         "en": "Vientiane",
         "ka": "Vientiane"
       },
-      "population": 7275556
+      "population": 7275556,
+      "rating": 0
     },
     {
-      "id": "33e9",
+      "id": "dfd3",
       "name": {
         "en": "Caribbean Netherlands",
         "ka": "Caribbean Netherlands"
@@ -217,10 +218,11 @@
         "en": "Kralendijk",
         "ka": "Kralendijk"
       },
-      "population": 25987
+      "population": 25987,
+      "rating": 0
     },
     {
-      "id": "e9fe",
+      "id": "0f96",
       "name": {
         "en": "Uganda",
         "ka": "Uganda"
@@ -229,10 +231,11 @@
         "en": "Kampala",
         "ka": "Kampala"
       },
-      "population": 45741000
+      "population": 45741000,
+      "rating": 0
     },
     {
-      "id": "49b7",
+      "id": "d027",
       "name": {
         "en": "Andorra",
         "ka": "Andorra"
@@ -241,10 +244,11 @@
         "en": "Andorra la Vella",
         "ka": "Andorra la Vella"
       },
-      "population": 77265
+      "population": 77265,
+      "rating": 0
     },
     {
-      "id": "aaef",
+      "id": "15f5",
       "name": {
         "en": "Burundi",
         "ka": "Burundi"
@@ -253,10 +257,11 @@
         "en": "Gitega",
         "ka": "Gitega"
       },
-      "population": 11890781
+      "population": 11890781,
+      "rating": 0
     },
     {
-      "id": "454b",
+      "id": "598e",
       "name": {
         "en": "South Africa",
         "ka": "South Africa"
@@ -265,10 +270,11 @@
         "en": "Pretoria",
         "ka": "Pretoria"
       },
-      "population": 59308690
+      "population": 59308690,
+      "rating": 0
     },
     {
-      "id": "9a9c",
+      "id": "05b3",
       "name": {
         "en": "France",
         "ka": "France"
@@ -277,10 +283,11 @@
         "en": "Paris",
         "ka": "Paris"
       },
-      "population": 67391582
+      "population": 67391582,
+      "rating": 0
     },
     {
-      "id": "8143",
+      "id": "f51d",
       "name": {
         "en": "Libya",
         "ka": "Libya"
@@ -289,10 +296,11 @@
         "en": "Tripoli",
         "ka": "Tripoli"
       },
-      "population": 6871287
+      "population": 6871287,
+      "rating": 0
     },
     {
-      "id": "3b2d",
+      "id": "4ac9",
       "name": {
         "en": "Mexico",
         "ka": "Mexico"
@@ -301,10 +309,11 @@
         "en": "Mexico City",
         "ka": "Mexico City"
       },
-      "population": 128932753
+      "population": 128932753,
+      "rating": 0
     },
     {
-      "id": "0e4d",
+      "id": "30aa",
       "name": {
         "en": "Gabon",
         "ka": "Gabon"
@@ -313,10 +322,11 @@
         "en": "Libreville",
         "ka": "Libreville"
       },
-      "population": 2225728
+      "population": 2225728,
+      "rating": 0
     },
     {
-      "id": "92a6",
+      "id": "603f",
       "name": {
         "en": "Northern Mariana Islands",
         "ka": "Northern Mariana Islands"
@@ -325,10 +335,11 @@
         "en": "Saipan",
         "ka": "Saipan"
       },
-      "population": 57557
+      "population": 57557,
+      "rating": 0
     },
     {
-      "id": "fd47",
+      "id": "2669",
       "name": {
         "en": "North Macedonia",
         "ka": "North Macedonia"
@@ -337,10 +348,11 @@
         "en": "Skopje",
         "ka": "Skopje"
       },
-      "population": 2077132
+      "population": 2077132,
+      "rating": 0
     },
     {
-      "id": "b8ae",
+      "id": "4ec2",
       "name": {
         "en": "China",
         "ka": "China"
@@ -349,10 +361,11 @@
         "en": "Beijing",
         "ka": "Beijing"
       },
-      "population": 1402112000
+      "population": 1402112000,
+      "rating": 0
     },
     {
-      "id": "15d6",
+      "id": "74e9",
       "name": {
         "en": "Yemen",
         "ka": "Yemen"
@@ -361,10 +374,11 @@
         "en": "Sana'a",
         "ka": "Sana'a"
       },
-      "population": 29825968
+      "population": 29825968,
+      "rating": 0
     },
     {
-      "id": "e8fe",
+      "id": "26ff",
       "name": {
         "en": "Saint Barthélemy",
         "ka": "Saint Barthélemy"
@@ -373,10 +387,11 @@
         "en": "Gustavia",
         "ka": "Gustavia"
       },
-      "population": 4255
+      "population": 4255,
+      "rating": 0
     },
     {
-      "id": "5817",
+      "id": "01c8",
       "name": {
         "en": "Guernsey",
         "ka": "Guernsey"
@@ -385,10 +400,11 @@
         "en": "St. Peter Port",
         "ka": "St. Peter Port"
       },
-      "population": 62999
+      "population": 62999,
+      "rating": 0
     },
     {
-      "id": "b1dd",
+      "id": "53f7",
       "name": {
         "en": "Solomon Islands",
         "ka": "Solomon Islands"
@@ -397,10 +413,11 @@
         "en": "Honiara",
         "ka": "Honiara"
       },
-      "population": 686878
+      "population": 686878,
+      "rating": 0
     },
     {
-      "id": "947f",
+      "id": "4def",
       "name": {
         "en": "Svalbard and Jan Mayen",
         "ka": "Svalbard and Jan Mayen"
@@ -409,10 +426,11 @@
         "en": "Longyearbyen",
         "ka": "Longyearbyen"
       },
-      "population": 2562
+      "population": 2562,
+      "rating": 0
     },
     {
-      "id": "0e20",
+      "id": "b894",
       "name": {
         "en": "Faroe Islands",
         "ka": "Faroe Islands"
@@ -421,10 +439,11 @@
         "en": "Tórshavn",
         "ka": "Tórshavn"
       },
-      "population": 48865
+      "population": 48865,
+      "rating": 0
     },
     {
-      "id": "89ee",
+      "id": "6327",
       "name": {
         "en": "Uzbekistan",
         "ka": "Uzbekistan"
@@ -433,10 +452,11 @@
         "en": "Tashkent",
         "ka": "Tashkent"
       },
-      "population": 34232050
+      "population": 34232050,
+      "rating": 0
     },
     {
-      "id": "c9c2",
+      "id": "be06",
       "name": {
         "en": "Egypt",
         "ka": "Egypt"
@@ -445,10 +465,11 @@
         "en": "Cairo",
         "ka": "Cairo"
       },
-      "population": 102334403
+      "population": 102334403,
+      "rating": 0
     },
     {
-      "id": "4e74",
+      "id": "24f6",
       "name": {
         "en": "Senegal",
         "ka": "Senegal"
@@ -457,10 +478,11 @@
         "en": "Dakar",
         "ka": "Dakar"
       },
-      "population": 16743930
+      "population": 16743930,
+      "rating": 0
     },
     {
-      "id": "a88e",
+      "id": "6d25",
       "name": {
         "en": "Sri Lanka",
         "ka": "Sri Lanka"
@@ -469,10 +491,11 @@
         "en": "Sri Jayawardenepura Kotte",
         "ka": "Sri Jayawardenepura Kotte"
       },
-      "population": 21919000
+      "population": 21919000,
+      "rating": 0
     },
     {
-      "id": "72b8",
+      "id": "e669",
       "name": {
         "en": "Palestine",
         "ka": "Palestine"
@@ -481,10 +504,11 @@
         "en": "Ramallah",
         "ka": "Ramallah"
       },
-      "population": 4803269
+      "population": 4803269,
+      "rating": 0
     },
     {
-      "id": "d501",
+      "id": "c6a1",
       "name": {
         "en": "Bangladesh",
         "ka": "Bangladesh"
@@ -493,10 +517,11 @@
         "en": "Dhaka",
         "ka": "Dhaka"
       },
-      "population": 164689383
+      "population": 164689383,
+      "rating": 0
     },
     {
-      "id": "c256",
+      "id": "e9ba",
       "name": {
         "en": "Peru",
         "ka": "Peru"
@@ -505,10 +530,11 @@
         "en": "Lima",
         "ka": "Lima"
       },
-      "population": 32971846
+      "population": 32971846,
+      "rating": 0
     },
     {
-      "id": "f7d4",
+      "id": "641b",
       "name": {
         "en": "Singapore",
         "ka": "Singapore"
@@ -517,10 +543,11 @@
         "en": "Singapore",
         "ka": "Singapore"
       },
-      "population": 5685807
+      "population": 5685807,
+      "rating": 0
     },
     {
-      "id": "01bd",
+      "id": "c085",
       "name": {
         "en": "Turkey",
         "ka": "Turkey"
@@ -529,10 +556,11 @@
         "en": "Ankara",
         "ka": "Ankara"
       },
-      "population": 84339067
+      "population": 84339067,
+      "rating": 0
     },
     {
-      "id": "b1fe",
+      "id": "e7c1",
       "name": {
         "en": "Afghanistan",
         "ka": "Afghanistan"
@@ -541,10 +569,11 @@
         "en": "Kabul",
         "ka": "Kabul"
       },
-      "population": 40218234
+      "population": 40218234,
+      "rating": 0
     },
     {
-      "id": "e9c9",
+      "id": "1ffb",
       "name": {
         "en": "Aruba",
         "ka": "Aruba"
@@ -553,10 +582,11 @@
         "en": "Oranjestad",
         "ka": "Oranjestad"
       },
-      "population": 106766
+      "population": 106766,
+      "rating": 0
     },
     {
-      "id": "9b5d",
+      "id": "398b",
       "name": {
         "en": "Cook Islands",
         "ka": "Cook Islands"
@@ -565,10 +595,11 @@
         "en": "Avarua",
         "ka": "Avarua"
       },
-      "population": 18100
+      "population": 18100,
+      "rating": 0
     },
     {
-      "id": "3c7c",
+      "id": "6636",
       "name": {
         "en": "United Kingdom",
         "ka": "United Kingdom"
@@ -577,10 +608,11 @@
         "en": "London",
         "ka": "London"
       },
-      "population": 67215293
+      "population": 67215293,
+      "rating": 0
     },
     {
-      "id": "65b3",
+      "id": "93dc",
       "name": {
         "en": "Zambia",
         "ka": "Zambia"
@@ -589,10 +621,11 @@
         "en": "Lusaka",
         "ka": "Lusaka"
       },
-      "population": 18383956
+      "population": 18383956,
+      "rating": 0
     },
     {
-      "id": "df1a",
+      "id": "b1b1",
       "name": {
         "en": "Finland",
         "ka": "Finland"
@@ -601,10 +634,11 @@
         "en": "Helsinki",
         "ka": "Helsinki"
       },
-      "population": 5530719
+      "population": 5530719,
+      "rating": 0
     },
     {
-      "id": "a0b9",
+      "id": "29a1",
       "name": {
         "en": "Niger",
         "ka": "Niger"
@@ -613,10 +647,11 @@
         "en": "Niamey",
         "ka": "Niamey"
       },
-      "population": 24206636
+      "population": 24206636,
+      "rating": 0
     },
     {
-      "id": "aa0c",
+      "id": "1004",
       "name": {
         "en": "Christmas Island",
         "ka": "Christmas Island"
@@ -625,10 +660,11 @@
         "en": "Flying Fish Cove",
         "ka": "Flying Fish Cove"
       },
-      "population": 2072
+      "population": 2072,
+      "rating": 0
     },
     {
-      "id": "f0ec",
+      "id": "2f99",
       "name": {
         "en": "Tokelau",
         "ka": "Tokelau"
@@ -637,10 +673,11 @@
         "en": "Fakaofo",
         "ka": "Fakaofo"
       },
-      "population": 1411
+      "population": 1411,
+      "rating": 0
     },
     {
-      "id": "6192",
+      "id": "2f44",
       "name": {
         "en": "Guinea-Bissau",
         "ka": "Guinea-Bissau"
@@ -649,10 +686,11 @@
         "en": "Bissau",
         "ka": "Bissau"
       },
-      "population": 1967998
+      "population": 1967998,
+      "rating": 0
     },
     {
-      "id": "5419",
+      "id": "63b5",
       "name": {
         "en": "Azerbaijan",
         "ka": "Azerbaijan"
@@ -661,10 +699,11 @@
         "en": "Baku",
         "ka": "Baku"
       },
-      "population": 10110116
+      "population": 10110116,
+      "rating": 0
     },
     {
-      "id": "12e4",
+      "id": "cec7",
       "name": {
         "en": "Réunion",
         "ka": "Réunion"
@@ -673,10 +712,11 @@
         "en": "Saint-Denis",
         "ka": "Saint-Denis"
       },
-      "population": 840974
+      "population": 840974,
+      "rating": 0
     },
     {
-      "id": "79d8",
+      "id": "372b",
       "name": {
         "en": "Djibouti",
         "ka": "Djibouti"
@@ -685,10 +725,11 @@
         "en": "Djibouti",
         "ka": "Djibouti"
       },
-      "population": 988002
+      "population": 988002,
+      "rating": 0
     },
     {
-      "id": "0d65",
+      "id": "ddc1",
       "name": {
         "en": "North Korea",
         "ka": "North Korea"
@@ -697,10 +738,11 @@
         "en": "Pyongyang",
         "ka": "Pyongyang"
       },
-      "population": 25778815
+      "population": 25778815,
+      "rating": 0
     },
     {
-      "id": "3f47",
+      "id": "2ee5",
       "name": {
         "en": "Mauritius",
         "ka": "Mauritius"
@@ -709,10 +751,11 @@
         "en": "Port Louis",
         "ka": "Port Louis"
       },
-      "population": 1265740
+      "population": 1265740,
+      "rating": 0
     },
     {
-      "id": "54fd",
+      "id": "a6f8",
       "name": {
         "en": "Montserrat",
         "ka": "Montserrat"
@@ -721,10 +764,11 @@
         "en": "Plymouth",
         "ka": "Plymouth"
       },
-      "population": 4922
+      "population": 4922,
+      "rating": 0
     },
     {
-      "id": "6f8f",
+      "id": "01bd",
       "name": {
         "en": "United States Virgin Islands",
         "ka": "United States Virgin Islands"
@@ -733,10 +777,11 @@
         "en": "Charlotte Amalie",
         "ka": "Charlotte Amalie"
       },
-      "population": 106290
+      "population": 106290,
+      "rating": 0
     },
     {
-      "id": "647c",
+      "id": "e39b",
       "name": {
         "en": "Colombia",
         "ka": "Colombia"
@@ -745,10 +790,11 @@
         "en": "Bogotá",
         "ka": "Bogotá"
       },
-      "population": 50882884
+      "population": 50882884,
+      "rating": 0
     },
     {
-      "id": "9754",
+      "id": "404a",
       "name": {
         "en": "Greece",
         "ka": "Greece"
@@ -757,10 +803,11 @@
         "en": "Athens",
         "ka": "Athens"
       },
-      "population": 10715549
+      "population": 10715549,
+      "rating": 0
     },
     {
-      "id": "a510",
+      "id": "8abb",
       "name": {
         "en": "Croatia",
         "ka": "Croatia"
@@ -769,10 +816,11 @@
         "en": "Zagreb",
         "ka": "Zagreb"
       },
-      "population": 4047200
+      "population": 4047200,
+      "rating": 0
     },
     {
-      "id": "c5be",
+      "id": "c2f7",
       "name": {
         "en": "Morocco",
         "ka": "Morocco"
@@ -781,10 +829,11 @@
         "en": "Rabat",
         "ka": "Rabat"
       },
-      "population": 36910558
+      "population": 36910558,
+      "rating": 0
     },
     {
-      "id": "5213",
+      "id": "91d6",
       "name": {
         "en": "Algeria",
         "ka": "Algeria"
@@ -793,10 +842,11 @@
         "en": "Algiers",
         "ka": "Algiers"
       },
-      "population": 44700000
+      "population": 44700000,
+      "rating": 0
     },
     {
-      "id": "4b76",
+      "id": "e929",
       "name": {
         "en": "Antarctica",
         "ka": "Antarctica"
@@ -805,10 +855,11 @@
         "en": "No Capital",
         "ka": "No Capital"
       },
-      "population": 1000
+      "population": 1000,
+      "rating": 0
     },
     {
-      "id": "5060",
+      "id": "282d",
       "name": {
         "en": "Netherlands",
         "ka": "Netherlands"
@@ -817,10 +868,11 @@
         "en": "Amsterdam",
         "ka": "Amsterdam"
       },
-      "population": 16655799
+      "population": 16655799,
+      "rating": 0
     },
     {
-      "id": "19cc",
+      "id": "c756",
       "name": {
         "en": "Sudan",
         "ka": "Sudan"
@@ -829,10 +881,11 @@
         "en": "Khartoum",
         "ka": "Khartoum"
       },
-      "population": 43849269
+      "population": 43849269,
+      "rating": 0
     },
     {
-      "id": "fd26",
+      "id": "d235",
       "name": {
         "en": "Fiji",
         "ka": "Fiji"
@@ -841,10 +894,11 @@
         "en": "Suva",
         "ka": "Suva"
       },
-      "population": 896444
+      "population": 896444,
+      "rating": 0
     },
     {
-      "id": "38b6",
+      "id": "43f4",
       "name": {
         "en": "Liechtenstein",
         "ka": "Liechtenstein"
@@ -853,10 +907,11 @@
         "en": "Vaduz",
         "ka": "Vaduz"
       },
-      "population": 38137
+      "population": 38137,
+      "rating": 0
     },
     {
-      "id": "5f17",
+      "id": "bdf1",
       "name": {
         "en": "Nepal",
         "ka": "Nepal"
@@ -865,10 +920,11 @@
         "en": "Kathmandu",
         "ka": "Kathmandu"
       },
-      "population": 29136808
+      "population": 29136808,
+      "rating": 0
     },
     {
-      "id": "769a",
+      "id": "99a3",
       "name": {
         "en": "Puerto Rico",
         "ka": "Puerto Rico"
@@ -877,10 +933,11 @@
         "en": "San Juan",
         "ka": "San Juan"
       },
-      "population": 3194034
+      "population": 3194034,
+      "rating": 0
     },
     {
-      "id": "0503",
+      "id": "7988",
       "name": {
         "en": "Georgia",
         "ka": "Georgia"
@@ -889,10 +946,11 @@
         "en": "Tbilisi",
         "ka": "Tbilisi"
       },
-      "population": 3714000
+      "population": 3714000,
+      "rating": 0
     },
     {
-      "id": "f14a",
+      "id": "3905",
       "name": {
         "en": "Pakistan",
         "ka": "Pakistan"
@@ -901,10 +959,11 @@
         "en": "Islamabad",
         "ka": "Islamabad"
       },
-      "population": 220892331
+      "population": 220892331,
+      "rating": 0
     },
     {
-      "id": "42be",
+      "id": "db14",
       "name": {
         "en": "Monaco",
         "ka": "Monaco"
@@ -913,10 +972,11 @@
         "en": "Monaco",
         "ka": "Monaco"
       },
-      "population": 39244
+      "population": 39244,
+      "rating": 0
     },
     {
-      "id": "df87",
+      "id": "5eb1",
       "name": {
         "en": "Botswana",
         "ka": "Botswana"
@@ -925,10 +985,11 @@
         "en": "Gaborone",
         "ka": "Gaborone"
       },
-      "population": 2351625
+      "population": 2351625,
+      "rating": 0
     },
     {
-      "id": "b067",
+      "id": "18aa",
       "name": {
         "en": "Lebanon",
         "ka": "Lebanon"
@@ -937,10 +998,11 @@
         "en": "Beirut",
         "ka": "Beirut"
       },
-      "population": 6825442
+      "population": 6825442,
+      "rating": 0
     },
     {
-      "id": "f7f5",
+      "id": "72b1",
       "name": {
         "en": "Papua New Guinea",
         "ka": "Papua New Guinea"
@@ -949,10 +1011,11 @@
         "en": "Port Moresby",
         "ka": "Port Moresby"
       },
-      "population": 8947027
+      "population": 8947027,
+      "rating": 0
     },
     {
-      "id": "d355",
+      "id": "2ccc",
       "name": {
         "en": "Mayotte",
         "ka": "Mayotte"
@@ -961,10 +1024,11 @@
         "en": "Mamoudzou",
         "ka": "Mamoudzou"
       },
-      "population": 226915
+      "population": 226915,
+      "rating": 0
     },
     {
-      "id": "d81a",
+      "id": "8089",
       "name": {
         "en": "Dominican Republic",
         "ka": "Dominican Republic"
@@ -973,10 +1037,11 @@
         "en": "Santo Domingo",
         "ka": "Santo Domingo"
       },
-      "population": 10847904
+      "population": 10847904,
+      "rating": 0
     },
     {
-      "id": "f849",
+      "id": "61f1",
       "name": {
         "en": "Norfolk Island",
         "ka": "Norfolk Island"
@@ -985,10 +1050,11 @@
         "en": "Kingston",
         "ka": "Kingston"
       },
-      "population": 2302
+      "population": 2302,
+      "rating": 0
     },
     {
-      "id": "abf4",
+      "id": "46df",
       "name": {
         "en": "Bouvet Island",
         "ka": "Bouvet Island"
@@ -997,10 +1063,11 @@
         "en": "No Capital",
         "ka": "No Capital"
       },
-      "population": 0
+      "population": 0,
+      "rating": 0
     },
     {
-      "id": "e96e",
+      "id": "ea56",
       "name": {
         "en": "Qatar",
         "ka": "Qatar"
@@ -1009,10 +1076,11 @@
         "en": "Doha",
         "ka": "Doha"
       },
-      "population": 2881060
+      "population": 2881060,
+      "rating": 0
     },
     {
-      "id": "0e83",
+      "id": "da22",
       "name": {
         "en": "Madagascar",
         "ka": "Madagascar"
@@ -1021,10 +1089,11 @@
         "en": "Antananarivo",
         "ka": "Antananarivo"
       },
-      "population": 27691019
+      "population": 27691019,
+      "rating": 0
     },
     {
-      "id": "d7c8",
+      "id": "cf97",
       "name": {
         "en": "India",
         "ka": "India"
@@ -1033,10 +1102,11 @@
         "en": "New Delhi",
         "ka": "New Delhi"
       },
-      "population": 1380004385
+      "population": 1380004385,
+      "rating": 0
     },
     {
-      "id": "d569",
+      "id": "343c",
       "name": {
         "en": "Syria",
         "ka": "Syria"
@@ -1045,10 +1115,11 @@
         "en": "Damascus",
         "ka": "Damascus"
       },
-      "population": 17500657
+      "population": 17500657,
+      "rating": 0
     },
     {
-      "id": "4794",
+      "id": "23c3",
       "name": {
         "en": "Montenegro",
         "ka": "Montenegro"
@@ -1057,10 +1128,11 @@
         "en": "Podgorica",
         "ka": "Podgorica"
       },
-      "population": 621718
+      "population": 621718,
+      "rating": 0
     },
     {
-      "id": "9413",
+      "id": "7733",
       "name": {
         "en": "Eswatini",
         "ka": "Eswatini"
@@ -1069,10 +1141,11 @@
         "en": "Mbabane",
         "ka": "Mbabane"
       },
-      "population": 1160164
+      "population": 1160164,
+      "rating": 0
     },
     {
-      "id": "6ec2",
+      "id": "a559",
       "name": {
         "en": "Paraguay",
         "ka": "Paraguay"
@@ -1081,10 +1154,11 @@
         "en": "Asunción",
         "ka": "Asunción"
       },
-      "population": 7132530
+      "population": 7132530,
+      "rating": 0
     },
     {
-      "id": "568d",
+      "id": "c1c9",
       "name": {
         "en": "El Salvador",
         "ka": "El Salvador"
@@ -1093,10 +1167,11 @@
         "en": "San Salvador",
         "ka": "San Salvador"
       },
-      "population": 6486201
+      "population": 6486201,
+      "rating": 0
     },
     {
-      "id": "bffc",
+      "id": "31ad",
       "name": {
         "en": "Ukraine",
         "ka": "Ukraine"
@@ -1105,10 +1180,11 @@
         "en": "Kyiv",
         "ka": "Kyiv"
       },
-      "population": 44134693
+      "population": 44134693,
+      "rating": 0
     },
     {
-      "id": "50c7",
+      "id": "cfed",
       "name": {
         "en": "Isle of Man",
         "ka": "Isle of Man"
@@ -1117,10 +1193,11 @@
         "en": "Douglas",
         "ka": "Douglas"
       },
-      "population": 85032
+      "population": 85032,
+      "rating": 0
     },
     {
-      "id": "eb81",
+      "id": "57e8",
       "name": {
         "en": "Namibia",
         "ka": "Namibia"
@@ -1129,10 +1206,11 @@
         "en": "Windhoek",
         "ka": "Windhoek"
       },
-      "population": 2540916
+      "population": 2540916,
+      "rating": 0
     },
     {
-      "id": "ba81",
+      "id": "1ee6",
       "name": {
         "en": "United Arab Emirates",
         "ka": "United Arab Emirates"
@@ -1141,10 +1219,11 @@
         "en": "Abu Dhabi",
         "ka": "Abu Dhabi"
       },
-      "population": 9890400
+      "population": 9890400,
+      "rating": 0
     },
     {
-      "id": "f6c7",
+      "id": "c3b3",
       "name": {
         "en": "Bulgaria",
         "ka": "Bulgaria"
@@ -1153,10 +1232,11 @@
         "en": "Sofia",
         "ka": "Sofia"
       },
-      "population": 6927288
+      "population": 6927288,
+      "rating": 0
     },
     {
-      "id": "8e68",
+      "id": "7a9f",
       "name": {
         "en": "Greenland",
         "ka": "Greenland"
@@ -1165,10 +1245,11 @@
         "en": "Nuuk",
         "ka": "Nuuk"
       },
-      "population": 56367
+      "population": 56367,
+      "rating": 0
     },
     {
-      "id": "b8cd",
+      "id": "7965",
       "name": {
         "en": "Germany",
         "ka": "Germany"
@@ -1177,10 +1258,11 @@
         "en": "Berlin",
         "ka": "Berlin"
       },
-      "population": 83240525
+      "population": 83240525,
+      "rating": 0
     },
     {
-      "id": "b7b6",
+      "id": "cd10",
       "name": {
         "en": "Cambodia",
         "ka": "Cambodia"
@@ -1189,10 +1271,11 @@
         "en": "Phnom Penh",
         "ka": "Phnom Penh"
       },
-      "population": 16718971
+      "population": 16718971,
+      "rating": 0
     },
     {
-      "id": "6f52",
+      "id": "d982",
       "name": {
         "en": "Iraq",
         "ka": "Iraq"
@@ -1201,10 +1284,11 @@
         "en": "Baghdad",
         "ka": "Baghdad"
       },
-      "population": 40222503
+      "population": 40222503,
+      "rating": 0
     },
     {
-      "id": "24b2",
+      "id": "7068",
       "name": {
         "en": "French Southern and Antarctic Lands",
         "ka": "French Southern and Antarctic Lands"
@@ -1213,10 +1297,11 @@
         "en": "Port-aux-Français",
         "ka": "Port-aux-Français"
       },
-      "population": 400
+      "population": 400,
+      "rating": 0
     },
     {
-      "id": "8131",
+      "id": "43e6",
       "name": {
         "en": "Sweden",
         "ka": "Sweden"
@@ -1225,10 +1310,11 @@
         "en": "Stockholm",
         "ka": "Stockholm"
       },
-      "population": 10353442
+      "population": 10353442,
+      "rating": 0
     },
     {
-      "id": "16ce",
+      "id": "84bd",
       "name": {
         "en": "Cuba",
         "ka": "Cuba"
@@ -1237,10 +1323,11 @@
         "en": "Havana",
         "ka": "Havana"
       },
-      "population": 11326616
+      "population": 11326616,
+      "rating": 0
     },
     {
-      "id": "e896",
+      "id": "0aa8",
       "name": {
         "en": "Kyrgyzstan",
         "ka": "Kyrgyzstan"
@@ -1249,10 +1336,11 @@
         "en": "Bishkek",
         "ka": "Bishkek"
       },
-      "population": 6591600
+      "population": 6591600,
+      "rating": 0
     },
     {
-      "id": "1987",
+      "id": "bfc1",
       "name": {
         "en": "Russia",
         "ka": "Russia"
@@ -1261,10 +1349,11 @@
         "en": "Moscow",
         "ka": "Moscow"
       },
-      "population": 144104080
+      "population": 144104080,
+      "rating": 0
     },
     {
-      "id": "b1e9",
+      "id": "6858",
       "name": {
         "en": "Malaysia",
         "ka": "Malaysia"
@@ -1273,10 +1362,11 @@
         "en": "Kuala Lumpur",
         "ka": "Kuala Lumpur"
       },
-      "population": 32365998
+      "population": 32365998,
+      "rating": 0
     },
     {
-      "id": "41ad",
+      "id": "0802",
       "name": {
         "en": "São Tomé and Príncipe",
         "ka": "São Tomé and Príncipe"
@@ -1285,10 +1375,11 @@
         "en": "São Tomé",
         "ka": "São Tomé"
       },
-      "population": 219161
+      "population": 219161,
+      "rating": 0
     },
     {
-      "id": "d7e3",
+      "id": "995a",
       "name": {
         "en": "Cyprus",
         "ka": "Cyprus"
@@ -1297,10 +1388,11 @@
         "en": "Nicosia",
         "ka": "Nicosia"
       },
-      "population": 1207361
+      "population": 1207361,
+      "rating": 0
     },
     {
-      "id": "ece8",
+      "id": "5829",
       "name": {
         "en": "Canada",
         "ka": "Canada"
@@ -1309,10 +1401,11 @@
         "en": "Ottawa",
         "ka": "Ottawa"
       },
-      "population": 38005238
+      "population": 38005238,
+      "rating": 0
     },
     {
-      "id": "8421",
+      "id": "e3bb",
       "name": {
         "en": "Malawi",
         "ka": "Malawi"
@@ -1321,10 +1414,11 @@
         "en": "Lilongwe",
         "ka": "Lilongwe"
       },
-      "population": 19129955
+      "population": 19129955,
+      "rating": 0
     },
     {
-      "id": "e013",
+      "id": "4dd2",
       "name": {
         "en": "Saudi Arabia",
         "ka": "Saudi Arabia"
@@ -1333,10 +1427,11 @@
         "en": "Riyadh",
         "ka": "Riyadh"
       },
-      "population": 34813867
+      "population": 34813867,
+      "rating": 0
     },
     {
-      "id": "037e",
+      "id": "d479",
       "name": {
         "en": "Bosnia and Herzegovina",
         "ka": "Bosnia and Herzegovina"
@@ -1345,10 +1440,11 @@
         "en": "Sarajevo",
         "ka": "Sarajevo"
       },
-      "population": 3280815
+      "population": 3280815,
+      "rating": 0
     },
     {
-      "id": "45d0",
+      "id": "a5c2",
       "name": {
         "en": "Ethiopia",
         "ka": "Ethiopia"
@@ -1357,10 +1453,11 @@
         "en": "Addis Ababa",
         "ka": "Addis Ababa"
       },
-      "population": 114963583
+      "population": 114963583,
+      "rating": 0
     },
     {
-      "id": "50eb",
+      "id": "12b5",
       "name": {
         "en": "Spain",
         "ka": "Spain"
@@ -1369,10 +1466,11 @@
         "en": "Madrid",
         "ka": "Madrid"
       },
-      "population": 47351567
+      "population": 47351567,
+      "rating": 0
     },
     {
-      "id": "31bd",
+      "id": "3d8d",
       "name": {
         "en": "Slovenia",
         "ka": "Slovenia"
@@ -1381,10 +1479,11 @@
         "en": "Ljubljana",
         "ka": "Ljubljana"
       },
-      "population": 2100126
+      "population": 2100126,
+      "rating": 0
     },
     {
-      "id": "a8a3",
+      "id": "ccb1",
       "name": {
         "en": "Oman",
         "ka": "Oman"
@@ -1393,10 +1492,11 @@
         "en": "Muscat",
         "ka": "Muscat"
       },
-      "population": 5106622
+      "population": 5106622,
+      "rating": 0
     },
     {
-      "id": "6fa8",
+      "id": "c16c",
       "name": {
         "en": "Saint Pierre and Miquelon",
         "ka": "Saint Pierre and Miquelon"
@@ -1405,10 +1505,11 @@
         "en": "Saint-Pierre",
         "ka": "Saint-Pierre"
       },
-      "population": 6069
+      "population": 6069,
+      "rating": 0
     },
     {
-      "id": "1b37",
+      "id": "eff8",
       "name": {
         "en": "Macau",
         "ka": "Macau"
@@ -1417,10 +1518,11 @@
         "en": "No Capital",
         "ka": "No Capital"
       },
-      "population": 649342
+      "population": 649342,
+      "rating": 0
     },
     {
-      "id": "2900",
+      "id": "84ef",
       "name": {
         "en": "San Marino",
         "ka": "San Marino"
@@ -1429,10 +1531,11 @@
         "en": "City of San Marino",
         "ka": "City of San Marino"
       },
-      "population": 33938
+      "population": 33938,
+      "rating": 0
     },
     {
-      "id": "de91",
+      "id": "0142",
       "name": {
         "en": "Lesotho",
         "ka": "Lesotho"
@@ -1441,10 +1544,11 @@
         "en": "Maseru",
         "ka": "Maseru"
       },
-      "population": 2142252
+      "population": 2142252,
+      "rating": 0
     },
     {
-      "id": "79c5",
+      "id": "87ab",
       "name": {
         "en": "Marshall Islands",
         "ka": "Marshall Islands"
@@ -1453,10 +1557,11 @@
         "en": "Majuro",
         "ka": "Majuro"
       },
-      "population": 59194
+      "population": 59194,
+      "rating": 0
     },
     {
-      "id": "f9f5",
+      "id": "1d49",
       "name": {
         "en": "Sint Maarten",
         "ka": "Sint Maarten"
@@ -1465,10 +1570,11 @@
         "en": "Philipsburg",
         "ka": "Philipsburg"
       },
-      "population": 40812
+      "population": 40812,
+      "rating": 0
     },
     {
-      "id": "d4bb",
+      "id": "0fdc",
       "name": {
         "en": "Iceland",
         "ka": "Iceland"
@@ -1477,10 +1583,11 @@
         "en": "Reykjavik",
         "ka": "Reykjavik"
       },
-      "population": 366425
+      "population": 366425,
+      "rating": 0
     },
     {
-      "id": "5030",
+      "id": "2c7f",
       "name": {
         "en": "Luxembourg",
         "ka": "Luxembourg"
@@ -1489,10 +1596,11 @@
         "en": "Luxembourg",
         "ka": "Luxembourg"
       },
-      "population": 632275
+      "population": 632275,
+      "rating": 0
     },
     {
-      "id": "f683",
+      "id": "52a7",
       "name": {
         "en": "Argentina",
         "ka": "Argentina"
@@ -1501,10 +1609,11 @@
         "en": "Buenos Aires",
         "ka": "Buenos Aires"
       },
-      "population": 45376763
+      "population": 45376763,
+      "rating": 0
     },
     {
-      "id": "f7d8",
+      "id": "b6e7",
       "name": {
         "en": "Turks and Caicos Islands",
         "ka": "Turks and Caicos Islands"
@@ -1513,10 +1622,11 @@
         "en": "Cockburn Town",
         "ka": "Cockburn Town"
       },
-      "population": 38718
+      "population": 38718,
+      "rating": 0
     },
     {
-      "id": "507b",
+      "id": "5800",
       "name": {
         "en": "Nauru",
         "ka": "Nauru"
@@ -1525,10 +1635,11 @@
         "en": "Yaren",
         "ka": "Yaren"
       },
-      "population": 10834
+      "population": 10834,
+      "rating": 0
     },
     {
-      "id": "1435",
+      "id": "2edb",
       "name": {
         "en": "Cocos (Keeling) Islands",
         "ka": "Cocos (Keeling) Islands"
@@ -1537,10 +1648,11 @@
         "en": "West Island",
         "ka": "West Island"
       },
-      "population": 544
+      "population": 544,
+      "rating": 0
     },
     {
-      "id": "67f7",
+      "id": "7f55",
       "name": {
         "en": "Western Sahara",
         "ka": "Western Sahara"
@@ -1549,10 +1661,11 @@
         "en": "El Aaiún",
         "ka": "El Aaiún"
       },
-      "population": 510713
+      "population": 510713,
+      "rating": 0
     },
     {
-      "id": "4af4",
+      "id": "a0d1",
       "name": {
         "en": "Dominica",
         "ka": "Dominica"
@@ -1561,10 +1674,11 @@
         "en": "Roseau",
         "ka": "Roseau"
       },
-      "population": 71991
+      "population": 71991,
+      "rating": 0
     },
     {
-      "id": "9da0",
+      "id": "95d6",
       "name": {
         "en": "Costa Rica",
         "ka": "Costa Rica"
@@ -1573,10 +1687,11 @@
         "en": "San José",
         "ka": "San José"
       },
-      "population": 5094114
+      "population": 5094114,
+      "rating": 0
     },
     {
-      "id": "9b5f",
+      "id": "55b7",
       "name": {
         "en": "Australia",
         "ka": "Australia"
@@ -1585,10 +1700,11 @@
         "en": "Canberra",
         "ka": "Canberra"
       },
-      "population": 25687041
+      "population": 25687041,
+      "rating": 0
     },
     {
-      "id": "09de",
+      "id": "0e32",
       "name": {
         "en": "Thailand",
         "ka": "Thailand"
@@ -1597,10 +1713,11 @@
         "en": "Bangkok",
         "ka": "Bangkok"
       },
-      "population": 69799978
+      "population": 69799978,
+      "rating": 0
     },
     {
-      "id": "1211",
+      "id": "0b27",
       "name": {
         "en": "Haiti",
         "ka": "Haiti"
@@ -1609,10 +1726,11 @@
         "en": "Port-au-Prince",
         "ka": "Port-au-Prince"
       },
-      "population": 11402533
+      "population": 11402533,
+      "rating": 0
     },
     {
-      "id": "3012",
+      "id": "f2a1",
       "name": {
         "en": "Tuvalu",
         "ka": "Tuvalu"
@@ -1621,10 +1739,11 @@
         "en": "Funafuti",
         "ka": "Funafuti"
       },
-      "population": 11792
+      "population": 11792,
+      "rating": 0
     },
     {
-      "id": "e8fa",
+      "id": "aec6",
       "name": {
         "en": "Honduras",
         "ka": "Honduras"
@@ -1633,10 +1752,11 @@
         "en": "Tegucigalpa",
         "ka": "Tegucigalpa"
       },
-      "population": 9904608
+      "population": 9904608,
+      "rating": 0
     },
     {
-      "id": "212c",
+      "id": "50a5",
       "name": {
         "en": "Equatorial Guinea",
         "ka": "Equatorial Guinea"
@@ -1645,10 +1765,11 @@
         "en": "Malabo",
         "ka": "Malabo"
       },
-      "population": 1402985
+      "population": 1402985,
+      "rating": 0
     },
     {
-      "id": "908e",
+      "id": "0b95",
       "name": {
         "en": "Saint Lucia",
         "ka": "Saint Lucia"
@@ -1657,10 +1778,11 @@
         "en": "Castries",
         "ka": "Castries"
       },
-      "population": 183629
+      "population": 183629,
+      "rating": 0
     },
     {
-      "id": "6a68",
+      "id": "1edf",
       "name": {
         "en": "French Polynesia",
         "ka": "French Polynesia"
@@ -1669,10 +1791,11 @@
         "en": "Papeetē",
         "ka": "Papeetē"
       },
-      "population": 280904
+      "population": 280904,
+      "rating": 0
     },
     {
-      "id": "481c",
+      "id": "47ff",
       "name": {
         "en": "Belarus",
         "ka": "Belarus"
@@ -1681,10 +1804,11 @@
         "en": "Minsk",
         "ka": "Minsk"
       },
-      "population": 9398861
+      "population": 9398861,
+      "rating": 0
     },
     {
-      "id": "7ca1",
+      "id": "02d3",
       "name": {
         "en": "Latvia",
         "ka": "Latvia"
@@ -1693,10 +1817,11 @@
         "en": "Riga",
         "ka": "Riga"
       },
-      "population": 1901548
+      "population": 1901548,
+      "rating": 0
     },
     {
-      "id": "1b0d",
+      "id": "2b4c",
       "name": {
         "en": "Palau",
         "ka": "Palau"
@@ -1705,10 +1830,11 @@
         "en": "Ngerulmud",
         "ka": "Ngerulmud"
       },
-      "population": 18092
+      "population": 18092,
+      "rating": 0
     },
     {
-      "id": "16a2",
+      "id": "8da4",
       "name": {
         "en": "Guadeloupe",
         "ka": "Guadeloupe"
@@ -1717,10 +1843,11 @@
         "en": "Basse-Terre",
         "ka": "Basse-Terre"
       },
-      "population": 400132
+      "population": 400132,
+      "rating": 0
     },
     {
-      "id": "1c33",
+      "id": "d956",
       "name": {
         "en": "Philippines",
         "ka": "Philippines"
@@ -1729,10 +1856,11 @@
         "en": "Manila",
         "ka": "Manila"
       },
-      "population": 109581085
+      "population": 109581085,
+      "rating": 0
     },
     {
-      "id": "48fb",
+      "id": "5cb5",
       "name": {
         "en": "Gibraltar",
         "ka": "Gibraltar"
@@ -1741,10 +1869,11 @@
         "en": "Gibraltar",
         "ka": "Gibraltar"
       },
-      "population": 33691
+      "population": 33691,
+      "rating": 0
     },
     {
-      "id": "4d22",
+      "id": "aec2",
       "name": {
         "en": "Denmark",
         "ka": "Denmark"
@@ -1753,10 +1882,11 @@
         "en": "Copenhagen",
         "ka": "Copenhagen"
       },
-      "population": 5831404
+      "population": 5831404,
+      "rating": 0
     },
     {
-      "id": "ae91",
+      "id": "98f7",
       "name": {
         "en": "Cameroon",
         "ka": "Cameroon"
@@ -1765,10 +1895,11 @@
         "en": "Yaoundé",
         "ka": "Yaoundé"
       },
-      "population": 26545864
+      "population": 26545864,
+      "rating": 0
     },
     {
-      "id": "2ecf",
+      "id": "536f",
       "name": {
         "en": "Guinea",
         "ka": "Guinea"
@@ -1777,10 +1908,11 @@
         "en": "Conakry",
         "ka": "Conakry"
       },
-      "population": 13132792
+      "population": 13132792,
+      "rating": 0
     },
     {
-      "id": "96b4",
+      "id": "4962",
       "name": {
         "en": "Bahrain",
         "ka": "Bahrain"
@@ -1789,10 +1921,11 @@
         "en": "Manama",
         "ka": "Manama"
       },
-      "population": 1701583
+      "population": 1701583,
+      "rating": 0
     },
     {
-      "id": "2a11",
+      "id": "14f5",
       "name": {
         "en": "Suriname",
         "ka": "Suriname"
@@ -1801,10 +1934,11 @@
         "en": "Paramaribo",
         "ka": "Paramaribo"
       },
-      "population": 586634
+      "population": 586634,
+      "rating": 0
     },
     {
-      "id": "45ed",
+      "id": "5ee4",
       "name": {
         "en": "DR Congo",
         "ka": "DR Congo"
@@ -1813,10 +1947,11 @@
         "en": "Kinshasa",
         "ka": "Kinshasa"
       },
-      "population": 108407721
+      "population": 108407721,
+      "rating": 0
     },
     {
-      "id": "2a4e",
+      "id": "f8f7",
       "name": {
         "en": "Somalia",
         "ka": "Somalia"
@@ -1825,10 +1960,11 @@
         "en": "Mogadishu",
         "ka": "Mogadishu"
       },
-      "population": 15893219
+      "population": 15893219,
+      "rating": 0
     },
     {
-      "id": "3af2",
+      "id": "3d6e",
       "name": {
         "en": "Czechia",
         "ka": "Czechia"
@@ -1837,10 +1973,11 @@
         "en": "Prague",
         "ka": "Prague"
       },
-      "population": 10698896
+      "population": 10698896,
+      "rating": 0
     },
     {
-      "id": "dfb7",
+      "id": "97bb",
       "name": {
         "en": "New Caledonia",
         "ka": "New Caledonia"
@@ -1849,10 +1986,11 @@
         "en": "Nouméa",
         "ka": "Nouméa"
       },
-      "population": 271960
+      "population": 271960,
+      "rating": 0
     },
     {
-      "id": "4539",
+      "id": "3285",
       "name": {
         "en": "Vanuatu",
         "ka": "Vanuatu"
@@ -1861,10 +1999,11 @@
         "en": "Port Vila",
         "ka": "Port Vila"
       },
-      "population": 307150
+      "population": 307150,
+      "rating": 0
     },
     {
-      "id": "7684",
+      "id": "9571",
       "name": {
         "en": "Saint Helena, Ascension and Tristan da Cunha",
         "ka": "Saint Helena, Ascension and Tristan da Cunha"
@@ -1873,10 +2012,11 @@
         "en": "Jamestown",
         "ka": "Jamestown"
       },
-      "population": 53192
+      "population": 53192,
+      "rating": 0
     },
     {
-      "id": "20ab",
+      "id": "ac1f",
       "name": {
         "en": "Togo",
         "ka": "Togo"
@@ -1885,10 +2025,11 @@
         "en": "Lomé",
         "ka": "Lomé"
       },
-      "population": 8278737
+      "population": 8278737,
+      "rating": 0
     },
     {
-      "id": "fcf5",
+      "id": "5364",
       "name": {
         "en": "British Virgin Islands",
         "ka": "British Virgin Islands"
@@ -1897,10 +2038,11 @@
         "en": "Road Town",
         "ka": "Road Town"
       },
-      "population": 30237
+      "population": 30237,
+      "rating": 0
     },
     {
-      "id": "148e",
+      "id": "1ed5",
       "name": {
         "en": "Kenya",
         "ka": "Kenya"
@@ -1909,10 +2051,11 @@
         "en": "Nairobi",
         "ka": "Nairobi"
       },
-      "population": 53771300
+      "population": 53771300,
+      "rating": 0
     },
     {
-      "id": "ae90",
+      "id": "737d",
       "name": {
         "en": "Niue",
         "ka": "Niue"
@@ -1921,10 +2064,11 @@
         "en": "Alofi",
         "ka": "Alofi"
       },
-      "population": 1470
+      "population": 1470,
+      "rating": 0
     },
     {
-      "id": "bd5e",
+      "id": "ac3f",
       "name": {
         "en": "Heard Island and McDonald Islands",
         "ka": "Heard Island and McDonald Islands"
@@ -1933,10 +2077,11 @@
         "en": "No Capital",
         "ka": "No Capital"
       },
-      "population": 0
+      "population": 0,
+      "rating": 0
     },
     {
-      "id": "110d",
+      "id": "e554",
       "name": {
         "en": "Rwanda",
         "ka": "Rwanda"
@@ -1945,10 +2090,11 @@
         "en": "Kigali",
         "ka": "Kigali"
       },
-      "population": 12952209
+      "population": 12952209,
+      "rating": 0
     },
     {
-      "id": "aadf",
+      "id": "8a0a",
       "name": {
         "en": "Estonia",
         "ka": "Estonia"
@@ -1957,10 +2103,11 @@
         "en": "Tallinn",
         "ka": "Tallinn"
       },
-      "population": 1331057
+      "population": 1331057,
+      "rating": 0
     },
     {
-      "id": "7af2",
+      "id": "8054",
       "name": {
         "en": "Romania",
         "ka": "Romania"
@@ -1969,10 +2116,11 @@
         "en": "Bucharest",
         "ka": "Bucharest"
       },
-      "population": 19286123
+      "population": 19286123,
+      "rating": 0
     },
     {
-      "id": "10b0",
+      "id": "2a5c",
       "name": {
         "en": "Trinidad and Tobago",
         "ka": "Trinidad and Tobago"
@@ -1981,10 +2129,11 @@
         "en": "Port of Spain",
         "ka": "Port of Spain"
       },
-      "population": 1399491
+      "population": 1399491,
+      "rating": 0
     },
     {
-      "id": "0559",
+      "id": "0d46",
       "name": {
         "en": "Guyana",
         "ka": "Guyana"
@@ -1993,10 +2142,11 @@
         "en": "Georgetown",
         "ka": "Georgetown"
       },
-      "population": 786559
+      "population": 786559,
+      "rating": 0
     },
     {
-      "id": "afd0",
+      "id": "a835",
       "name": {
         "en": "Timor-Leste",
         "ka": "Timor-Leste"
@@ -2005,10 +2155,11 @@
         "en": "Dili",
         "ka": "Dili"
       },
-      "population": 1318442
+      "population": 1318442,
+      "rating": 0
     },
     {
-      "id": "e73b",
+      "id": "9148",
       "name": {
         "en": "Vietnam",
         "ka": "Vietnam"
@@ -2017,10 +2168,11 @@
         "en": "Hanoi",
         "ka": "Hanoi"
       },
-      "population": 97338583
+      "population": 97338583,
+      "rating": 0
     },
     {
-      "id": "86da",
+      "id": "8b7d",
       "name": {
         "en": "Uruguay",
         "ka": "Uruguay"
@@ -2029,10 +2181,11 @@
         "en": "Montevideo",
         "ka": "Montevideo"
       },
-      "population": 3473727
+      "population": 3473727,
+      "rating": 0
     },
     {
-      "id": "2010",
+      "id": "287a",
       "name": {
         "en": "Vatican City",
         "ka": "Vatican City"
@@ -2041,10 +2194,11 @@
         "en": "Vatican City",
         "ka": "Vatican City"
       },
-      "population": 451
+      "population": 451,
+      "rating": 0
     },
     {
-      "id": "e479",
+      "id": "97d1",
       "name": {
         "en": "Hong Kong",
         "ka": "Hong Kong"
@@ -2053,10 +2207,11 @@
         "en": "City of Victoria",
         "ka": "City of Victoria"
       },
-      "population": 7500700
+      "population": 7500700,
+      "rating": 0
     },
     {
-      "id": "a88c",
+      "id": "c3ad",
       "name": {
         "en": "Austria",
         "ka": "Austria"
@@ -2065,10 +2220,11 @@
         "en": "Vienna",
         "ka": "Vienna"
       },
-      "population": 8917205
+      "population": 8917205,
+      "rating": 0
     },
     {
-      "id": "409d",
+      "id": "d34d",
       "name": {
         "en": "Antigua and Barbuda",
         "ka": "Antigua and Barbuda"
@@ -2077,10 +2233,11 @@
         "en": "Saint John's",
         "ka": "Saint John's"
       },
-      "population": 97928
+      "population": 97928,
+      "rating": 0
     },
     {
-      "id": "9807",
+      "id": "55da",
       "name": {
         "en": "Turkmenistan",
         "ka": "Turkmenistan"
@@ -2089,10 +2246,11 @@
         "en": "Ashgabat",
         "ka": "Ashgabat"
       },
-      "population": 6031187
+      "population": 6031187,
+      "rating": 0
     },
     {
-      "id": "5fc5",
+      "id": "0936",
       "name": {
         "en": "Mozambique",
         "ka": "Mozambique"
@@ -2101,10 +2259,11 @@
         "en": "Maputo",
         "ka": "Maputo"
       },
-      "population": 31255435
+      "population": 31255435,
+      "rating": 0
     },
     {
-      "id": "53c7",
+      "id": "0dc2",
       "name": {
         "en": "Panama",
         "ka": "Panama"
@@ -2113,10 +2272,11 @@
         "en": "Panama City",
         "ka": "Panama City"
       },
-      "population": 4314768
+      "population": 4314768,
+      "rating": 0
     },
     {
-      "id": "2f75",
+      "id": "7235",
       "name": {
         "en": "Micronesia",
         "ka": "Micronesia"
@@ -2125,10 +2285,11 @@
         "en": "Palikir",
         "ka": "Palikir"
       },
-      "population": 115021
+      "population": 115021,
+      "rating": 0
     },
     {
-      "id": "b521",
+      "id": "e961",
       "name": {
         "en": "Ireland",
         "ka": "Ireland"
@@ -2137,10 +2298,11 @@
         "en": "Dublin",
         "ka": "Dublin"
       },
-      "population": 4994724
+      "population": 4994724,
+      "rating": 0
     },
     {
-      "id": "1214",
+      "id": "7c47",
       "name": {
         "en": "Curaçao",
         "ka": "Curaçao"
@@ -2149,10 +2311,11 @@
         "en": "Willemstad",
         "ka": "Willemstad"
       },
-      "population": 155014
+      "population": 155014,
+      "rating": 0
     },
     {
-      "id": "bb14",
+      "id": "520c",
       "name": {
         "en": "French Guiana",
         "ka": "French Guiana"
@@ -2161,10 +2324,11 @@
         "en": "Cayenne",
         "ka": "Cayenne"
       },
-      "population": 254541
+      "population": 254541,
+      "rating": 0
     },
     {
-      "id": "ae43",
+      "id": "cf7d",
       "name": {
         "en": "Norway",
         "ka": "Norway"
@@ -2173,10 +2337,11 @@
         "en": "Oslo",
         "ka": "Oslo"
       },
-      "population": 5379475
+      "population": 5379475,
+      "rating": 0
     },
     {
-      "id": "c022",
+      "id": "7cbd",
       "name": {
         "en": "Åland Islands",
         "ka": "Åland Islands"
@@ -2185,10 +2350,11 @@
         "en": "Mariehamn",
         "ka": "Mariehamn"
       },
-      "population": 29458
+      "population": 29458,
+      "rating": 0
     },
     {
-      "id": "6898",
+      "id": "1c8d",
       "name": {
         "en": "Central African Republic",
         "ka": "Central African Republic"
@@ -2197,10 +2363,11 @@
         "en": "Bangui",
         "ka": "Bangui"
       },
-      "population": 4829764
+      "population": 4829764,
+      "rating": 0
     },
     {
-      "id": "1b31",
+      "id": "16bb",
       "name": {
         "en": "Burkina Faso",
         "ka": "Burkina Faso"
@@ -2209,10 +2376,11 @@
         "en": "Ouagadougou",
         "ka": "Ouagadougou"
       },
-      "population": 20903278
+      "population": 20903278,
+      "rating": 0
     },
     {
-      "id": "39e7",
+      "id": "80a6",
       "name": {
         "en": "Eritrea",
         "ka": "Eritrea"
@@ -2221,10 +2389,11 @@
         "en": "Asmara",
         "ka": "Asmara"
       },
-      "population": 5352000
+      "population": 5352000,
+      "rating": 0
     },
     {
-      "id": "96bd",
+      "id": "9a10",
       "name": {
         "en": "Tanzania",
         "ka": "Tanzania"
@@ -2233,10 +2402,11 @@
         "en": "Dodoma",
         "ka": "Dodoma"
       },
-      "population": 59734213
+      "population": 59734213,
+      "rating": 0
     },
     {
-      "id": "5758",
+      "id": "8488",
       "name": {
         "en": "South Korea",
         "ka": "South Korea"
@@ -2245,10 +2415,11 @@
         "en": "Seoul",
         "ka": "Seoul"
       },
-      "population": 51780579
+      "population": 51780579,
+      "rating": 0
     },
     {
-      "id": "5e5e",
+      "id": "6bc5",
       "name": {
         "en": "Jordan",
         "ka": "Jordan"
@@ -2257,10 +2428,11 @@
         "en": "Amman",
         "ka": "Amman"
       },
-      "population": 10203140
+      "population": 10203140,
+      "rating": 0
     },
     {
-      "id": "0d25",
+      "id": "7540",
       "name": {
         "en": "Mauritania",
         "ka": "Mauritania"
@@ -2269,10 +2441,11 @@
         "en": "Nouakchott",
         "ka": "Nouakchott"
       },
-      "population": 4649660
+      "population": 4649660,
+      "rating": 0
     },
     {
-      "id": "b802",
+      "id": "7939",
       "name": {
         "en": "Lithuania",
         "ka": "Lithuania"
@@ -2281,10 +2454,11 @@
         "en": "Vilnius",
         "ka": "Vilnius"
       },
-      "population": 2794700
+      "population": 2794700,
+      "rating": 0
     },
     {
-      "id": "0185",
+      "id": "bdde",
       "name": {
         "en": "United States Minor Outlying Islands",
         "ka": "United States Minor Outlying Islands"
@@ -2293,10 +2467,11 @@
         "en": "Washington DC",
         "ka": "Washington DC"
       },
-      "population": 300
+      "population": 300,
+      "rating": 0
     },
     {
-      "id": "25df",
+      "id": "6a70",
       "name": {
         "en": "Slovakia",
         "ka": "Slovakia"
@@ -2305,10 +2480,11 @@
         "en": "Bratislava",
         "ka": "Bratislava"
       },
-      "population": 5458827
+      "population": 5458827,
+      "rating": 0
     },
     {
-      "id": "14e4",
+      "id": "018c",
       "name": {
         "en": "Angola",
         "ka": "Angola"
@@ -2317,10 +2493,11 @@
         "en": "Luanda",
         "ka": "Luanda"
       },
-      "population": 32866268
+      "population": 32866268,
+      "rating": 0
     },
     {
-      "id": "f781",
+      "id": "a2a4",
       "name": {
         "en": "Kazakhstan",
         "ka": "Kazakhstan"
@@ -2329,10 +2506,11 @@
         "en": "Nur-Sultan",
         "ka": "Nur-Sultan"
       },
-      "population": 18754440
+      "population": 18754440,
+      "rating": 0
     },
     {
-      "id": "ea63",
+      "id": "2d62",
       "name": {
         "en": "Moldova",
         "ka": "Moldova"
@@ -2341,10 +2519,11 @@
         "en": "Chișinău",
         "ka": "Chișinău"
       },
-      "population": 2617820
+      "population": 2617820,
+      "rating": 0
     },
     {
-      "id": "5f36",
+      "id": "0d0f",
       "name": {
         "en": "Mali",
         "ka": "Mali"
@@ -2353,10 +2532,11 @@
         "en": "Bamako",
         "ka": "Bamako"
       },
-      "population": 20250834
+      "population": 20250834,
+      "rating": 0
     },
     {
-      "id": "58e7",
+      "id": "9d57",
       "name": {
         "en": "Falkland Islands",
         "ka": "Falkland Islands"
@@ -2365,10 +2545,11 @@
         "en": "Stanley",
         "ka": "Stanley"
       },
-      "population": 2563
+      "population": 2563,
+      "rating": 0
     },
     {
-      "id": "3fec",
+      "id": "b466",
       "name": {
         "en": "Armenia",
         "ka": "Armenia"
@@ -2377,10 +2558,11 @@
         "en": "Yerevan",
         "ka": "Yerevan"
       },
-      "population": 2963234
+      "population": 2963234,
+      "rating": 0
     },
     {
-      "id": "6998",
+      "id": "cb3e",
       "name": {
         "en": "Samoa",
         "ka": "Samoa"
@@ -2389,10 +2571,11 @@
         "en": "Apia",
         "ka": "Apia"
       },
-      "population": 198410
+      "population": 198410,
+      "rating": 0
     },
     {
-      "id": "8ae3",
+      "id": "1b3a",
       "name": {
         "en": "Jersey",
         "ka": "Jersey"
@@ -2401,10 +2584,11 @@
         "en": "Saint Helier",
         "ka": "Saint Helier"
       },
-      "population": 100800
+      "population": 100800,
+      "rating": 0
     },
     {
-      "id": "4ba9",
+      "id": "3540",
       "name": {
         "en": "Japan",
         "ka": "Japan"
@@ -2413,10 +2597,11 @@
         "en": "Tokyo",
         "ka": "Tokyo"
       },
-      "population": 125836021
+      "population": 125836021,
+      "rating": 0
     },
     {
-      "id": "6135",
+      "id": "0517",
       "name": {
         "en": "Bolivia",
         "ka": "Bolivia"
@@ -2425,10 +2610,11 @@
         "en": "Sucre",
         "ka": "Sucre"
       },
-      "population": 11673029
+      "population": 11673029,
+      "rating": 0
     },
     {
-      "id": "25bf",
+      "id": "4f3b",
       "name": {
         "en": "Chile",
         "ka": "Chile"
@@ -2437,10 +2623,11 @@
         "en": "Santiago",
         "ka": "Santiago"
       },
-      "population": 19116209
+      "population": 19116209,
+      "rating": 0
     },
     {
-      "id": "ccff",
+      "id": "af53",
       "name": {
         "en": "United States",
         "ka": "United States"
@@ -2449,10 +2636,11 @@
         "en": "Washington, D.C.",
         "ka": "Washington, D.C."
       },
-      "population": 329484123
+      "population": 329484123,
+      "rating": 0
     },
     {
-      "id": "ad65",
+      "id": "9db7",
       "name": {
         "en": "Saint Vincent and the Grenadines",
         "ka": "Saint Vincent and the Grenadines"
@@ -2461,10 +2649,11 @@
         "en": "Kingstown",
         "ka": "Kingstown"
       },
-      "population": 110947
+      "population": 110947,
+      "rating": 0
     },
     {
-      "id": "b215",
+      "id": "67c0",
       "name": {
         "en": "Bermuda",
         "ka": "Bermuda"
@@ -2473,10 +2662,11 @@
         "en": "Hamilton",
         "ka": "Hamilton"
       },
-      "population": 63903
+      "population": 63903,
+      "rating": 0
     },
     {
-      "id": "0c48",
+      "id": "b675",
       "name": {
         "en": "Seychelles",
         "ka": "Seychelles"
@@ -2485,10 +2675,11 @@
         "en": "Victoria",
         "ka": "Victoria"
       },
-      "population": 98462
+      "population": 98462,
+      "rating": 0
     },
     {
-      "id": "a4d5",
+      "id": "35a4",
       "name": {
         "en": "British Indian Ocean Territory",
         "ka": "British Indian Ocean Territory"
@@ -2497,10 +2688,11 @@
         "en": "Diego Garcia",
         "ka": "Diego Garcia"
       },
-      "population": 3000
+      "population": 3000,
+      "rating": 0
     },
     {
-      "id": "fc6d",
+      "id": "52fb",
       "name": {
         "en": "Guatemala",
         "ka": "Guatemala"
@@ -2509,10 +2701,11 @@
         "en": "Guatemala City",
         "ka": "Guatemala City"
       },
-      "population": 16858333
+      "population": 16858333,
+      "rating": 0
     },
     {
-      "id": "0aef",
+      "id": "5d3a",
       "name": {
         "en": "Ecuador",
         "ka": "Ecuador"
@@ -2521,10 +2714,11 @@
         "en": "Quito",
         "ka": "Quito"
       },
-      "population": 17643060
+      "population": 17643060,
+      "rating": 0
     },
     {
-      "id": "36c4",
+      "id": "2d71",
       "name": {
         "en": "Martinique",
         "ka": "Martinique"
@@ -2533,10 +2727,11 @@
         "en": "Fort-de-France",
         "ka": "Fort-de-France"
       },
-      "population": 378243
+      "population": 378243,
+      "rating": 0
     },
     {
-      "id": "a3d5",
+      "id": "d713",
       "name": {
         "en": "Tajikistan",
         "ka": "Tajikistan"
@@ -2545,10 +2740,11 @@
         "en": "Dushanbe",
         "ka": "Dushanbe"
       },
-      "population": 9537642
+      "population": 9537642,
+      "rating": 0
     },
     {
-      "id": "6c25",
+      "id": "8c45",
       "name": {
         "en": "Malta",
         "ka": "Malta"
@@ -2557,10 +2753,11 @@
         "en": "Valletta",
         "ka": "Valletta"
       },
-      "population": 525285
+      "population": 525285,
+      "rating": 0
     },
     {
-      "id": "3dad",
+      "id": "db6c",
       "name": {
         "en": "Gambia",
         "ka": "Gambia"
@@ -2569,10 +2766,11 @@
         "en": "Banjul",
         "ka": "Banjul"
       },
-      "population": 2416664
+      "population": 2416664,
+      "rating": 0
     },
     {
-      "id": "0bc3",
+      "id": "5248",
       "name": {
         "en": "Nigeria",
         "ka": "Nigeria"
@@ -2581,10 +2779,11 @@
         "en": "Abuja",
         "ka": "Abuja"
       },
-      "population": 206139587
+      "population": 206139587,
+      "rating": 0
     },
     {
-      "id": "cd5a",
+      "id": "3156",
       "name": {
         "en": "Bahamas",
         "ka": "Bahamas"
@@ -2593,10 +2792,11 @@
         "en": "Nassau",
         "ka": "Nassau"
       },
-      "population": 393248
+      "population": 393248,
+      "rating": 0
     },
     {
-      "id": "4f05",
+      "id": "6ef3",
       "name": {
         "en": "Kosovo",
         "ka": "Kosovo"
@@ -2605,10 +2805,11 @@
         "en": "Pristina",
         "ka": "Pristina"
       },
-      "population": 1775378
+      "population": 1775378,
+      "rating": 0
     },
     {
-      "id": "0d16",
+      "id": "5951",
       "name": {
         "en": "Kuwait",
         "ka": "Kuwait"
@@ -2617,10 +2818,11 @@
         "en": "Kuwait City",
         "ka": "Kuwait City"
       },
-      "population": 4270563
+      "population": 4270563,
+      "rating": 0
     },
     {
-      "id": "324c",
+      "id": "b08d",
       "name": {
         "en": "Maldives",
         "ka": "Maldives"
@@ -2629,10 +2831,11 @@
         "en": "Malé",
         "ka": "Malé"
       },
-      "population": 540542
+      "population": 540542,
+      "rating": 0
     },
     {
-      "id": "b9b6",
+      "id": "f8a3",
       "name": {
         "en": "South Sudan",
         "ka": "South Sudan"
@@ -2641,10 +2844,11 @@
         "en": "Juba",
         "ka": "Juba"
       },
-      "population": 11193729
+      "population": 11193729,
+      "rating": 0
     },
     {
-      "id": "7c7f",
+      "id": "a040",
       "name": {
         "en": "Iran",
         "ka": "Iran"
@@ -2653,10 +2857,11 @@
         "en": "Tehran",
         "ka": "Tehran"
       },
-      "population": 83992953
+      "population": 83992953,
+      "rating": 0
     },
     {
-      "id": "a55f",
+      "id": "cea3",
       "name": {
         "en": "Albania",
         "ka": "Albania"
@@ -2665,10 +2870,11 @@
         "en": "Tirana",
         "ka": "Tirana"
       },
-      "population": 2837743
+      "population": 2837743,
+      "rating": 0
     },
     {
-      "id": "e86e",
+      "id": "cfb0",
       "name": {
         "en": "Brazil",
         "ka": "Brazil"
@@ -2677,10 +2883,11 @@
         "en": "Brasília",
         "ka": "Brasília"
       },
-      "population": 212559409
+      "population": 212559409,
+      "rating": 0
     },
     {
-      "id": "dbc8",
+      "id": "35e5",
       "name": {
         "en": "Serbia",
         "ka": "Serbia"
@@ -2689,10 +2896,11 @@
         "en": "Belgrade",
         "ka": "Belgrade"
       },
-      "population": 6908224
+      "population": 6908224,
+      "rating": 0
     },
     {
-      "id": "91cd",
+      "id": "5b6f",
       "name": {
         "en": "Belize",
         "ka": "Belize"
@@ -2701,10 +2909,11 @@
         "en": "Belmopan",
         "ka": "Belmopan"
       },
-      "population": 397621
+      "population": 397621,
+      "rating": 0
     },
     {
-      "id": "7ff5",
+      "id": "0053",
       "name": {
         "en": "Myanmar",
         "ka": "Myanmar"
@@ -2713,10 +2922,11 @@
         "en": "Naypyidaw",
         "ka": "Naypyidaw"
       },
-      "population": 54409794
+      "population": 54409794,
+      "rating": 0
     },
     {
-      "id": "1ed8",
+      "id": "4b6f",
       "name": {
         "en": "Bhutan",
         "ka": "Bhutan"
@@ -2725,10 +2935,11 @@
         "en": "Thimphu",
         "ka": "Thimphu"
       },
-      "population": 771612
+      "population": 771612,
+      "rating": 0
     },
     {
-      "id": "7314",
+      "id": "4f72",
       "name": {
         "en": "Venezuela",
         "ka": "Venezuela"
@@ -2737,10 +2948,11 @@
         "en": "Caracas",
         "ka": "Caracas"
       },
-      "population": 28435943
+      "population": 28435943,
+      "rating": 0
     },
     {
-      "id": "9621",
+      "id": "ab05",
       "name": {
         "en": "Liberia",
         "ka": "Liberia"
@@ -2749,10 +2961,11 @@
         "en": "Monrovia",
         "ka": "Monrovia"
       },
-      "population": 5057677
+      "population": 5057677,
+      "rating": 0
     },
     {
-      "id": "bcc6",
+      "id": "c518",
       "name": {
         "en": "Jamaica",
         "ka": "Jamaica"
@@ -2761,10 +2974,11 @@
         "en": "Kingston",
         "ka": "Kingston"
       },
-      "population": 2961161
+      "population": 2961161,
+      "rating": 0
     },
     {
-      "id": "9883",
+      "id": "0559",
       "name": {
         "en": "Poland",
         "ka": "Poland"
@@ -2773,10 +2987,11 @@
         "en": "Warsaw",
         "ka": "Warsaw"
       },
-      "population": 37950802
+      "population": 37950802,
+      "rating": 0
     },
     {
-      "id": "6e19",
+      "id": "1071",
       "name": {
         "en": "Cayman Islands",
         "ka": "Cayman Islands"
@@ -2785,10 +3000,11 @@
         "en": "George Town",
         "ka": "George Town"
       },
-      "population": 65720
+      "population": 65720,
+      "rating": 0
     },
     {
-      "id": "0abd",
+      "id": "6bee",
       "name": {
         "en": "Brunei",
         "ka": "Brunei"
@@ -2797,10 +3013,11 @@
         "en": "Bandar Seri Begawan",
         "ka": "Bandar Seri Begawan"
       },
-      "population": 437483
+      "population": 437483,
+      "rating": 0
     },
     {
-      "id": "a0da",
+      "id": "042e",
       "name": {
         "en": "Comoros",
         "ka": "Comoros"
@@ -2809,10 +3026,11 @@
         "en": "Moroni",
         "ka": "Moroni"
       },
-      "population": 869595
+      "population": 869595,
+      "rating": 0
     },
     {
-      "id": "2b60",
+      "id": "2d83",
       "name": {
         "en": "Guam",
         "ka": "Guam"
@@ -2821,10 +3039,11 @@
         "en": "Hagåtña",
         "ka": "Hagåtña"
       },
-      "population": 168783
+      "population": 168783,
+      "rating": 0
     },
     {
-      "id": "b4ad",
+      "id": "c05f",
       "name": {
         "en": "Tonga",
         "ka": "Tonga"
@@ -2833,10 +3052,11 @@
         "en": "Nuku'alofa",
         "ka": "Nuku'alofa"
       },
-      "population": 105697
+      "population": 105697,
+      "rating": 0
     },
     {
-      "id": "1945",
+      "id": "7c32",
       "name": {
         "en": "Kiribati",
         "ka": "Kiribati"
@@ -2845,10 +3065,11 @@
         "en": "South Tarawa",
         "ka": "South Tarawa"
       },
-      "population": 119446
+      "population": 119446,
+      "rating": 0
     },
     {
-      "id": "8794",
+      "id": "8b32",
       "name": {
         "en": "Ghana",
         "ka": "Ghana"
@@ -2857,10 +3078,11 @@
         "en": "Accra",
         "ka": "Accra"
       },
-      "population": 31072945
+      "population": 31072945,
+      "rating": 0
     },
     {
-      "id": "2847",
+      "id": "b89e",
       "name": {
         "en": "Chad",
         "ka": "Chad"
@@ -2869,10 +3091,11 @@
         "en": "N'Djamena",
         "ka": "N'Djamena"
       },
-      "population": 16425859
+      "population": 16425859,
+      "rating": 0
     },
     {
-      "id": "2c13",
+      "id": "1b31",
       "name": {
         "en": "Zimbabwe",
         "ka": "Zimbabwe"
@@ -2881,10 +3104,11 @@
         "en": "Harare",
         "ka": "Harare"
       },
-      "population": 14862927
+      "population": 14862927,
+      "rating": 0
     },
     {
-      "id": "fb2f",
+      "id": "f0fb",
       "name": {
         "en": "Saint Martin",
         "ka": "Saint Martin"
@@ -2893,10 +3117,11 @@
         "en": "Marigot",
         "ka": "Marigot"
       },
-      "population": 38659
+      "population": 38659,
+      "rating": 0
     },
     {
-      "id": "183c",
+      "id": "ded1",
       "name": {
         "en": "Mongolia",
         "ka": "Mongolia"
@@ -2905,10 +3130,11 @@
         "en": "Ulan Bator",
         "ka": "Ulan Bator"
       },
-      "population": 3278292
+      "population": 3278292,
+      "rating": 0
     },
     {
-      "id": "44d5",
+      "id": "bb4d",
       "name": {
         "en": "Portugal",
         "ka": "Portugal"
@@ -2917,10 +3143,11 @@
         "en": "Lisbon",
         "ka": "Lisbon"
       },
-      "population": 10305564
+      "population": 10305564,
+      "rating": 0
     },
     {
-      "id": "d7a5",
+      "id": "fc23",
       "name": {
         "en": "American Samoa",
         "ka": "American Samoa"
@@ -2929,10 +3156,11 @@
         "en": "Pago Pago",
         "ka": "Pago Pago"
       },
-      "population": 55197
+      "population": 55197,
+      "rating": 0
     },
     {
-      "id": "6620",
+      "id": "c47e",
       "name": {
         "en": "Republic of the Congo",
         "ka": "Republic of the Congo"
@@ -2941,10 +3169,11 @@
         "en": "Brazzaville",
         "ka": "Brazzaville"
       },
-      "population": 5657000
+      "population": 5657000,
+      "rating": 0
     },
     {
-      "id": "b3f3",
+      "id": "280a",
       "name": {
         "en": "Belgium",
         "ka": "Belgium"
@@ -2953,10 +3182,11 @@
         "en": "Brussels",
         "ka": "Brussels"
       },
-      "population": 11555997
+      "population": 11555997,
+      "rating": 0
     },
     {
-      "id": "c618",
+      "id": "dfca",
       "name": {
         "en": "Israel",
         "ka": "Israel"
@@ -2965,10 +3195,11 @@
         "en": "Jerusalem",
         "ka": "Jerusalem"
       },
-      "population": 9216900
+      "population": 9216900,
+      "rating": 0
     },
     {
-      "id": "5dbb",
+      "id": "7363",
       "name": {
         "en": "New Zealand",
         "ka": "New Zealand"
@@ -2977,10 +3208,11 @@
         "en": "Wellington",
         "ka": "Wellington"
       },
-      "population": 5084300
+      "population": 5084300,
+      "rating": 0
     },
     {
-      "id": "f9b6",
+      "id": "6089",
       "name": {
         "en": "Nicaragua",
         "ka": "Nicaragua"
@@ -2989,10 +3221,11 @@
         "en": "Managua",
         "ka": "Managua"
       },
-      "population": 6624554
+      "population": 6624554,
+      "rating": 0
     },
     {
-      "id": "fcd2",
+      "id": "cb49",
       "name": {
         "en": "Anguilla",
         "ka": "Anguilla"
@@ -3001,7 +3234,8 @@
         "en": "The Valley",
         "ka": "The Valley"
       },
-      "population": 13452
+      "population": 13452,
+      "rating": 0
     }
   ]
 }
