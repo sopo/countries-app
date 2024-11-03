@@ -4,7 +4,6 @@ import PopupHeader from '@/layouts/popup/popup-header/popup-header';
 import PopupBody from '@/layouts/popup/popup-body/popup-body';
 import Form from '@/components/form/form';
 import Input from '@/components/form/input/input';
-
 import Button from '@/components/button/button';
 import content from './create-country-popup-content';
 import { ChangeEvent, useState, useEffect } from 'react';
@@ -30,12 +29,14 @@ function imageToBase64(file: File) {
   });
 }
 
+//კომპონენტი
 const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   isOpen,
   handlePopupCloseClick,
   handleCreateArticle,
   id,
 }) => {
+
   // useEffect
   useEffect(() => {
     if (id) {
@@ -46,31 +47,29 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
           setEnglishName(data.name.en);
           setGeorgianCapital(data.capital.ka);
           setEnglishCapital(data.capital.en);
-          // setPopulation(data.population)
+          setPopulation(data.population.toString())
         });
     }
   }, [id]);
 
-  //useState fields
+  //useState ფილდებისთვის, ტაბებისთვის
   const [georgianName, setGeorgianName] = useState('');
   const [englishName, setEnglishName] = useState('');
   const [georgianCapital, setGeorgianCapital] = useState('');
   const [englishCapital, setEnglishCapital] = useState('');
-  const [population, setPopulation] = useState('');
+  const [population, setPopulation] = useState("");
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
   const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
     useState('');
   const [englishCapitalErrorMessage, setEnglishCapitalErrorMessage] =
     useState('');
-
   const [populationErrorMessage, setPopulationErrorMessage] = useState('');
-
   const [img, setImg] = useState('');
   const [firstTabActive, setFirstTabActive] = useState(true);
   const [secondTabActive, setSecondTabActive] = useState(false);
 
-  // language
+  // ენის ფილტრი
   const { lang } = useParams();
   const filteredContent = lang === 'en' ? content.en : content.ka;
 
@@ -111,7 +110,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       setGeorgianCapitalErrorMessage('');
     }
   };
-
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newPopulation = e.target.value;
     const numericValue = Number(newPopulation);
@@ -122,7 +120,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
     }
     setPopulation(newPopulation);
   };
-
   function handleUploadChange(e: ChangeEvent<HTMLInputElement>) {
     if (e.target.files) {
       const file = e.target.files[0];
@@ -137,6 +134,8 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       }
     }
   }
+
+  //createArticle
   function createArticle() {
     handleCreateArticle({
       name: {
@@ -152,6 +151,8 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       rating: 0,
     });
   }
+
+  // ტაბების ლოგიკა
   const handleFirstTabChange = () => {
     setFirstTabActive(true);
     setSecondTabActive(false);
@@ -172,6 +173,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const showSecondTabInputs = secondTabActive
     ? tabStyles.activeTabContent
     : tabStyles.inactiveTabContent;
+
   return (
     <Popup isOpen={isOpen}>
       <PopupHeader

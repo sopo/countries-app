@@ -3,15 +3,16 @@
     {
       "id": "2f29",
       "name": {
-        "en": "Grenada",
-        "ka": "Grenada"
+        "ka": "Grenada",
+        "en": "Grenada"
       },
       "capital": {
-        "en": "St. George's",
-        "ka": "St. George's"
+        "ka": "St. George's",
+        "en": "St. George's"
       },
-      "population": 112519,
-      "rating": 0
+      "population": 1125100999,
+      "rating": 0,
+      "imageUrl": ""
     },
     {
       "id": "9310",
@@ -24,7 +25,7 @@
         "ka": "Bern"
       },
       "population": 8654622,
-      "rating": 0
+      "rating": 1
     },
     {
       "id": "5b9a",
@@ -3235,6 +3236,20 @@
         "ka": "The Valley"
       },
       "population": 13452,
+      "rating": 0
+    },
+    {
+      "id": "cc50",
+      "name": {
+        "ka": "",
+        "en": ""
+      },
+      "capital": {
+        "ka": "",
+        "en": ""
+      },
+      "population": 0,
+      "imageUrl": "",
       "rating": 0
     }
   ]

@@ -10,15 +10,15 @@ type Action =
 
 function countriesReducer(countriesData: Country[], action: Action): Country[] {
   switch (action.type) {
+    case 'load': {
+      return action.data;
+    }
     case 'like': {
       return countriesData.map((country) =>
         country.id === action.id
           ? { ...country, rating: country.rating + 1 }
           : country,
       );
-    }
-    case 'load': {
-      return action.data;
     }
     case 'edit': {
       return countriesData.map((country) => {

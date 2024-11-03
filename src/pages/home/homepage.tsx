@@ -19,28 +19,36 @@ import CreateCountryPopup from './create article/create-country-popup';
 import { Country } from '@/components/cards/cards-data/country';
 
 const HomePage: React.FC = () => {
-  // კონტენტის გაფილტვრა ენის მიხედვით
+  // ენის მიხედვით ფილტრი
   const { lang } = useParams();
   const content = lang === 'en' ? cardsSectionSd.en : cardsSectionSd.ka;
 
-  // რეიტინგის მიხედვით დასორტვა
+  // სორტი
   const [sortByRating, setSortByRating] = useState(false);
   const buttonTitle = sortByRating
     ? `${content.sort.least}`
     : `${content.sort.most}`;
 
-  //პოპაპის გახსნა/დახურვა
+  //პოპაპის სთეითი
   const [isOpen, setIsOpen] = useState(false);
+
+  //რედუსერი
+  const [countriesNew, dispatch] = useReducer(countriesReducer, []);
+
+  //პოპაპის გახსნა/დახურვა
   const handleAddArticleClick = () => {
     setIsOpen(true);
   };
   const handlePopupCloseClick = () => {
     setIsOpen(false);
   };
-  //useEffect
+
+  // ქარდის შეცვლის აიდი
   const [editCountryId, setEditCountryId] = useState<string | undefined>(
     undefined,
   );
+
+  // ბაზიდან დატის წამოღება
   const refreshData = () => {
     return axios.get('http://localhost:3000/countries').then((response) => {
       dispatch({
@@ -49,9 +57,13 @@ const HomePage: React.FC = () => {
       });
     });
   };
+
+  // useEffect
   useEffect(() => {
     refreshData();
   }, []);
+
+  // ჰენდლერები
   const handleCreateArticle = (data: Omit<Country, 'id'>) => {
     if (editCountryId) {
       axios
@@ -78,7 +90,6 @@ const HomePage: React.FC = () => {
         });
     }
   };
-
   const handleDeleteClick = (id: string) => {
     axios.delete(`http://localhost:3000/countries/${id}`).then(() => {
       dispatch({
@@ -103,14 +114,6 @@ const HomePage: React.FC = () => {
         });
       });
   };
-  //რედიუსერი
-  const [countriesNew, dispatch] = useReducer(countriesReducer, []);
-  // const handleLikeClick = (id: number) => {
-  //   dispatch({
-  //     type: 'like',
-  //     id: id,
-  //   });
-  // };
   const handleSortClick = () => {
     const newSort = !sortByRating;
     setSortByRating(newSort);
@@ -119,20 +122,6 @@ const HomePage: React.FC = () => {
       newSort: newSort,
     });
   };
-  // const handleDeleteClick = (id: number) => {
-  //   dispatch({
-  //     type: 'delete',
-  //     id: id,
-  //   });
-  // };
-
-  // const handleCreateArticle = (data: Country) => {
-  //   dispatch({
-  //     type: 'create',
-  //     data: data,
-  //   });
-  //   setIsOpen(false);
-  // };
 
   return (
     <div>
