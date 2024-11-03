@@ -4,16 +4,8 @@ export interface Country {
     ka: string;
     en: string;
   };
-  title: {
-    ka: string;
-    en: string;
-  };
   population: number;
   capital: {
-    ka: string;
-    en: string;
-  };
-  description: {
     ka: string;
     en: string;
   };

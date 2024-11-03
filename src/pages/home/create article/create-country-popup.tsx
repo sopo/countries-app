@@ -4,7 +4,7 @@ import PopupHeader from '@/layouts/popup/popup-header/popup-header';
 import PopupBody from '@/layouts/popup/popup-body/popup-body';
 import Form from '@/components/form/form';
 import Input from '@/components/form/input/input';
-import TextArea from '@/components/form/text-area/text-area';
+
 import Button from '@/components/button/button';
 import content from './create-country-popup-content';
 import { ChangeEvent, useState, useEffect } from 'react';
@@ -18,6 +18,7 @@ interface CreateCountryPopupProps {
   handlePopupCloseClick: () => void;
   handleCreateArticle: (data: Omit<Country, 'id'>) => void;
   id?: string;
+  
 }
 function imageToBase64(file: File) {
   return new Promise<string>((resolve, reject) => {
@@ -39,7 +40,9 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   // useEffect
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3000/countries/${id}`).then(() => {});
+      axios.get<Country>(`http://localhost:3000/countries/${id}`).then(({data}) => {
+        setGeorgianName(data.name.ka);
+      });
     }
   }, [id]);
 
@@ -48,26 +51,16 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [englishName, setEnglishName] = useState('');
   const [georgianCapital, setGeorgianCapital] = useState('');
   const [englishCapital, setEnglishCapital] = useState('');
-  const [georgianTitle, setGeorgianTitle] = useState('');
-  const [englishTitle, setEnglishTitle] = useState('');
-  const [georgianDescription, setGeorgianDescription] = useState('');
-  const [englishDescription, setEnglishDescription] = useState('');
   const [population, setPopulation] = useState('');
-
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
   const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
     useState('');
   const [englishCapitalErrorMessage, setEnglishCapitalErrorMessage] =
     useState('');
-  const [georgianTitleErrorMessage, setGeorgianTitleErrorMessage] =
-    useState('');
-  const [englishTitleErrorMessage, setEnglishTitleErrorMessage] = useState('');
+
   const [populationErrorMessage, setPopulationErrorMessage] = useState('');
-  const [georgianDescriptionErrorMessage, setGeorgianDescriptionErrorMessage] =
-    useState('');
-  const [englishDescriptionErrorMessage, setEnglishDescriptionErrorMessage] =
-    useState('');
+
   const [img, setImg] = useState('');
   const [firstTabActive, setFirstTabActive] = useState(true);
   const [secondTabActive, setSecondTabActive] = useState(false);
@@ -113,49 +106,10 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       setGeorgianCapitalErrorMessage('');
     }
   };
-  const handleGeorgianTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newTitle = e.target.value;
-    setGeorgianTitle(newTitle);
-    if (newTitle === '') {
-      setGeorgianTitleErrorMessage(`${filteredContent.title.error}`);
-    } else {
-      setGeorgianTitleErrorMessage('');
-    }
-  };
-  const handleEnglishTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newTitle = e.target.value;
-    setEnglishTitle(newTitle);
-    if (newTitle === '') {
-      setEnglishTitleErrorMessage(`${filteredContent.title.error}`);
-    } else {
-      setEnglishTitleErrorMessage('');
-    }
-  };
-  const handleGeorgianDescriptionChange = (
-    e: ChangeEvent<HTMLTextAreaElement>,
-  ) => {
-    const newDescription = e.target.value;
-    setGeorgianDescription(newDescription);
-    if (newDescription === '') {
-      setGeorgianDescriptionErrorMessage(
-        `${filteredContent.description.error}`,
-      );
-    } else {
-      setGeorgianDescriptionErrorMessage('');
-    }
-  };
-  const handleEnglishDescriptionChange = (
-    e: ChangeEvent<HTMLTextAreaElement>,
-  ) => {
-    const newDescription = e.target.value;
-    setEnglishDescription(newDescription);
 
-    if (newDescription === '') {
-      setEnglishDescriptionErrorMessage(`${filteredContent.description.error}`);
-    } else {
-      setEnglishDescriptionErrorMessage('');
-    }
-  };
+
+
+
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newPopulation = e.target.value;
     const numericValue = Number(newPopulation);
@@ -191,14 +145,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       capital: {
         ka: georgianCapital,
         en: englishCapital,
-      },
-      title: {
-        ka: georgianTitle,
-        en: englishTitle,
-      },
-      description: {
-        ka: georgianDescription,
-        en: englishDescription,
       },
       population: +population,
       imageUrl: img,
@@ -264,22 +210,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
                 value={georgianCapital}
                 onChange={handleGeorgianCapitalChange}
               />
-              <Input
-                id="titleInGeorgian"
-                name="titleInGeorgian"
-                placeholder={filteredContent.title.ka}
-                errorMessage={georgianTitleErrorMessage}
-                value={georgianTitle}
-                onChange={handleGeorgianTitleChange}
-              />
-              <TextArea
-                id="descriptionInGeorgian"
-                name="descriptionInGeorgian"
-                placeholder={filteredContent.description.ka}
-                errorMessage={georgianDescriptionErrorMessage}
-                value={georgianDescription}
-                onChange={handleGeorgianDescriptionChange}
-              />
+          
             </div>
             <div className={showSecondTabInputs}>
               <Input
@@ -300,22 +231,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
                 onChange={handleEnglishCapitalChange}
               />
 
-              <Input
-                id="titleInEnglish"
-                name="titleInEnglish"
-                placeholder={filteredContent.title.en}
-                errorMessage={englishTitleErrorMessage}
-                value={englishTitle}
-                onChange={handleEnglishTitleChange}
-              />
-              <TextArea
-                id="descriptionInEnglish"
-                name="descriptionInEnglish"
-                placeholder={filteredContent.description.en}
-                errorMessage={englishDescriptionErrorMessage}
-                value={englishDescription}
-                onChange={handleEnglishDescriptionChange}
-              />
+       
             </div>
           </div>
           <Input

@@ -1,6 +1,7 @@
 import { Country } from '@/components/cards/cards-data/country';
 type Action =
   | { type: 'load'; data: Country[] }
+  | { type: 'edit'; data: Country }
   | { type: 'like'; id: string }
   | { type: 'sort'; newSort: boolean }
   | { type: 'delete'; id: string }
@@ -18,6 +19,16 @@ function countriesReducer(countriesData: Country[], action: Action): Country[] {
     }
     case 'load': {
       return action.data;
+    }
+    case 'edit': {
+      return countriesData.map((country) => {
+        if(country.id === action.data.id){
+          return action.data
+        }else{
+          return country
+        }
+      })
+      
     }
     case 'sort': {
       return [...countriesData].sort((a, b) => {
