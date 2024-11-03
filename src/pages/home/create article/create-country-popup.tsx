@@ -43,6 +43,10 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
         .get<Country>(`http://localhost:3000/countries/${id}`)
         .then(({ data }) => {
           setGeorgianName(data.name.ka);
+          setEnglishName(data.name.en);
+          setGeorgianCapital(data.capital.ka)
+          setEnglishCapital(data.capital.en)
+          // setPopulation(data.population)
         });
     }
   }, [id]);
@@ -52,7 +56,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [englishName, setEnglishName] = useState('');
   const [georgianCapital, setGeorgianCapital] = useState('');
   const [englishCapital, setEnglishCapital] = useState('');
-  const [population, setPopulation] = useState('');
+  const [population, setPopulation] = useState("");
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
   const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
@@ -111,7 +115,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const handlePopulationChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newPopulation = e.target.value;
     const numericValue = Number(newPopulation);
-
     if (newPopulation !== '' && isNaN(numericValue)) {
       setPopulationErrorMessage(`${filteredContent.population.error}`);
     } else {

@@ -3,14 +3,16 @@
     {
       "id": "d808",
       "name": {
-        "en": "South Georgia",
-        "ka": "South Georgia"
+        "ka": "ჯორჯია",
+        "en": "South Georgia"
       },
       "capital": {
-        "en": "King Edward Point",
-        "ka": "King Edward Point"
+        "ka": "King Edward Point",
+        "en": "King Edward Point"
       },
-      "population": 30
+      "population": 9898,
+      "imageUrl": "",
+      "rating": 0
     },
     {
       "id": "e30a",
@@ -22,7 +24,8 @@
         "en": "St. George's",
         "ka": "St. George's"
       },
-      "population": 112519
+      "population": 112519,
+      "rating": null
     },
     {
       "id": "4b56",
