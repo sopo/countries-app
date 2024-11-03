@@ -44,8 +44,8 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
         .then(({ data }) => {
           setGeorgianName(data.name.ka);
           setEnglishName(data.name.en);
-          setGeorgianCapital(data.capital.ka)
-          setEnglishCapital(data.capital.en)
+          setGeorgianCapital(data.capital.ka);
+          setEnglishCapital(data.capital.en);
           // setPopulation(data.population)
         });
     }
@@ -56,7 +56,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   const [englishName, setEnglishName] = useState('');
   const [georgianCapital, setGeorgianCapital] = useState('');
   const [englishCapital, setEnglishCapital] = useState('');
-  const [population, setPopulation] = useState("");
+  const [population, setPopulation] = useState('');
   const [georgianNameErrorMessage, setGeorgianNameErrorMessage] = useState('');
   const [englishNameErrorMessage, setEnglishNameErrorMessage] = useState('');
   const [georgianCapitalErrorMessage, setGeorgianCapitalErrorMessage] =
