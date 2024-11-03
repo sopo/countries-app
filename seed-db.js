@@ -13,7 +13,7 @@ async function seed() {
         ka: country.capital ? country.capital[0] : 'No Capital',
       },
       population: country.population || 0,
-      rating: 0
+      rating: 0,
     });
   }
 }
