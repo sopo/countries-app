@@ -7,15 +7,17 @@ import Input from '@/components/form/input/input';
 import Button from '@/components/button/button';
 import content from './create-country-popup-content';
 import { ChangeEvent, useState, useEffect } from 'react';
-import { Country } from '@/components/cards/cards-data/country';
 import { useParams } from 'react-router-dom';
 import TabBar from '@/components/tab/tab-bar';
 import Tab from '@/components/tab/tab';
-import axios from 'axios';
+import { getCountry, updateCountry } from '@/api/countries/get-countries';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { createCountry } from '@/api/countries/get-countries';
+
 interface CreateCountryPopupProps {
   isOpen: boolean;
   handlePopupCloseClick: () => void;
-  handleCreateArticle: (data: Omit<Country, 'id'>) => void;
+  handleCreateArticle: () => void;
   id?: string;
 }
 function imageToBase64(file: File) {
@@ -36,20 +38,27 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   handleCreateArticle,
   id,
 }) => {
+  const {data,  } = useQuery({
+    queryKey: ["country"], 
+    queryFn: () => getCountry(id as string), 
+    retry: 0,
+    enabled: !!id,
+    
+  })
+  const  {mutate: mutateEdit, isError,  } = useMutation({mutationFn: updateCountry, }); 
+  const  {mutate: mutateCreate} = useMutation({mutationFn: createCountry,}); 
+  
   // useEffect
   useEffect(() => {
-    if (id) {
-      axios
-        .get<Country>(`http://localhost:3000/countries/${id}`)
-        .then(({ data }) => {
-          setGeorgianName(data.name.ka);
-          setEnglishName(data.name.en);
-          setGeorgianCapital(data.capital.ka);
-          setEnglishCapital(data.capital.en);
-          setPopulation(data.population.toString());
-        });
+    if(data){
+      console.log(data)
+      setGeorgianName(data.name.ka);
+      setEnglishName(data.name.en);
+      setGeorgianCapital(data.capital.ka);
+      setEnglishCapital(data.capital.en);
+      setPopulation(data.population.toString());
     }
-  }, [id]);
+  }, [data]);
 
   //useState ფილდებისთვის, ტაბებისთვის
   const [georgianName, setGeorgianName] = useState('');
@@ -136,7 +145,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
 
   //createArticle
   function createArticle() {
-    handleCreateArticle({
+    const newCountry = {
       name: {
         ka: georgianName,
         en: englishName,
@@ -148,7 +157,14 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       population: +population,
       imageUrl: img,
       rating: 0,
-    });
+    }
+    if (id) {
+      mutateEdit({id: id, ...newCountry}, {
+        onSuccess: () => {handleCreateArticle()}
+      })
+    } else {
+      mutateCreate(newCountry)
+    }
   }
 
   // ტაბების ლოგიკა
@@ -196,6 +212,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             </TabBar>
 
             <div className={showFirstTabInputs}>
+             
               <Input
                 id="nameInGeorgian"
                 errorMessage={georgianNameErrorMessage}
@@ -250,7 +267,9 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             title={filteredContent.button}
             className="buttonPrimaryM"
             type="submit"
+            
           />
+           {isError && <p>error</p>}
         </Form>
       </PopupBody>
     </Popup>

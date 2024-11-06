@@ -1,7 +1,10 @@
-import { useState, useReducer, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
+import {
+  getCountries,
+  deleteCountry,
+  likeCountry,
+} from '@/api/countries/get-countries';
 import { Link, useParams } from 'react-router-dom';
-import countriesReducer from './countries-reducer';
 import cardsSectionSd from './static-data/cards-section-sd';
 import Banner from '../../components/banner/banner';
 import CardsSection from '@/components/cards/cards-section/cards-section';
@@ -16,26 +19,15 @@ import IconButton from '@/components/button/icon-button/icon-button';
 import DeleteIcon from '@/assets/icons/trash.svg?react';
 import EditIcon from '@/assets/icons/pencil.svg?react';
 import CreateCountryPopup from './create article/create-country-popup';
-import { Country } from '@/components/cards/cards-data/country';
+import { useMutation, useQuery } from '@tanstack/react-query';
 
 const HomePage: React.FC = () => {
   // ენის მიხედვით ფილტრი
   const { lang } = useParams();
   const content = lang === 'en' ? cardsSectionSd.en : cardsSectionSd.ka;
 
-  // სორტი
-  const [sortByRating, setSortByRating] = useState(false);
-  const buttonTitle = sortByRating
-    ? `${content.sort.least}`
-    : `${content.sort.most}`;
-
-  //პოპაპის სთეითი
+  //პოპაპი გახსნა დახურვა
   const [isOpen, setIsOpen] = useState(false);
-
-  //რედუსერი
-  const [countriesNew, dispatch] = useReducer(countriesReducer, []);
-
-  //პოპაპის გახსნა/დახურვა
   const handleAddArticleClick = () => {
     setIsOpen(true);
   };
@@ -48,79 +40,40 @@ const HomePage: React.FC = () => {
     undefined,
   );
 
-  // ბაზიდან დატის წამოღება
-  const refreshData = () => {
-    return axios.get('http://localhost:3000/countries').then((response) => {
-      dispatch({
-        type: 'load',
-        data: response.data,
-      });
-    });
-  };
-
-  // useEffect
-  useEffect(() => {
-    refreshData();
-  }, []);
+  const { data, isLoading, isError, refetch } = useQuery({
+    queryKey: ['countries-list'],
+    queryFn: getCountries,
+    retry: 0,
+  });
 
   // ჰენდლერები
-  const handleCreateArticle = (data: Omit<Country, 'id'>) => {
-    if (editCountryId) {
-      axios
-        .patch(`http://localhost:3000/countries/${editCountryId}`, data)
-        .then(({ data }) => {
-          dispatch({
-            type: 'edit',
-            data: data,
-          });
-          setIsOpen(false);
-        });
-    } else {
-      axios
-        .post('http://localhost:3000/countries', data)
-        .then((response) => {
-          dispatch({
-            type: 'create',
-            data: response.data,
-          });
-        })
-
-        .finally(() => {
-          setIsOpen(false);
-        });
-    }
+  const handleCreateArticle = () => {
+    setIsOpen(false);
+    refetch();
   };
+  const { mutate: mutateDelete } = useMutation({ mutationFn: deleteCountry });
   const handleDeleteClick = (id: string) => {
-    axios.delete(`http://localhost:3000/countries/${id}`).then(() => {
-      dispatch({
-        type: 'delete',
-        id: id,
-      });
+    mutateDelete(id, {
+      onSuccess: () => {
+        refetch()
+      }
     });
+   
   };
   const handleEditClick = (id: string) => {
     setIsOpen(true);
     setEditCountryId(id);
   };
+  const { mutate: mutateLike } = useMutation({ mutationFn: likeCountry });
   const handleLikeClick = (id: string, rating: number) => {
-    axios
-      .patch(`http://localhost:3000/countries/${id}`, {
-        rating: rating + 1,
-      })
-      .then(() => {
-        dispatch({
-          type: 'like',
-          id: id,
-        });
-      });
-  };
-  const handleSortClick = () => {
-    const newSort = !sortByRating;
-    setSortByRating(newSort);
-    dispatch({
-      type: 'sort',
-      newSort: newSort,
-    });
+    mutateLike(
+      { id, rating: rating + 1 },
+      {
+        onSuccess: () => {
+          refetch();
+        },
+      },
+    );
   };
 
   return (
@@ -139,17 +92,14 @@ const HomePage: React.FC = () => {
         <SectionHeader>
           <h1 className="text-primary">{content.articleTitle}</h1>
           <Button
-            title={buttonTitle}
-            className="buttonSecondaryM"
-            onClick={handleSortClick}
-          />
-          <Button
             title={content.addNewArticle}
             className="buttonSecondaryM"
             onClick={handleAddArticleClick}
           />
         </SectionHeader>
-        {countriesNew.map((country) => (
+        {isError && <p>error</p>}
+        {isLoading && <p>loading...</p>}
+        {data?.map((country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
               <CardHeader cardImageUrl={country.imageUrl} />
