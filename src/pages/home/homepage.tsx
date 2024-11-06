@@ -55,10 +55,9 @@ const HomePage: React.FC = () => {
   const handleDeleteClick = (id: string) => {
     mutateDelete(id, {
       onSuccess: () => {
-        refetch()
-      }
+        refetch();
+      },
     });
-   
   };
   const handleEditClick = (id: string) => {
     setIsOpen(true);

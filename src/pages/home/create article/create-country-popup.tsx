@@ -38,20 +38,21 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   handleCreateArticle,
   id,
 }) => {
-  const {data,  } = useQuery({
-    queryKey: ["country"], 
-    queryFn: () => getCountry(id as string), 
+  const { data } = useQuery({
+    queryKey: ['country'],
+    queryFn: () => getCountry(id as string),
     retry: 0,
     enabled: !!id,
-    
-  })
-  const  {mutate: mutateEdit, isError,  } = useMutation({mutationFn: updateCountry, }); 
-  const  {mutate: mutateCreate} = useMutation({mutationFn: createCountry,}); 
-  
+  });
+  const { mutate: mutateEdit, isError } = useMutation({
+    mutationFn: updateCountry,
+  });
+  const { mutate: mutateCreate } = useMutation({ mutationFn: createCountry });
+
   // useEffect
   useEffect(() => {
-    if(data){
-      console.log(data)
+    if (data) {
+      console.log(data);
       setGeorgianName(data.name.ka);
       setEnglishName(data.name.en);
       setGeorgianCapital(data.capital.ka);
@@ -157,13 +158,18 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       population: +population,
       imageUrl: img,
       rating: 0,
-    }
+    };
     if (id) {
-      mutateEdit({id: id, ...newCountry}, {
-        onSuccess: () => {handleCreateArticle()}
-      })
+      mutateEdit(
+        { id: id, ...newCountry },
+        {
+          onSuccess: () => {
+            handleCreateArticle();
+          },
+        },
+      );
     } else {
-      mutateCreate(newCountry)
+      mutateCreate(newCountry);
     }
   }
 
@@ -212,7 +218,6 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             </TabBar>
 
             <div className={showFirstTabInputs}>
-             
               <Input
                 id="nameInGeorgian"
                 errorMessage={georgianNameErrorMessage}
@@ -267,9 +272,8 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             title={filteredContent.button}
             className="buttonPrimaryM"
             type="submit"
-            
           />
-           {isError && <p>error</p>}
+          {isError && <p>error</p>}
         </Form>
       </PopupBody>
     </Popup>

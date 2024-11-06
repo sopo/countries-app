@@ -1,14 +1,14 @@
 import httpClient from '../axios';
 import { Country } from '@/components/cards/cards-data/country';
 export const getCountries = async () => {
-    try {
-        return httpClient.get<Country[]>('/countries').then((response) => {
-            return response.data;
-          }); 
-    } catch (error) {
-        console.error('error on get countries: ', error);
-        throw error
-    }
+  try {
+    return httpClient.get<Country[]>('/countries').then((response) => {
+      return response.data;
+    });
+  } catch (error) {
+    console.error('error on get countries: ', error);
+    throw error;
+  }
 };
 export const updateCountry = async (data: Country) => {
   try {
@@ -17,19 +17,19 @@ export const updateCountry = async (data: Country) => {
     });
   } catch (error) {
     console.error('error on update: ', error);
-    throw error
+    throw error;
   }
 };
 export const getCountry = async (id: string) => {
-    try {
-      return httpClient.get(`/countries/${id}`).then((res) => {
-        return res.data;
-      });
-    } catch (error) {
-      console.error('error on get country: ', error);
-      throw error
-    }
-  };
+  try {
+    return httpClient.get(`/countries/${id}`).then((res) => {
+      return res.data;
+    });
+  } catch (error) {
+    console.error('error on get country: ', error);
+    throw error;
+  }
+};
 export const likeCountry = async ({
   id,
   rating,
@@ -43,7 +43,7 @@ export const likeCountry = async ({
     });
   } catch (error) {
     console.error('error on like: ', error);
-    throw error
+    throw error;
   }
 };
 export const createCountry = async (data: Omit<Country, 'id'>) => {
@@ -53,7 +53,7 @@ export const createCountry = async (data: Omit<Country, 'id'>) => {
     });
   } catch (error) {
     console.error('error on create country: ', error);
-    throw error
+    throw error;
   }
 };
 export const deleteCountry = async (id: string) => {
@@ -61,6 +61,6 @@ export const deleteCountry = async (id: string) => {
     return await httpClient.delete(`/countries/${id}`);
   } catch (error) {
     console.error('error on delete country: ', error);
-    throw error
+    throw error;
   }
 };
