@@ -11,7 +11,7 @@ import { useParams } from 'react-router-dom';
 import TabBar from '@/components/tab/tab-bar';
 import Tab from '@/components/tab/tab';
 import { getCountry, updateCountry } from '@/api/countries/get-countries';
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, } from '@tanstack/react-query';
 import { createCountry } from '@/api/countries/get-countries';
 
 interface CreateCountryPopupProps {
@@ -38,28 +38,20 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
   handleCreateArticle,
   id,
 }) => {
+  
   const { data } = useQuery({
     queryKey: ['country'],
     queryFn: () => getCountry(id as string),
     retry: 0,
     enabled: !!id,
   });
-  const { mutate: mutateEdit, isError } = useMutation({
+  const { mutate: mutateEdit, status: editStatus, isError: editError, } = useMutation({
     mutationFn: updateCountry,
   });
-  const { mutate: mutateCreate } = useMutation({ mutationFn: createCountry });
-
-  // useEffect
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-      setGeorgianName(data.name.ka);
-      setEnglishName(data.name.en);
-      setGeorgianCapital(data.capital.ka);
-      setEnglishCapital(data.capital.en);
-      setPopulation(data.population.toString());
-    }
-  }, [data]);
+ 
+const { mutate: mutateCreate, status: createStatus, isError: createError } = useMutation({ mutationFn: createCountry });
+ const isLoading = editStatus === 'pending'
+ const isCreating = createStatus === "pending"
 
   //useState ფილდებისთვის, ტაბებისთვის
   const [georgianName, setGeorgianName] = useState('');
@@ -143,6 +135,19 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       }
     }
   }
+
+// useEffect
+useEffect(() => {
+  if (data) {
+    console.log(data);
+    setGeorgianName(data.name.ka);
+    setEnglishName(data.name.en);
+    setGeorgianCapital(data.capital.ka);
+    setEnglishCapital(data.capital.en);
+    setPopulation(data.population.toString());
+  }
+  
+}, [data]);
 
   //createArticle
   function createArticle() {
@@ -268,12 +273,16 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
             onChange={handleUploadChange}
             accept=".png, .jpg, .jpeg"
           />
+          
           <Button
             title={filteredContent.button}
             className="buttonPrimaryM"
             type="submit"
+            disabled={isLoading}
           />
-          {isError && <p>error</p>}
+          {editError && <p>error while editing</p>}
+          {createError && <p>error crating article</p>}
+          {isCreating && <p>loading...</p>}
         </Form>
       </PopupBody>
     </Popup>

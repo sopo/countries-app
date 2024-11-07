@@ -51,7 +51,8 @@ const HomePage: React.FC = () => {
     setIsOpen(false);
     refetch();
   };
-  const { mutate: mutateDelete } = useMutation({ mutationFn: deleteCountry });
+  const { mutate: mutateDelete, status: statusDelete, isError: errorDelete } = useMutation({ mutationFn: deleteCountry });
+  const deleteLoading =  statusDelete === 'pending'
   const handleDeleteClick = (id: string) => {
     mutateDelete(id, {
       onSuccess: () => {
@@ -115,11 +116,12 @@ const HomePage: React.FC = () => {
                   onClick={() => handleEditClick(country.id)}
                 />
               </IconButton>
-              <IconButton>
+              <IconButton disabled={deleteLoading}>
                 <DeleteIcon
                   className="icon-l icon-secondary"
                   onClick={() => handleDeleteClick(country.id)}
                 />
+                {errorDelete && <p>Couldn't delete</p>}
               </IconButton>
             </CardFooter>
           </CardContainer>
