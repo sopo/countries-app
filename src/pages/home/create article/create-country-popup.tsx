@@ -180,7 +180,11 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
         },
       );
     } else {
-      mutateCreate(newCountry);
+      mutateCreate(newCountry, {
+        onSuccess: () => {
+          handleCreateArticle();
+        },
+      });
     }
   }
 
