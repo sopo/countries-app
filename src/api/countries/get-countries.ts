@@ -1,30 +1,29 @@
 import httpClient from '../axios';
 import { Country } from '@/components/cards/cards-data/country';
-export const getCountries = async () => {
+export const getCountries = async (): Promise<Country[]> => {
   try {
-    return httpClient.get<Country[]>('/countries').then((response) => {
-      return response.data;
-    });
+    const response = await httpClient.get<Country[]>('/countries');
+    return response.data;
   } catch (error) {
     console.error('error on get countries: ', error);
     throw error;
   }
 };
-export const updateCountry = async (data: Country) => {
+export const updateCountry = async (data: Country): Promise<Country> => {
   try {
-    return httpClient.patch(`/countries/${data.id}`, data).then((res) => {
-      return res.data;
-    });
+   const response = await httpClient.patch(`/countries/${data.id}`, data)
+      return response.data;
+    
   } catch (error) {
     console.error('error on update: ', error);
     throw error;
   }
 };
-export const getCountry = async (id: string) => {
+export const getCountry = async (id: string): Promise<Country> => {
   try {
-    return httpClient.get(`/countries/${id}`).then((res) => {
-      return res.data;
-    });
+    const response = await httpClient.get(`/countries/${id}`)
+      return response.data;
+  
   } catch (error) {
     console.error('error on get country: ', error);
     throw error;
@@ -36,27 +35,27 @@ export const likeCountry = async ({
 }: {
   id: string;
   rating: number;
-}) => {
+}): Promise<Country> => {
   try {
-    return httpClient.patch(`/countries/${id}`, { rating }).then((res) => {
-      return res.data;
-    });
+    const response = await httpClient.patch(`/countries/${id}`, { rating })
+      return response.data;
+ 
   } catch (error) {
     console.error('error on like: ', error);
     throw error;
   }
 };
-export const createCountry = async (data: Omit<Country, 'id'>) => {
+export const createCountry = async (data: Omit<Country, 'id'>): Promise<Country> => {
   try {
-    return await httpClient.post(`/countries`, data).then((res) => {
-      return res.data;
-    });
+    const response =  await httpClient.post(`/countries`, data) 
+      return response.data;
+  
   } catch (error) {
     console.error('error on create country: ', error);
     throw error;
   }
 };
-export const deleteCountry = async (id: string) => {
+export const deleteCountry = async (id: string): Promise<void> => {
   try {
     return await httpClient.delete(`/countries/${id}`);
   } catch (error) {
