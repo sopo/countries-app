@@ -142,7 +142,7 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       }
     }
   }
-   
+
   // useEffect
   useEffect(() => {
     if (data) {
