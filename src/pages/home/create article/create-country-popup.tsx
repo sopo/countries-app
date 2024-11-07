@@ -142,11 +142,10 @@ const CreateCountryPopup: React.FC<CreateCountryPopupProps> = ({
       }
     }
   }
-
+   
   // useEffect
   useEffect(() => {
     if (data) {
-      console.log(data);
       setGeorgianName(data.name.ka);
       setEnglishName(data.name.en);
       setGeorgianCapital(data.capital.ka);
