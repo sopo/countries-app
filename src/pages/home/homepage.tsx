@@ -51,8 +51,12 @@ const HomePage: React.FC = () => {
     setIsOpen(false);
     refetch();
   };
-  const { mutate: mutateDelete, status: statusDelete, isError: errorDelete } = useMutation({ mutationFn: deleteCountry });
-  const deleteLoading =  statusDelete === 'pending'
+  const {
+    mutate: mutateDelete,
+    status: statusDelete,
+    isError: errorDelete,
+  } = useMutation({ mutationFn: deleteCountry });
+  const deleteLoading = statusDelete === 'pending';
   const handleDeleteClick = (id: string) => {
     mutateDelete(id, {
       onSuccess: () => {
