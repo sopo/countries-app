@@ -73,7 +73,9 @@ export const deleteCountry = async (id: string): Promise<void> => {
 
 export const sortCountries = async (sort: string) => {
   try {
-    const response = await httpClient.get(`/countries?_sort=${sort}`);
+    const response = await httpClient.get(
+      `/countries?_sort=rating&_order=${sort}`,
+    );
     return response.data;
   } catch (error) {
     console.error('error on sort: ', error);

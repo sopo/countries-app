@@ -41,18 +41,23 @@ const HomePage: React.FC = () => {
   );
   const [searchParams, setSearchParams] = useSearchParams();
   const sort = searchParams.get('sort') || 'asc';
-  const sortButtonText = sort === 'rating'?'most Liked' : 'least Liked';
-   const handleSortClick = () => {
-     const searchParam = sort === "asc" ? "desc":"asc"
-     setSearchParams({ sort: searchParam });
-   };
-  const { data:countries, isLoading, isError, refetch } = useQuery({
-    queryKey: ['countries-list',sort],
-    queryFn:()=>{
-      console.log("fetching sort")
-    return  sortCountries(sort)
-    } ,
-    
+  const sortButtonText = sort === 'rating' ? 'most Liked' : 'least Liked';
+  const handleSortClick = () => {
+    const searchParam = sort === 'asc' ? 'desc' : 'asc';
+    setSearchParams({ sort: searchParam });
+  };
+  const {
+    data: countries,
+    isLoading,
+    isError,
+    refetch,
+  } = useQuery({
+    queryKey: ['countries-list', sort],
+    queryFn: () => {
+      console.log('fetching sort');
+      return sortCountries(sort);
+    },
+
     retry: 0,
   });
 
@@ -89,7 +94,6 @@ const HomePage: React.FC = () => {
       {
         onSuccess: () => {
           refetch();
-          // refetchCountries()
         },
       },
     );
@@ -124,7 +128,7 @@ const HomePage: React.FC = () => {
         {countries && console.log('yes :', countries)}
         {isError && <p>error</p>}
         {isLoading && <p>loading...</p>}
-        {(countries)?.map((country: Country) => (
+        {countries?.map((country: Country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
               <CardHeader cardImageUrl={country.imageUrl} />
