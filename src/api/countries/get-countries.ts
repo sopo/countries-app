@@ -27,6 +27,19 @@ export const getCountry = async (id: string): Promise<Country> => {
     throw error;
   }
 };
+export const openCountry = async ({
+  id,
+}: {
+  id: string;
+}): Promise<Country> => {
+  try {
+    const response = await httpClient.get(`/countries/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('error opening counry: ', error);
+    throw error;
+  }
+};
 export const likeCountry = async ({
   id,
   rating,
