@@ -23,7 +23,6 @@ import CreateCountryPopup from './create article/create-country-popup';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { Country } from '@/components/cards/cards-data/country';
 const HomePage: React.FC = () => {
-
   // ენის მიხედვით ფილტრი
   const { lang } = useParams();
   const content = lang === 'en' ? cardsSectionSd.en : cardsSectionSd.ka;
@@ -45,7 +44,7 @@ const HomePage: React.FC = () => {
     queryKey: ['countries-list'],
     queryFn: getCountries,
     retry: 0,
-  },);
+  });
 
   // ჰენდლერები
   const handleCreateArticle = () => {
@@ -71,25 +70,25 @@ const HomePage: React.FC = () => {
   };
 
   // sort
-  type SortType = "most" | "least"
-  const [sortType, setSortType] = useState<SortType>("most")
+  type SortType = 'most' | 'least';
+  const [sortType, setSortType] = useState<SortType>('most');
   const [searchParams, setSearchParams] = useSearchParams();
   const sort = searchParams.get('sort') || 'rating';
   const { data: countries } = useQuery({
     queryKey: ['countries', sort],
     queryFn: () => sortCountries(sort),
-    enabled: !!sort 
+    enabled: !!sort,
   });
   const handleSortClick = (newSort: string) => {
-    setSortType((prevSort) => (prevSort === "most" ? "least" : "most"));
-    const searchParam = sortType === "most" ? newSort : `-${newSort}`;
-   setSearchParams({sort: searchParam})
+    setSortType((prevSort) => (prevSort === 'most' ? 'least' : 'most'));
+    const searchParam = sortType === 'most' ? newSort : `-${newSort}`;
+    setSearchParams({ sort: searchParam });
   };
   //like
   const { mutate: mutateLike } = useMutation({ mutationFn: likeCountry });
   const handleLikeClick = (id: string, rating: number) => {
-    mutateLike(   
-      { id, rating: rating +1 },
+    mutateLike(
+      { id, rating: rating + 1 },
       {
         onSuccess: () => {
           refetch();
@@ -97,8 +96,6 @@ const HomePage: React.FC = () => {
       },
     );
   };
-
-
 
   return (
     <div>

@@ -62,7 +62,7 @@ export const deleteCountry = async (id: string): Promise<void> => {
   }
 };
 
-export const sortCountries = async (sort: string,)  => {
+export const sortCountries = async (sort: string) => {
   try {
     const response = await httpClient.get(`/countries?_sort=${sort}`);
     return response.data;
