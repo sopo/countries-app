@@ -3,8 +3,9 @@ import {
   getCountries,
   deleteCountry,
   likeCountry,
+  sortCountries,
 } from '@/api/countries/get-countries';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import cardsSectionSd from './static-data/cards-section-sd';
 import Banner from '../../components/banner/banner';
 import CardsSection from '@/components/cards/cards-section/cards-section';
@@ -20,8 +21,9 @@ import DeleteIcon from '@/assets/icons/trash.svg?react';
 import EditIcon from '@/assets/icons/pencil.svg?react';
 import CreateCountryPopup from './create article/create-country-popup';
 import { useMutation, useQuery } from '@tanstack/react-query';
-
+import { Country } from '@/components/cards/cards-data/country';
 const HomePage: React.FC = () => {
+
   // ენის მიხედვით ფილტრი
   const { lang } = useParams();
   const content = lang === 'en' ? cardsSectionSd.en : cardsSectionSd.ka;
@@ -39,12 +41,11 @@ const HomePage: React.FC = () => {
   const [editCountryId, setEditCountryId] = useState<string | undefined>(
     undefined,
   );
-
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ['countries-list'],
     queryFn: getCountries,
     retry: 0,
-  });
+  },);
 
   // ჰენდლერები
   const handleCreateArticle = () => {
@@ -68,10 +69,27 @@ const HomePage: React.FC = () => {
     setIsOpen(true);
     setEditCountryId(id);
   };
+
+  // sort
+  type SortType = "most" | "least"
+  const [sortType, setSortType] = useState<SortType>("most")
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sort = searchParams.get('sort') || 'rating';
+  const { data: countries } = useQuery({
+    queryKey: ['countries', sort],
+    queryFn: () => sortCountries(sort),
+    enabled: !!sort 
+  });
+  const handleSortClick = (newSort: string) => {
+    setSortType((prevSort) => (prevSort === "most" ? "least" : "most"));
+    const searchParam = sortType === "most" ? newSort : `-${newSort}`;
+   setSearchParams({sort: searchParam})
+  };
+  //like
   const { mutate: mutateLike } = useMutation({ mutationFn: likeCountry });
   const handleLikeClick = (id: string, rating: number) => {
-    mutateLike(
-      { id, rating: rating + 1 },
+    mutateLike(   
+      { id, rating: rating +1 },
       {
         onSuccess: () => {
           refetch();
@@ -79,6 +97,8 @@ const HomePage: React.FC = () => {
       },
     );
   };
+
+
 
   return (
     <div>
@@ -95,15 +115,23 @@ const HomePage: React.FC = () => {
       <CardsSection>
         <SectionHeader>
           <h1 className="text-primary">{content.articleTitle}</h1>
+
+          <Button
+            title={`${content.sort[sortType]}`}
+            className="buttonSecondaryM"
+            onClick={() => handleSortClick('rating')}
+          />
+
           <Button
             title={content.addNewArticle}
             className="buttonSecondaryM"
             onClick={handleAddArticleClick}
           />
         </SectionHeader>
+        {countries && console.log('yes :', countries)}
         {isError && <p>error</p>}
         {isLoading && <p>loading...</p>}
-        {data?.map((country) => (
+        {(countries ? countries : data)?.map((country: Country) => (
           <CardContainer key={country.id}>
             <Link to={`countries/${country.id}`}>
               <CardHeader cardImageUrl={country.imageUrl} />

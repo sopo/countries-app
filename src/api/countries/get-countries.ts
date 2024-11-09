@@ -61,3 +61,13 @@ export const deleteCountry = async (id: string): Promise<void> => {
     throw error;
   }
 };
+
+export const sortCountries = async (sort: string,)  => {
+  try {
+    const response = await httpClient.get(`/countries?_sort=${sort}`);
+    return response.data;
+  } catch (error) {
+    console.error('error on sort: ', error);
+    throw error;
+  }
+};
