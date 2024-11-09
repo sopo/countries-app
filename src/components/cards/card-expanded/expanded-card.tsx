@@ -20,17 +20,17 @@ const ExpandedCard: React.FC = () => {
   };
   const { id, lang } = useParams();
   const [country, setCountry] = useState<Country | undefined>(undefined);
-  const { data, } = useQuery({
+  const { data } = useQuery({
     queryKey: ['country', id],
-    queryFn: () => openCountry({id: id!}),
+    queryFn: () => openCountry({ id: id! }),
     enabled: !!id,
     retry: 0,
   });
   useEffect(() => {
     if (data) {
-      setCountry(data); 
+      setCountry(data);
     }
-  }, [data])
+  }, [data]);
   const content = lang === 'en' ? enContent : kaContent;
   const countryNotFound = !country;
 
