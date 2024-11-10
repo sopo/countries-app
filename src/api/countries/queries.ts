@@ -1,9 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { getCountries } from "./get-countries";
+import { useQuery } from '@tanstack/react-query';
+import { getCountries } from './get-countries';
 
-export function useGetCountries(){
-    return useQuery({
-        queryKey: ["countries"],
-        queryFn: getCountries
-    })
+export function useGetCountries() {
+  return useQuery({
+    queryKey: ['countries'],
+    queryFn: getCountries,
+  });
 }
